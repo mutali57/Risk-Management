@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/styles.css" rel="stylesheet">
+	<script  src="js/jquery-3.4.1.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://olss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	  
+
+  </head>
+
+  <body>
+	
+	
+
+    <table border=1 >
+	<thead>
+	  <tr>
+		<th>Topic</th>
+		<th>Severity</th>
+		<th>Probability</th>
+		<th >Results</th>
+		
+	  </tr>
+	</thead>
+	<tbody>
+	<!--  <tr> <td><input></td>
+		<td><select  id ="severe">
+			<option value="NULL"> NULL</option>
+			<option   value ="1">LOW</option>
+			<option value="2"> MEDIUM</option>
+			<option value="3">HIGH</option>
+		  </select></td>
+		<td><select id="probability">
+			<option value="NULL"> NULL</option>
+			<option  value ="1">LOW</option>
+			<option value="2"> MEDIUM</option>
+			<option value="3">HIGH</option>
+		  </select></td>
+		<td id="c3"><input ></td>
+
+
+	  </tr>
+
+	  <tr>
+		<td><input></td>
+		<td ><select name="s_box">
+			<option value="NULL"> NULL</option>
+			<option  value="LOW">LOW</option>
+			<option value="MEDIUM"> MEDIUM</option>
+			<option value="High">HIGH</option>
+		  </select></td>
+		<td><select  class="me">
+			<option value="NULL"> NULL</option>
+			<option  onclick="low ()" value ="LOW">LOW</option>
+			<option value="MEDIUM"> MEDIUM</option>
+			<option value="High">HIGH</option>
+		  </select></td>
+		  
+		<td><input></td>
+	  </tr>
+
+	  <tr>
+		
+		<td><input></td>
+		<td><select  class="me">
+			
+			<option  onclick="low ()" value ="LOW">LOW</option>
+			<option value="MEDIUM"> MEDIUM</option>
+			<option value="High">HIGH</option>
+		  </select></td>
+		<td><select name="s_box">
+		  <option  value="LOW">LOW</option>
+		  <option value="MEDIUM"> MEDIUM</option>
+		  <option value="High">HIGH</option>
+		  </select></td>
+		<td><input></td>
+	  </tr>-->
+
+	</tbody>
+	</table>
+	<button onclick="addRow()">Add</button>
+	<h1></h1>
+	<script>
+	  
+	  
+	  function fireInit (){
+	
+	
+	var config = {
+		apiKey: "AIzaSyB5F9qY38724px4bwXULcrCwj8fCq_D58Y",
+    authDomain: "projectrisk-1a0a1.firebaseapp.com",
+    databaseURL: "https://projectrisk-1a0a1.firebaseio.com",
+    projectxutuId: "projectrisk-1a0a1",
+    storageBucket: "",
+    messagingSenderId: "659506389580",
+    appId: "1:659506389580:web:029194abbba2619576cae9"
+ 
+	  };
+	  firebase.initializeApp(config);
+	  
+	  
+	  };
+	 
+	  
+	function  readData (){
+	var database = firebase.database();
+
+	
+    database.ref().child ("users/"). on('value', function(snapshot){
+        if(snapshot.exists()){
+	
+		
+            var content = '';
+		     var i=0;
+            snapshot.forEach(function(data){
+			//
+			var val=data.val ();
+		//$("p").html( i);
+			   // array[i]=data.key; 
+		
+				content+="<tr><td><input id='A"+i+"' type='text' value='"+val.date_of_birth+"'></td>";
+                content+="<td><input id='B"+i+"' type='text' value='"+val.FullName+"'></td></tr>";
+                i++;
+            });
+           // $('#ex-table').append(content);
+        }
+    });
+	
+	
+	
+	};
+	
+  
+  
+  function writeNewPost(userId,heading,prob,severe,score) {
+ // var database = firebase.database();
+  
+  // A post entry.
+  var postData = {
+     Topic:heading,
+	 Probability:prob,
+	 Severity:severe,
+	 Score:score
+  };
+  
+  
+  
+ var newPostKey = firebase.database().ref().child('users').push().key;
+
+ 
+
+ // Write the new post's data simultaneously in the posts list and the user's post list.
+ 
+
+
+
+
+
+ var updates = {};
+  
+  
+  
+  
+  
+  
+  
+  updates['/users/'+array ] = postData;
+//  $('p').html(array [i]);
+  //updates['/user-posts/' + uid + '/' + newPostKey] = postData;
+
+  firebase.database().ref().update(updates);
+  
+};
+
+
+
+  function getKey(){
+  array=[];
+  var database = firebase.database();
+	
+    database.ref().child ("users/"). on('value', function(snapshot){
+        if(snapshot.exists()){
+	
+		
+            var content = '';
+		     var i=0;
+            snapshot.forEach(function(data){
+		
+			    array[i]=data.key; 
+				writeNewPost(array[i],"me ","you");
+		i++;
+				
+            });
+			
+			
+			;
+            
+        }
+		//$('p').html(array.length);
+			
+		;
+		
+    });
+ 
+ ;
+ 
+  
+  }
+ 
+  $(document).ready(function (){
+  
+  
+  
+  
+  });
+	
+	
+
+	  
+	  
+	  
+	
+	</script>
+	
+	<script  src="js/scripts.js">
+	 
+	  	   
+	 
+	</script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

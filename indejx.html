@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+	<title>jQuery Bind Click Event to Dynamically added Elements</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+		var doc="<td><td>subtopic</td>" +
+		"<td>  dueDelligence </td>" +
+		"<td><input></td>" +
+		"<td><select  id ='severe'>" +
+		"<option value='NULL'> NULL</option>" +
+		"<option   value ='1'>LOW</option>" +
+		"<option value='2'> MEDIUM</option>" +
+		"<option value='3'>HIGH</option>" +
+		" </select></td>" +
+		" <td></td>" +
+		"<td><select id='probability'>" +
+		"<option value='NULL'> NULL</option>" +
+		"<option  value ='1'>LOW</option>" +
+		"<option value='2'> MEDIUM</option>" +
+		"<option value='3'>HIGH</option>" +
+		"</select></td>" +
+		"<td></td>" +
+		"<td></td>" +
+		"<td></td" +
+		"<td id='I0'></td>" +
+		"<td id='J'>hello</td>"+
+		"<td>hello2</td>"+
+		"<td id='remove'>&times</td>";
+		
+		
+		
+		
+            $("tbody").append("<tr>"+doc+"</tr>");
+			
+        });
+        $(document).on("click", "#remove" , function() {
+            $(this).parent().remove();
+        });
+    });
+</script>
+  </head>
+  <body>
+    <button>Add new list item</button>
+    <p>Click the above button to dynamically add new list items. You can remove it later.</p>
+    <table border=1>
+	  <tbody></tbody>
+    </table>
+  </body> 
+</html>

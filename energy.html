@@ -1,0 +1,704 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+	<meta charset="utf-8">
+	<title>jQuery Add / Remove Table Rows</title>
+	<!--<link href="css/bootstrap.min.css" rel="stylesheet" />-->
+	<link href="css/styles.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
+	  
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="stylesheet" href="style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+	<title>Registration Form</title>
+<style>
+	 
+	 
+</style>
+	<!-- <script type="text/javascript" src="js/bootstrap.min.js" ></script>-->
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+
+
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+
+
+  <body>
+	<div  class=" nav navbar  navbar-inverse navbar-fixed-top " role="navigation">
+      <div class="container nav-wrapper">
+        <div id ="nav" class=" navbar-header ">
+		  
+		  
+          <button id="toggle" type="button" class="navbar-toggle collapsed  " data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only navbar-left" >Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+			
+          </button>
+          <!--<a class=" navbar-brand" href="#">My Website</a>
+		  -->
+        </div>
+		
+	  <div class="nav navbar  ">
+		<input class="form-control" id="myInput" type="text" placeholder="Search Table">
+	  </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="siteappreciation.html">Site Appreciation</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+		  
+        </div><!--/.nav-collapse -->
+	
+      </div>
+	</div>
+	<iframe name="votar" style="display:none;"></iframe>
+	<div class="container-fluid">
+	  <div class="row">
+		<div class="col-sm-6">
+		  <h2>Energy Yield</h2>
+		</div>
+	  </div>
+	  <div>
+		<div class="table-scroll" >
+		  
+		  <table  id="productTable" 
+			class="table table-bordered table-condensed table-scroll ">
+			<thead class='thead-dark'>
+			  <tr>
+				<th >
+				<th scope="col">Reference (and clause)</th>
+				<th scope="col">Sub topic</th>
+				<th scope="col">	Due diligence focus (hide this column)</th>
+				<th scope="col">Observations, issues and specific risk description</th>
+				<th scope="col">
+				  <div>Severity of impact</div>
+				  <div>score</div></th>
+				<th scope="col">
+				  <div>Severity</div><div>of</div><div>impact</div>
+				  <div>description</div></th>
+				<th scope="col"><div>Probability of occurrence</div>
+				  <div>score</div></th>
+				<th scope="col"><div>Probability of occurrence</div>
+				  <div>description</div></th>
+
+				<th scope="col">Risk score</th>
+				<th scope="col">Risk</th>
+				<th scope="col">Suggestion </th>
+			  </tr>
+			</thead>
+
+		  </table>
+		</div>
+	  </div>
+	</div>
+
+	<div >
+	  <button class="btn  bg-primary" id="download">Download</button>
+	</div>
+
+
+
+	<form  target="votar"   class="sucess-none was-validated  " id="newContact" >
+	  <div class="modal fade modalPanel" id="myModal" role="dialog">
+		<div class="modal-dialog">
+
+		  <!-- Modal content-->
+		  <div class="modal-content" >
+
+			<div class="modal-body">
+			  <div class="row">
+				<div class="col-sm-6">
+				  <div class="panel panel-primary">
+					<!--<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Modal Header</h4>
+					</div>-->
+					<div class="panel-heading  modal-header">
+					  <button type="button" id="closebutton" data-dismiss="modal" 
+						class="btn btn-primary ">
+						close
+					  </button>
+					  Product Information
+					</div>
+
+					<div class="panel-body">
+					  <div class="form-group">
+						<label for="heading">
+						  Heading
+						</label>
+						<input type="text"
+						  class="form-control"
+						  value="Site Data"
+						  id="heading" />
+					  </div>
+
+					  <div class="form-group">
+						<label for="subtopic">
+						  Sub Topic
+						</label>
+						<input type="text"
+						  class="form-control"
+						  value="Extending Bootstrap with CSS, JavaScript and jQuery"
+						  id="subtopic" />
+					  </div>
+
+					  <div class="form-group">
+						<label for="duedelligence">
+						  Due Delligence
+						</label>
+						<input type="text"
+						  class="form-control"
+						  value="6/11/2015"
+						  id="duedelligence" />
+					  </div>
+					  <div class="form-group">
+						<label for="url">
+						  Observation
+						</label>
+						<input type="option"
+						  class="form-control"
+						  value="www.pluralsight.com"
+						  id="observation" />
+					  </div>
+					  <div class="form-group">
+						<label for="severityscore">
+						  Serverity of impact score
+						</label>
+						<select  id ='severityscore' 
+
+						  class="form-control"  >
+						  <option value='Negligible'> NULL</option>
+						  <option   value ='Low'>LOW</option>
+						  <option value='Medium'> MEDIUM</option>
+						  <option  value='High'>HIGH</option>
+						</select>
+
+					  </div>
+					  <div class="form-group">
+						<label for="Description">
+						  Severity of impact description
+						</label>
+						<input type="text"
+						  class="form-control"
+						  value="6/11/2015"
+						  id="severitydescription" />
+					  </div>
+					  <div class="form-group">
+						<label for="probabilityscore">
+						  Probability of accurence score
+						</label>
+						<select  id ='probabilityscore' 
+
+						  class="form-control"  >
+						  <option value='N/A'> NULL</option>
+						  <option value='Negligible'> NULL</option>
+						  <option   value ='Low'>LOW</option>
+						  <option value='Medium'> MEDIUM</option>
+						  <option  value='High'>HIGH</option>
+						</select>
+
+					  </div>
+					  <div class="form-group">
+						<label for="Description">
+						  Probability of accurence description
+						</label>
+						<input type="text"
+						  class="form-control"
+						  value="6/11/2015"
+						  id="probabilitydescription" />
+					  </div>
+					  <div class="form-group">
+						<label for="suggestion">
+						  Suggestion
+						</label>
+						<input type="text"
+						  class="form-control"
+						  value="6/11/2015"
+						  id="suggestion" />
+					  </div>
+
+					</div>
+					<!--<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>-->
+					<div class="panel-footer modal-footer">
+					  <div class="row">
+						<div class="col-xs-12">
+						  <div style="position: absolute; left: -5000px;" aria-hidden="true">
+							<input type="text" name="b_96d9e6e519173af7bdbdab9d_23138bd741" tabindex="-1" value="">
+
+						  </div>
+						  <button   aria-hidden="true"
+							type="submit" class="btn btn-primary"  name="subscribe" id="submitContact">Submit</button>
+						</div>
+
+					  </div>
+
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+
+		  </div>
+
+		</div>
+	  </div>
+	  <!--<div class="row">
+	  <div class="col-sm-6">
+	  <div class="panel panel-primary">
+
+	  <div class="panel-heading">
+	  <button type="button" id="closebutton"
+	  class="btn btn-primary">
+	  close
+	  </button>
+	  Product Information
+	  </div>
+
+	  <div class="panel-body">
+	  <div class="form-group">
+	  <label for="heading">
+	  Heading
+	  </label>
+	  <input type="text"
+	  class="form-control"
+	  value="Site Data"
+	  id="heading" />
+	  <div class="valid-feedback">Valid.</div>
+	  <div class="invalid-feedback">Please fill out this field.</div>
+	  </div>
+
+	  <div class="form-group">
+	  <label for="subtopic">
+	  Sub Topic
+	  </label>
+	  <input type="text"
+	  class="form-control"
+	  value="Extending Bootstrap with CSS, JavaScript and jQuery"
+	  id="subtopic" />
+	  </div>
+
+	  <div class="form-group">
+	  <label for="duedelligence">
+	  Due Delligence
+	  </label>
+	  <input type="text"
+	  class="form-control"
+	  value="6/11/2015"
+	  id="duedelligence" />
+	  </div>
+	  <div class="form-group">
+	  <label for="url">
+	  Observation
+	  </label>
+	  <input type="option"
+	  class="form-control"
+	  value="www.pluralsight.com"
+	  id="observation" />
+	  </div>
+	  <div class="form-group">
+	  <label for="severityscore">
+	  Serverity of impact score
+	  </label>
+	  <select  id ='severityscore' 
+
+	  class="form-control"  >
+	  <option value='Negligible'> NULL</option>
+	  <option   value ='Low'>LOW</option>
+	  <option value='Medium'> MEDIUM</option>
+	  <option  value='High'>HIGH</option>
+	  </select>
+
+	  </div>
+	  <div class="form-group">
+	  <label for="Description">
+	  Severity of impact description
+	  </label>
+	  <input type="text"
+	  class="form-control"
+	  value="6/11/2015"
+	  id="severitydescription" />
+	  </div>
+	  <div class="form-group">
+	  <label for="probabilityscore">
+	  Probability of accurence score
+	  </label>
+	  <select  id ='probabilityscore' 
+
+	  class="form-control"  >
+	  <option value='N/A'> NULL</option>
+	  <option value='Negligible'> NULL</option>
+	  <option   value ='Low'>LOW</option>
+	  <option value='Medium'> MEDIUM</option>
+	  <option  value='High'>HIGH</option>
+	  </select>
+
+	  </div>
+	  <div class="form-group">
+	  <label for="Description">
+	  Probability of accurence description
+	  </label>
+	  <input type="text"
+	  class="form-control"
+	  value="6/11/2015"
+	  id="probabilitydescription" />
+	  </div>
+	  <div class="form-group">
+	  <label for="suggestion">
+	  Suggestion
+	  </label>
+	  <input type="text"
+	  class="form-control"
+	  value="6/11/2015"
+	  id="suggestion" />
+	  </div>
+
+	  </div>
+	  <div class="panel-footer">
+	  <div class="row">
+	  <div class="col-xs-12">
+	  <div style="position: absolute; left: -5000px;" aria-hidden="true">
+	  <input type="text" name="b_96d9e6e519173af7bdbdab9d_23138bd741" tabindex="-1" value="">
+	  </div>
+	  <button type="submit" class="btn btn-primary"  name="subscribe" id="submitContact">Submit</button>
+	  </div>
+	  </div>
+
+	  </div>
+	  </div>
+	  </div>
+	  </div>-->
+	</form>
+
+	<!--<p>hello</p>-->
+	<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
+<script type="text/javascript" src="js/firebase.js">
+</script>
+	<script type="text/javascript" src="js/risk.js"></script>
+
+<script type="text/javascript">
+
+var isUpdated=false;
+
+
+
+
+
+
+function colorChange (id) {
+	$(id).change(function () {
+					 if ($(this).val() == "Low")
+					 {
+						 $(id).css("background-color", "yellow");
+					 }
+					 else if ($(this).val() == "Medium")
+					 {
+						 $(id).css("background-color", '#ffa500');
+
+					 }
+					 else if ($(this).val() == "High")
+					 {
+						 $(id).css("background-color", "Red");
+					 }
+					 else if ($(this).val() == "Negligible")
+					 {
+						 $(id).css("background-color", "green");
+					 }
+				 });}
+
+
+
+
+$(document).ready(function() {
+
+
+
+
+					  $("#myInput").on("keyup", function() {
+										   var value = $(this).val().toLowerCase();
+										   $("#mytbody tr").filter(function() {
+																	   $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+																   });
+									   });
+
+					  colorChange("#probabilityscore");
+					  colorChange("#severityscore");
+
+					  fireInit();
+					  keyRead('Energy');
+					  $('select').change(function (){
+					  alert('change');
+					  updateTotal('energyRisk');
+					  });
+					  //updateTotal('energyRisk');
+					 //alert(RiskArray);
+
+					  $("#submitContact").on("click", function () {
+												 alert($("#submitContact").text());
+												 if ($("#submitContact").text() == "Update")
+												 {
+                                               
+				
+											   
+											   
+											   
+											   //keyRead('Energy');
+									                  
+													 updateFile("Energy");
+                                                    
+													 $("#submitContact").text("Submit");
+												 }
+												 else
+												 {
+													 contactScript();
+
+													 $("#submitContact").text("Submit");
+												 }
+											 });
+
+					  
+
+					  // alert($('#submitContact').text());
+
+
+					  // $(".panel-primary").hide();
+					  //if ($(".panel-primary").hide ()){
+					  //  $("#submitContact").text("Update");};
+					  $('#closebutton').click(function () {
+												  $('.panel-primary').hide();
+												  $('#submitContact').text("Update");
+												  $('#addbutton').show();
+
+											  });
+
+					  $('#download').on('click',function () {
+					  alert('hello');
+  var filename  = 'ThisIsYourPDFFilename.pdf';
+
+		html2canvas($('.container') ,{
+  onrendered: function(canvas) {
+    
+	
+			var pdf = new jsPDF('table', 'pt', 'a4');
+		
+			pdf.addImage(canvas.toDataURL('css/png'), 'PNG', 0, 0, 500, 500);
+			pdf.save('hello.pdf');
+		}});			  
+			});	  
+				  
+			
+			
+	
+			
+			
+			
+			
+				  });
+
+
+
+
+
+
+</script>
+<script>
+// Current product being edited
+var editRow = null;
+var nextId = 1;
+// ID of Product currently editing
+var activeId = 0;
+
+function productDisplay(ctl) {
+
+
+//openForm();
+
+	//alert(row);
+
+
+	$('#submitContact').text('Update');
+
+	editRow = $(ctl).parents("tr");
+
+	var cols = editRow.children("td");
+	activeId = $($(cols[0]).children("button")[0]).data("id");
+	//alert(activeId-1);
+
+	$("#heading").val($(cols[1]).text());
+	$("#subtopic").val($(cols[2]).text());
+	$("#duedelligence").val($(cols[3]).text());
+	$("#observation").val($(cols[5]).text());
+	$("#severityscore").val($(cols[2]).text());
+	$("#severitydescription").val($(cols[6]).text());
+	$("#probabilityscore").val($(cols[7]).text());
+	$("#probabilitydescription").val($(cols[8]).text());
+	$("#suggestion").val($(cols[9]).text());
+
+
+
+	// Change Update Button Text
+
+}
+
+function productUpdate() {
+
+//alert ($("#submitContact").text());
+	if ($("#submitContact").text() == 'Update')
+	{
+
+        productUpdateInTable(activeId);
+
+	}
+	else
+
+	{
+
+
+		productAddToTable();
+
+
+
+
+
+
+	}
+
+	// Clear form fields
+	formClear();
+
+	// Focus to product name field
+	$("#subtopic").focus();
+
+}
+
+// Add product to <table>
+function productAddToTable() {
+	;
+
+
+
+	// First check if a <tbody> tag exists, add one if not
+	if ($("#productTable tbody").length == 0)
+	{
+
+        $("#productTable").append("<tbody id='mytbody'></tbody>");
+	}
+
+
+	// Append product to table
+
+	$("#productTable tbody").append(productBuildTableRow(nextId));
+	nextId += 1;
+}
+
+// Update product in <table>
+function productUpdateInTable(id) {
+
+	var row = $("#productTable button[data-id='" + id + "']")
+		.parents("tr")[0];
+
+	// Add changed product to table
+	$(row).after(productBuildTableRow(id));
+
+	// Remove original product
+	$(row).remove();
+
+	// Clear form fields
+	formClear();
+
+	// Change Update Button Text
+//$("#submitContact").text("Add");
+}
+var j=0;
+// Build a <table> row of Product data
+function productBuildTableRow(id) {
+	var ret ;
+
+	if (valList[1] == '')
+	{
+	//alert(valList[6]);
+
+		ret = "<tr>" +
+			"<td>" +
+			"<button type='button' class='btn btn-info btn-lg' data-toggle='modal'  data-target='#myModal'" +
+			"onclick='productDisplay(this);' " +
+			"class='btn btn-default'" +
+			"data-id='" + id + "'>" +
+			"<span class='glyphicon glyphicon-edit' />" +
+			"</button>" +
+			"<td>" + "</td>"  +
+			"<td>" + valList[7] + "</td>"  +
+			"<td>" + valList[0] + "</td>" +
+			"<td>"  + valList[3] + "</td>" +
+			"<td class='"+valList [4]+"'>" + valList[4] + "</td>" +
+			"<td>" + valList[5] + "</td>" +
+			"<td class='"+valList[6]+"'>" + valList[6] + "</td>" +
+			"<td>" + valList[2] + "</td>" +
+			"<td>" + riskScore() + "</td>" +
+			"<td class='"+risk(riskScore())+"'><strong>" + risk(riskScore()) + "</strong></td>" +
+			"<td>" + valList[8] + "</td>" +
+			"</tr>";
+			
+RiskArray[j]=riskScore(),
+j++;
+
+	}
+	else
+	{
+
+
+
+		ret = "<tr>" +
+			"<td>" +
+			"<button type='button' id='edit'" +
+			"onclick='productDisplay(this);' " +
+			"class='btn btn-default'" +
+			"data-id='" + id + "'>" +
+			"<span class='glyphicon glyphicon-edit' />" +
+			"</button>" +
+			"</td>" +
+			"</td><td class='Subtopic'> <strong>" + valList[1] + "<strong/></td>" +
+
+			"</tr>" ;
+
+
+	}
+
+
+
+	return ret;
+}
+
+// Delete product from <table>
+function productDelete(ctl) {
+	$(ctl).parents("tr").remove();
+}
+
+// Clear form fields+())))))))
+function formClear() {
+    $("#heading").val("");
+	$("#subtopic").val(""),
+		$("#duedelligence").val("");
+	$("#observation").val("");
+	$("#severityscore").val("");
+	$("#severitydescription").val("");
+	$("#probabilityscore").val("");
+	$("#probabilitydescription").val("");
+	$("#suggestion").val("");
+
+
+}
+</script>
+  </body>
+</html>
