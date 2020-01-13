@@ -49,7 +49,7 @@ table-scroll th,
   position: sticky;
   top: 0;
 }
-/* safari and ios need the tfoot itself to be position:sticky also*/ 
+/* safari and ios need the tfoot itself to be position:sticky also*/
 /*.table-scroll tfoot,
 .table-scroll tfoot th,
 .table-scroll tfoot td {
@@ -99,19 +99,19 @@ tfoot th:first-child {
   background-color:Black;
   color:WhiteSmoke;
   text-align:center;
-  
-  
- 
+
+
+
 }
 
-.L 
+.L
 {
   background-color:Yellow;
   color:Dark-Grey;
   text-align:center;
 }
 
-.H 
+.H
 {
   background-color:Red;
   color:Dark-Grey;
@@ -122,10 +122,10 @@ tfoot th:first-child {
   background-color:#ffa500;
   color:Dark-Grey;
   text-align:center;
-  
+
 }
 .N  {
-  
+
   background-color:Green;
   color:Dark-Grey;
   text-align:center;
@@ -134,9 +134,9 @@ tfoot th:first-child {
   background-color:#ffa500;
   color:Dark-Grey;
   text-align:center;
-  
+
 }
-.Low 
+.Low
 {
   background-color:Yellow;
   color:Dark-Grey;
@@ -144,32 +144,32 @@ tfoot th:first-child {
 }
 
 .High {
-  
+
   background-color:Red;
   color:Dark-Grey;
   text-align:center;
 }
 .Negligible  {
-  
+
   background-color:Green;
   color:Dark-Grey;
   text-align:center;
 }
 .Subtopic{
   background-color:WhiteSmoke
-  
+
 }
 
 #nav {
   /*background-color:Red;*/
   width:100%;
-  
+
 }
 
 .container-fluid
 {
   margin-top:100px;
- 
+
 }
 #myInput{
   width:40%;
@@ -179,4 +179,3 @@ tfoot th:first-child {
 #nav{
   margin-right:0vw;
 }
-
