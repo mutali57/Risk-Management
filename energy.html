@@ -174,10 +174,9 @@ input {
 						<label for="url">
 						  Observation
 						</label>
-						<input type="option"
-						  class="form-control"
-						  value="www.pluralsight.com"
-						  id="observation" />
+            <textarea id="observation" class="form-control" onkeyup="new do_resize(this);" cols="20" rows="1" name="description_name"></textarea>
+
+
 					  </div>
 					  <div class="form-group">
 						<label for="severityscore">
@@ -198,10 +197,9 @@ input {
 						<label for="Description">
 						  Severity of impact description
 						</label>
-						<input type="text"
-						  class="form-control"
-						  value="6/11/2015"
-						  id="severitydescription" />
+            <textarea id="severitydescription" class="form-control" onkeyup="new do_resize(this);" cols="20" rows="1" name="description_name"></textarea>
+
+						
 					  </div>
 					  <div class="form-group">
 						<label for="probabilityscore">
@@ -222,11 +220,9 @@ input {
 						<label for="Description">
 						  Probability of accurence description
 						</label>
-						<input type="text"
-						  class="form-control"
-						  value="6/11/2015"
-						  id="probabilitydescription" />
-					  </div>
+            <textarea id="probabilitydescription" class="form-control" onkeyup="new do_resize(this);" cols="20" rows="1" name="description_name"></textarea>
+
+						</div>
 					  <div class="form-group">
 						<label for="suggestion">
 						  Suggestion
@@ -470,7 +466,7 @@ $(document).ready(function() {
 
 					  fireInit();
 					  keyRead('Energy');
-updateTotal("energyRisk");
+
 					  //updateTotal('energyRisk');
 					 //alert(RiskArray);
 
@@ -480,7 +476,7 @@ updateTotal("energyRisk");
 												 {
 
 
-//updateTotal("energyRisk");
+updateTotal("energyRisk");
 
 
 											   //keyRead('Energy');
@@ -670,11 +666,11 @@ function productBuildTableRow(id) {
 			"<td>" + "</td>"  +
 			"<td>" + valList[7] + "</td>"  +
 			"<td>" + valList[0] + "</td>" +
-			"<td>"  + valList[3] + "</td>" +
+			"<td>"  + valList[2] + "</td>" +
 			"<td class='"+valList [4]+"'>" + valList[4] + "</td>" +
 			"<td>" + valList[5] + "</td>" +
 			"<td class='"+valList[6]+"'>" + valList[6] + "</td>" +
-			"<td>" + valList[2] + "</td>" +
+			"<td>" + valList[3] + "</td>" +
 			"<td>" + riskScore() + "</td>" +
 			"<td class='"+risk(riskScore())+"'><strong>" + risk(riskScore()) + "</strong></td>" +
 			"<td>" + valList[8] + "</td>" +

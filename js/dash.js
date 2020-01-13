@@ -1,5 +1,8 @@
 //var activeId=0;
-
+var high=0;
+var medium=0;
+var low=0;
+var critical=0;
 var a= [ "Introduction","Site Appreciation","Energy Yield Assessment",
 	"Site Conditions and Turbine Suitability",
 	"Contract Overview",
@@ -26,10 +29,7 @@ var a= [ "Introduction","Site Appreciation","Energy Yield Assessment",
 		//alert(totalRisk);
 		 var energyRisk=totalRisk;
  var editRow=null;
-var high=0;
-var medium=0;
-var low=0;
-var critical=0;
+
  var my=[];
  var my= energyRisk.split (',');
 
@@ -105,7 +105,24 @@ alert (valList[0]);
 
 
 }
+var data = {
+  labels: a,
+  series: [high,low,medium,critical
 
+  ]
+};
+
+var options = {
+  high: 10,
+  low: -10,
+  axisX: {
+    labelInterpolationFnc: function(value, index) {
+      return index % 2 === 0 ? value : null;
+    }
+  }
+};
+
+new Chartist.Bar('.ct-chart', data, options);
 
 
 
@@ -115,6 +132,7 @@ fireInit();
 //readData();
 valRead('totalRisk');
 //valRead('totalRisk');
+;
 
 
 

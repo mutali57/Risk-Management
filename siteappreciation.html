@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
 	<meta charset="utf-8">
@@ -6,18 +6,34 @@
 	<!--<link href="css/bootstrap.min.css" rel="stylesheet" />-->
 	<link href="css/styles.css" rel="stylesheet"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<link href="css/bootstrap-theme.css" rel="stylesheet"/>
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<link rel="stylesheet" href="style.css" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 
 	<title>Registration Form</title>
 <style>
-	  
-	 
+
+#duedelligence {
+  height:100px;
+
+}
+
+.panel {
+margin-left: 50%;
+
+}
+input {
+  min-height:10px!important;
+
+  max-height:99.99%!important;
+  transition: height 0.001s;
+
+}
 </style>
 	<!-- <script type="text/javascript" src="js/bootstrap.min.js" ></script>-->
 	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
@@ -31,26 +47,26 @@
   <body>
 	<div  class=" nav navbar  navbar-inverse navbar-fixed-top " role="navigation">
       <div class="container nav-wrapper">
-        <div id ="nav" class="navbar-header">
+        <div id ="nav" class=" navbar-header ">
 
 
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
+          <button id="toggle" type="button" class="navbar-toggle collapsed  " data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only navbar-left" >Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
 
           </button>
-          <a class="navbar-brand" href="#">My Website</a>
-
+          <!--<a class=" navbar-brand" href="#">My Website</a>
+		  -->
         </div>
 
-		<div class="nav navbar  ">
-		  <input class="form-control" id="myInput" type="text" placeholder="Search Table">
-		</div>
+	  <div class="nav navbar  ">
+		<input class="form-control" id="myInput" type="text" placeholder="Search Table">
+	  </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Energy</a></li>
+            <li class="active"><a href="#">Home</a></li>
             <li><a href="siteappreciation.html">Site Appreciation</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -59,19 +75,18 @@
 
       </div>
 	</div>
-	
-	
 	<iframe name="votar" style="display:none;"></iframe>
 	<div class="container-fluid">
-	   <div class="row">
+	  <div class="row">
 		<div class="col-sm-6">
-		  <h2>Site Appreciation</h2>
+		  <h2>Energy Yield</h2>
 		</div>
 	  </div>
 	  <div>
 		<div class="table-scroll" >
-		  <table  id="productTable" 
-			class="table table-bordered table-condensed table-scroll ">
+
+		  <table  id="productTable"
+			class="table table-bordered table-condensed table-scroll table-responsive">
 			<thead class='thead-dark'>
 			  <tr>
 				<th >
@@ -108,11 +123,9 @@
 
 
 	<form  target="votar"   class="sucess-none was-validated  " id="newContact" >
-	  <div class="modal fade panel " id="myModal" role="dialog">
-		<div class="modal-dialog">
+	  <div class="modal fade modalPanel" id="myModal" role="dialog">
 
 		  <!-- Modal content-->
-		  <div class="modal-content" >
 
 			<div class="modal-body">
 			  <div class="row">
@@ -123,7 +136,7 @@
 					<h4 class="modal-title">Modal Header</h4>
 					</div>-->
 					<div class="panel-heading  modal-header">
-					  <button type="button" id="closebutton" data-dismiss="modal" 
+					  <button type="button" id="closebutton" data-dismiss="modal"
 						class="btn btn-primary ">
 						close
 					  </button>
@@ -155,28 +168,25 @@
 						<label for="duedelligence">
 						  Due Delligence
 						</label>
-						<input type="text"
-						  class="form-control"
-						  value="6/11/2015"
-						  id="duedelligence" />
+						<textarea id="duedelligence" class="form-control" onkeyup="new do_resize(this);" cols="20" rows="1" name="description_name"></textarea>
 					  </div>
 					  <div class="form-group">
 						<label for="url">
 						  Observation
 						</label>
-						<input type="option"
-						  class="form-control"
-						  value="www.pluralsight.com"
-						  id="observation" />
+            <textarea id="observation" class="form-control" onkeyup="new do_resize(this);" cols="20" rows="1" name="description_name"></textarea>
+
+
 					  </div>
 					  <div class="form-group">
 						<label for="severityscore">
 						  Serverity of impact score
 						</label>
-						<select  id ='severityscore' 
+						<select  id ='severityscore'
 
 						  class="form-control"  >
-						  <option value='Negligible'> NULL</option>
+               <option value='Null'> NULL</option>
+						  <option value='Negligible'>NEGLIGIBLE</option>
 						  <option   value ='Low'>LOW</option>
 						  <option value='Medium'> MEDIUM</option>
 						  <option  value='High'>HIGH</option>
@@ -187,23 +197,22 @@
 						<label for="Description">
 						  Severity of impact description
 						</label>
-						<input type="text"
-						  class="form-control"
-						  value="6/11/2015"
-						  id="severitydescription" />
+            <textarea id="severitydescription" class="form-control" onkeyup="new do_resize(this);" cols="20" rows="1" name="description_name"></textarea>
+
+
 					  </div>
 					  <div class="form-group">
 						<label for="probabilityscore">
 						  Probability of accurence score
 						</label>
-						<select  id ='probabilityscore' 
+						<select  id ='probabilityscore'
 
 						  class="form-control"  >
-						  <option value='N/A'> NULL</option>
-						  <option value='Negligible'> NULL</option>
-						  <option   value ='Low'>LOW</option>
-						  <option value='Medium'> MEDIUM</option>
-						  <option  value='High'>HIGH</option>
+              <option value='Null'> NULL</option>
+             <option value='Negligible'>NEGLIGIBLE</option>
+             <option   value ='Low'>LOW</option>
+             <option value='Medium'> MEDIUM</option>
+             <option  value='High'>HIGH</option>
 						</select>
 
 					  </div>
@@ -211,11 +220,9 @@
 						<label for="Description">
 						  Probability of accurence description
 						</label>
-						<input type="text"
-						  class="form-control"
-						  value="6/11/2015"
-						  id="probabilitydescription" />
-					  </div>
+            <textarea id="probabilitydescription" class="form-control" onkeyup="new do_resize(this);" cols="20" rows="1" name="description_name"></textarea>
+
+						</div>
 					  <div class="form-group">
 						<label for="suggestion">
 						  Suggestion
@@ -249,10 +256,7 @@
 			  </div>
 			</div>
 
-		  </div>
 
-		</div>
-	  </div>
 	  <!--<div class="row">
 	  <div class="col-sm-6">
 	  <div class="panel panel-primary">
@@ -310,7 +314,7 @@
 	  <label for="severityscore">
 	  Serverity of impact score
 	  </label>
-	  <select  id ='severityscore' 
+	  <select  id ='severityscore'
 
 	  class="form-control"  >
 	  <option value='Negligible'> NULL</option>
@@ -333,7 +337,7 @@
 	  <label for="probabilityscore">
 	  Probability of accurence score
 	  </label>
-	  <select  id ='probabilityscore' 
+	  <select  id ='probabilityscore'
 
 	  class="form-control"  >
 	  <option value='N/A'> NULL</option>
@@ -383,18 +387,42 @@
 	<!--<p>hello</p>-->
 	<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
-	<script type="text/javascript" src="js/risk.js"></script>
-	
 <script type="text/javascript" src="js/firebase.js">
 </script>
-	
+	<script type="text/javascript" src="js/risk.js"></script>
+
 <script type="text/javascript">
 
 var isUpdated=false;
 
 
+/*function resizable (el, factor) {
+  var int = Number(factor) || 7.7;
+  function resize() {el.style.height = ((el.value.length+1) * int) + 'px'}
+  var e = 'keyup,keypress,focus,blur,change'.split(',');
+  for (var i in e) el.addEventListener(e[i],resize,false);
+  resize();
+}*/
 
 
+//resizable(document.getElementById('duedelligence'),3);
+
+
+function do_resize(textbox) {
+
+ var maxrows=5;
+  var txt=textbox.value;
+  var cols=textbox.cols;
+
+ var arraytxt=txt.split('\n');
+  var rows=arraytxt.length;
+
+ for (i=0;i<arraytxt.length;i++)
+  rows+=parseInt(arraytxt[i].length/cols);
+
+ if (rows>maxrows) textbox.rows=maxrows;
+  else textbox.rows=rows;
+ }
 
 
 function colorChange (id) {
@@ -419,7 +447,12 @@ function colorChange (id) {
 				 });}
 
 
+
+
 $(document).ready(function() {
+
+
+
 
 					  $("#myInput").on("keyup", function() {
 										   var value = $(this).val().toLowerCase();
@@ -434,11 +467,20 @@ $(document).ready(function() {
 					  fireInit();
 					  keyRead('SiteAppreciation');
 
+					  //updateTotal('energyRisk');
+					 //alert(RiskArray);
+
 					  $("#submitContact").on("click", function () {
 												 alert($("#submitContact").text());
 												 if ($("#submitContact").text() == "Update")
 												 {
-                                                     updateTotal("siteApp");
+
+
+updateTotal("SiteAPP");
+
+
+											   //keyRead('Energy');
+
 													 updateFile("SiteAppreciation");
 
 													 $("#submitContact").text("Submit");
@@ -451,7 +493,7 @@ $(document).ready(function() {
 												 }
 											 });
 
-					  
+
 
 					  // alert($('#submitContact').text());
 
@@ -459,12 +501,12 @@ $(document).ready(function() {
 					  // $(".panel-primary").hide();
 					  //if ($(".panel-primary").hide ()){
 					  //  $("#submitContact").text("Update");};
-					  $('#closebutton').click(function () {
+					 /* $('#closebutton').click(function () {
 												  $('.panel-primary').hide();
 												  $('#submitContact').text("Update");
 												  $('#addbutton').show();
 
-											  });
+											  });*/
 
 					  $('#download').on('click',function () {
 					  alert('hello');
@@ -472,15 +514,22 @@ $(document).ready(function() {
 
 		html2canvas($('.container') ,{
   onrendered: function(canvas) {
-    
-	
+
+
 			var pdf = new jsPDF('table', 'pt', 'a4');
-		
+
 			pdf.addImage(canvas.toDataURL('css/png'), 'PNG', 0, 0, 500, 500);
 			pdf.save('hello.pdf');
-		}});			  
-			});	  
-				  
+		}});
+			});
+
+
+
+
+
+
+
+
 				  });
 
 
@@ -498,7 +547,7 @@ var activeId = 0;
 
 function productDisplay(ctl) {
 
-
+console.log( 'pressed');
 //openForm();
 
 	//alert(row);
@@ -515,12 +564,12 @@ function productDisplay(ctl) {
 	$("#heading").val($(cols[1]).text());
 	$("#subtopic").val($(cols[2]).text());
 	$("#duedelligence").val($(cols[3]).text());
-	$("#observation").val($(cols[5]).text());
-	$("#severityscore").val($(cols[2]).text());
+	$("#observation").val($(cols[4]).text());
+	$("#severityscore").val($(cols[5]).text());
 	$("#severitydescription").val($(cols[6]).text());
 	$("#probabilityscore").val($(cols[7]).text());
 	$("#probabilitydescription").val($(cols[8]).text());
-	$("#suggestion").val($(cols[9]).text());
+	$("#suggestion").val($(cols[11]).text());
 
 
 
@@ -617,11 +666,11 @@ function productBuildTableRow(id) {
 			"<td>" + "</td>"  +
 			"<td>" + valList[7] + "</td>"  +
 			"<td>" + valList[0] + "</td>" +
-			"<td>"  + valList[3] + "</td>" +
+			"<td>"  + valList[2] + "</td>" +
 			"<td class='"+valList [4]+"'>" + valList[4] + "</td>" +
 			"<td>" + valList[5] + "</td>" +
 			"<td class='"+valList[6]+"'>" + valList[6] + "</td>" +
-			"<td>" + valList[2] + "</td>" +
+			"<td>" + valList[3] + "</td>" +
 			"<td>" + riskScore() + "</td>" +
 			"<td class='"+risk(riskScore())+"'><strong>" + risk(riskScore()) + "</strong></td>" +
 			"<td>" + valList[8] + "</td>" +
@@ -629,6 +678,7 @@ function productBuildTableRow(id) {
 
 RiskArray[j]=riskScore(),
 j++;
+
 	}
 	else
 	{
@@ -657,9 +707,7 @@ j++;
 }
 
 // Delete product from <table>
-function productDelete(ctl) {
-	$(ctl).parents("tr").remove();
-}
+
 
 // Clear form fields+())))))))
 function formClear() {
