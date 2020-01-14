@@ -82,7 +82,7 @@ input {
 		  <h2>Energy Yield</h2>
 		</div>
 	  </div>
-	  <div>
+	  <div id="source-html">
 		<div class="table-scroll" >
 
 		  <table  id="productTable"
@@ -117,7 +117,7 @@ input {
 	</div>
 
 	<div >
-	  <button class="btn  bg-primary" id="download">Download</button>
+	  <button class="btn  bg-primary" onclick="exportHTML()">Download</button>
 	</div>
 
 
@@ -199,7 +199,7 @@ input {
 						</label>
             <textarea id="severitydescription" class="form-control" onkeyup="new do_resize(this);" cols="20" rows="1" name="description_name"></textarea>
 
-						
+
 					  </div>
 					  <div class="form-group">
 						<label for="probabilityscore">
@@ -447,7 +447,22 @@ function colorChange (id) {
 				 });}
 
 
+         function exportHTML(){
+                var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' "+
+                     "xmlns:w='urn:schemas-microsoft-com:office:word' "+
+                     "xmlns='http://www.w3.org/TR/REC-html40'>"+
+                     "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
+                var footer = "</body></html>";
+                var sourceHTML = header+document.getElementById("source-html").innerHTML+footer;
 
+                var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+                var fileDownload = document.createElement("a");
+                document.body.appendChild(fileDownload);
+                fileDownload.href = source;
+                fileDownload.download = 'document.doc';
+                fileDownload.click();
+                document.body.removeChild(fileDownload);
+             }
 
 $(document).ready(function() {
 
@@ -506,7 +521,7 @@ updateTotal("energyRisk");
 												  $('#submitContact').text("Update");
 												  $('#addbutton').show();
 
-											  });*/
+											  });
 
 					  $('#download').on('click',function () {
 					  alert('hello');
@@ -521,7 +536,7 @@ updateTotal("energyRisk");
 			pdf.addImage(canvas.toDataURL('css/png'), 'PNG', 0, 0, 500, 500);
 			pdf.save('hello.pdf');
 		}});
-			});
+  });*/
 
 
 
