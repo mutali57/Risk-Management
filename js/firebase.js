@@ -20,7 +20,7 @@ function fireInit () {
 function valRead(name) {
 
 
-	
+
 
 
     databaseRes.ref().child(name). on('value', function(snapshot) {
@@ -28,7 +28,7 @@ function valRead(name) {
 									   if (snapshot.exists())
 									   {
 										   var i=0;
-										  
+
 
 
 										   snapshot.forEach(function(data) {
@@ -38,11 +38,11 @@ function valRead(name) {
 
 																i++;
 															});
-										  
+
 
 
 										   productUpdate();
-										   
+
 										  // alert("my:"+RiskArray.length);
 									   }
 
@@ -83,13 +83,13 @@ function keyRead(name) {
 
 										   snapshot.forEach(function(data) {
 
-											keyList [i]=data.key;					
+											keyList [i]=data.key;
 										   valRead(name+"/" + data.key);
 
-    
+
 																i++;
 															});
-										   
+
 
 
 									   }
@@ -118,7 +118,7 @@ function keyRead(name) {
 function contactScript() {
 
    databaseRes = firebase.database().ref("Energy");
-	
+
 $("#newContact").submit(function(a) { $(this), console.log("Submit to Firebase");
 var nhead=$('#heading').val(),
 									b=$("#subtopic").val(),
@@ -131,7 +131,7 @@ var nhead=$('#heading').val(),
 									k=$("#suggestion").val(),
 									dataModel= {
 									heading:nhead,
-									subtopic: b, 
+									subtopic: b,
 									duedelligence: c,
 									observation: d,
 									severityscore: e,
@@ -142,52 +142,68 @@ var nhead=$('#heading').val(),
 
 
 
-return databaseRes.push(dataModel).then(function() { 
+return databaseRes.push(dataModel).then(function() {
 alert(' Add successful');
 
 window.location.href = 'index.html';
 
 });});
-								
-								
-			}												
+
+
+			}
 
 function updateTotal (id){
 	if(id=="energyRisk"){
 	var str='';
 	//alert(RiskArray);
 	for ( x in RiskArray){
-	
+
 		str+=','+RiskArray [x];
 	}
-		
+
 databaseRes = firebase.database().ref('totalRisk/').update ({energyRisk:str});
 
 }
 
 
 if(id=="siteApp"){
-	
-	
+
+
 	var str='';
 	//alert(RiskArray);
 	alert(RiskArray);
 	for ( x in RiskArray){
-	
+
 		str+=','+RiskArray [x];
 
 		}
 databaseRes = firebase.database().ref('totalRisk/').update({siteApp:str});
 
 }
-	
-	
+
+
 }
 function updateFile(name) {
 	//alert(activeId);
 
 	databaseRes = firebase.database().ref(name+"/"+keyList [activeId-1]);
 	$("#newContact").submit(function(a) { $(this), console.log("Submit to Firebase");
+	var	dataModel;
+alert(name);
+
+
+	if (name=='Introduction'){
+		var detail=$('#detail').val();
+
+alert('hey');
+		dataModel={
+
+	    details : detail
+
+
+		};
+	}else {
+
 
 								var nhead=$('#heading').val(),
 									b=$("#subtopic").val(),
@@ -197,11 +213,11 @@ function updateFile(name) {
 									f=$("#severitydescription").val(),
 									g=$("#probabilityscore").val(),
 									h=$("#probabilitydescription").val(),
-									k=$("#suggestion").val(),
-									dataModel= {
-										
+									k=$("#suggestion").val();
+						dataModel= {
+
 									heading:nhead,
-									subtopic: b, 
+									subtopic: b,
 									duedelligence: c,
 									observation: d,
 									severityscore: e,
@@ -209,12 +225,11 @@ function updateFile(name) {
 									probabilityscore: g,
 									probabilitydescription: h,
 									suggestion: k};
-
+}
 								return databaseRes.update(dataModel). then(function() {
 									alert('Update success');
-									
+
 									window.location.reload();
-									
+
 									});});
 									}
-																			
