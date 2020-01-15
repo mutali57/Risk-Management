@@ -14,7 +14,9 @@ function fireInit () {
 		appId: "1:659506389580:web:029194abbba2619576cae9"
 	};
 	 firebase.initializeApp(a);
+
 	databaseRes= firebase.database();
+
 }
 
 function valRead(name) {
@@ -84,6 +86,7 @@ function keyRead(name) {
 										   snapshot.forEach(function(data) {
 
 											keyList [i]=data.key;
+
 										   valRead(name+"/" + data.key);
 
 

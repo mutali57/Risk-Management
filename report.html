@@ -1,29 +1,343 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>jQuery Add / Remove Table Rows</title>
-  <!--<link href="css/bootstrap.min.css" rel="stylesheet" />-->
-  <link href="css/styles.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+	<meta charset="utf-8">
+	<title>jQuery Add / Remove Table Rows</title>
+	<!--<link href="css/bootstrap.min.css" rel="stylesheet" />-->
+	<link href="css/styles.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+<script type="text/javascript" src="project.js"></script>
+	<title>Registration Form</title>
+<style>
 
-</head>
-<body>
-<div class="container">
-  <div class="<col span="2">">
+#duedelligence {
+  height:100px;
+
+}
+
+.panel {
+margin-left: 50%;
+
+}
+input {
+  min-height:10px!important;
+
+  max-height:99.99%!important;
+  transition: height 0.001s;
+
+}
+</style>
+	<!-- <script type="text/javascript" src="js/bootstrap.min.js" ></script>-->
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 
 
-  <h1><u>Introduction</h1>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
 
-    </div>
+
+  <body>
+<div id = "SiteAppreciation">
+</div>
+<div id = "EnergyAnalysis">
+
+</div>
+	<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
+<script type="text/javascript" src="js/firebase.js">
+</script>
+	<script type="text/javascript" src="js/risk.js"></script>
+
+<script type="text/javascript">
+
+var isUpdated=false;
+
+
+
+function do_resize(textbox) {
+
+ var maxrows=5;
+  var txt=textbox.value;
+  var cols=textbox.cols;
+
+ var arraytxt=txt.split('\n');
+  var rows=arraytxt.length;
+
+ for (i=0;i<arraytxt.length;i++)
+  rows+=parseInt(arraytxt[i].length/cols);
+
+ if (rows>maxrows) textbox.rows=maxrows;
+  else textbox.rows=rows;
+ }
+
+
+function colorChange (id) {
+	$(id).change(function () {
+					 if ($(this).val() == "Low")
+					 {
+						 $(id).css("background-color", "yellow");
+					 }
+					 else if ($(this).val() == "Medium")
+					 {
+						 $(id).css("background-color", '#ffa500');
+
+					 }
+					 else if ($(this).val() == "High")
+					 {
+						 $(id).css("background-color", "Red");
+					 }
+					 else if ($(this).val() == "Negligible")
+					 {
+						 $(id).css("background-color", "green");
+					 }
+				 });}
+         function exportHTML(){
+                var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' "+
+                     "xmlns:w='urn:schemas-microsoft-com:office:word' "+
+                     "xmlns='http://www.w3.org/TR/REC-html40'>"+
+                     "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
+                var footer = "</body></html>";
+                var sourceHTML = header+document.getElementById("source-html").innerHTML+footer;
+
+                var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+                var fileDownload = document.createElement("a");
+                document.body.appendChild(fileDownload);
+                fileDownload.href = source;
+                fileDownload.download = 'document.doc';
+                fileDownload.click();
+                document.body.removeChild(fileDownload);
+             }
+
+ function headings(name, id, topic){
+
+$(id).html(navigationbar()+createTable(topic)+ formInfo());
+keyRead(name);
+
+ }
+
+$(document).ready(function() {
+fireInit();
+
+headings('SiteAppreciation','#SiteAppreciation', 'Site Appreciation');
+
+  headings('Energy','#EnergyAnalysis', 'Energy Analysis');
+
+
+					  colorChange("#probabilityscore");
+					  colorChange("#severityscore");
+
+
+
+
+
+
+
+
+				  });
+
+
+
+
+
+
+</script>
+<script>
+// Current product being edited
+var editRow = null;
+var nextId = 1;
+// ID of Product currently editing
+var activeId = 0;
+
+function productDisplay(ctl) {
+
+console.log( 'pressed');
+//openForm();
+
+	//alert(row);
+
+
+	$('#submitContact').text('Update');
+
+	editRow = $(ctl).parents("tr");
+
+	var cols = editRow.children("td");
+	activeId = $($(cols[0]).children("button")[0]).data("id");
+	//alert(activeId-1);
+
+	$("#heading").val($(cols[1]).text());
+	$("#subtopic").val($(cols[2]).text());
+	$("#duedelligence").val($(cols[3]).text());
+	$("#observation").val($(cols[4]).text());
+	$("#severityscore").val($(cols[5]).text());
+	$("#severitydescription").val($(cols[6]).text());
+	$("#probabilityscore").val($(cols[7]).text());
+	$("#probabilitydescription").val($(cols[8]).text());
+	$("#suggestion").val($(cols[11]).text());
+
+
+
+	// Change Update Button Text
+
+}
+
+function productUpdate() {
+
+//alert ($("#submitContact").text());
+	if ($("#submitContact").text() == 'Update')
+	{
+
+        productUpdateInTable(activeId);
+
+	}
+	else
+
+	{
+
+
+		productAddToTable();
+
+
+
+
+
+
+	}
+
+	// Clear form fields
+	formClear();
+
+	// Focus to product name field
+	$("#subtopic").focus();
+
+}
+
+// Add product to <table>
+function productAddToTable() {
+	;
+
+
+
+	// First check if a <tbody> tag exists, add one if not
+	if ($("#productTable tbody").length == 0)
+	{
+
+        $("#productTable").append("<tbody id='mytbody'></tbody>");
+	}
+
+
+	// Append product to table
+
+	$("#productTable tbody").append(productBuildTableRow(nextId));
+	nextId += 1;
+}
+
+// Update product in <table>
+function productUpdateInTable(id) {
+
+	var row = $("#productTable button[data-id='" + id + "']")
+		.parents("tr")[0];
+
+	// Add changed product to table
+	$(row).after(productBuildTableRow(id));
+
+	// Remove original product
+	$(row).remove();
+
+	// Clear form fields
+	formClear();
+
+	// Change Update Button Text
+//$("#submitContact").text("Add");
+}
+var j=0;
+// Build a <table> row of Product data
+function productBuildTableRow(id) {
+	var ret ;
+
+	if (valList[1] == '')
+	{
+	//alert(valList[6]);
+
+		ret = "<tr>" +
+			"<td>" +
+			"<button type='button' class='btn btn-info btn-lg' data-toggle='modal'  data-target='#myModal'" +
+			"onclick='productDisplay(this);' " +
+			"class='btn btn-default'" +
+			"data-id='" + id + "'>" +
+			"<span class='glyphicon glyphicon-edit' />" +
+			"</button>" +
+			"<td>" + "</td>"  +
+			"<td>" + valList[7] + "</td>"  +
+			"<td>" + valList[0] + "</td>" +
+			"<td>"  + valList[2] + "</td>" +
+			"<td class='"+valList [4]+"'>" + valList[4] + "</td>" +
+			"<td>" + valList[5] + "</td>" +
+			"<td class='"+valList[6]+"'>" + valList[6] + "</td>" +
+			"<td>" + valList[3] + "</td>" +
+			"<td>" + riskScore() + "</td>" +
+			"<td class='"+risk(riskScore())+"'><strong>" + risk(riskScore()) + "</strong></td>" +
+			"<td>" + valList[8] + "</td>" +
+			"</tr>";
+
+RiskArray[j]=riskScore(),
+j++;
+
+	}
+	else
+	{
+
+
+
+		ret = "<tr>" +
+			"<td>" +
+			"<button type='button' id='edit'" +
+			"onclick='productDisplay(this);' " +
+			"class='btn btn-default'" +
+			"data-id='" + id + "'>" +
+			"<span class='glyphicon glyphicon-edit' />" +
+			"</button>" +
+			"</td>" +
+			"</td><td class='Subtopic'> <strong>" + valList[1] + "<strong/></td>" +
+
+			"</tr>" ;
+
+
+	}
+
+
+
+	return ret;
+}
+
+// Delete product from <table>
+
+
+// Clear form fields+())))))))
+function formClear() {
+    $("#heading").val("");
+	$("#subtopic").val(""),
+		$("#duedelligence").val("");
+	$("#observation").val("");
+	$("#severityscore").val("");
+	$("#severitydescription").val("");
+	$("#probabilityscore").val("");
+	$("#probabilitydescription").val("");
+	$("#suggestion").val("");
+
+
+}
+</script>
+  </body>
+</html>
+
 
 </div>
 
