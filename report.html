@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -45,10 +46,13 @@ input {
 
 
   <body>
+    <div id= "Introduction10"></div>
+
 <div id = "SiteAppreciation">
 </div>
-<div id = "EnergyAnalysis">
 
+<div id = "EnergyAnalysis"></div>
+<div id = "Site_and_Turbine_Suitability">
 </div>
 	<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
@@ -63,6 +67,7 @@ var isUpdated=false;
 
 
 function do_resize(textbox) {
+
 
  var maxrows=5;
   var txt=textbox.value;
@@ -80,6 +85,7 @@ function do_resize(textbox) {
 
 
 function colorChange (id) {
+
 	$(id).change(function () {
 					 if ($(this).val() == "Low")
 					 {
@@ -117,20 +123,23 @@ function colorChange (id) {
              }
 
  function headings(name, id, topic){
-
+//document.getElementById('productTable').id = name;
 $(id).html(navigationbar()+createTable(topic)+ formInfo());
+//document.getElementById('productTable').id = name;
+
 keyRead(name);
+
 
  }
 
 $(document).ready(function() {
 fireInit();
+//headings('SiteAppreciation','#SiteAppreciation', 'Site Appreciation');
+//document.getElementById('productTable').id ="Energy";
 
-headings('SiteAppreciation','#SiteAppreciation', 'Site Appreciation');
+  //headings('Energy','#EnergyAnalysis', 'Energy Analysis');
 
-  headings('Energy','#EnergyAnalysis', 'Energy Analysis');
-
-
+headings('Site_and_Turbine_Suitability','#Site_and_Turbine_Suitability','Site Conditions and Turbine Suitability');
 					  colorChange("#probabilityscore");
 					  colorChange("#severityscore");
 
@@ -261,12 +270,36 @@ var j=0;
 // Build a <table> row of Product data
 function productBuildTableRow(id) {
 	var ret ;
+if(valList.length<3){
 
-	if (valList[1] == '')
+  ret = "<tr>" +
+    "<td>" +
+  "<button type='button' class='btn btn-info btn-lg' data-toggle='modal'  data-target='#myModal'" +
+  "onclick='productDisplay(this);' " +
+  "class='btn btn-default'" +
+  "data-id='" + id + "'>" +
+  "<span class='glyphicon glyphicon-edit' />" +
+  "</button>" +
+  "<td>" + valList[0] + "</td>"  +
+  "<td>" + valList[1] + "</td>" +
+
+
+  "</tr>";
+
+
+}else{
+
+  //alert(valList[1]);
+
+  //alert(valList[1]=="");
+alert(valList[0]);
+
+	if (valList[1] =="")
 	{
+
 	//alert(valList[6]);
 
-		ret = "<tr>" +
+	ret = "<tr>" +
 			"<td>" +
 			"<button type='button' class='btn btn-info btn-lg' data-toggle='modal'  data-target='#myModal'" +
 			"onclick='productDisplay(this);' " +
@@ -296,6 +329,7 @@ j++;
 
 
 
+
 		ret = "<tr>" +
 			"<td>" +
 			"<button type='button' id='edit'" +
@@ -311,7 +345,7 @@ j++;
 
 
 	}
-
+}
 
 
 	return ret;

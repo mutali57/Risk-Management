@@ -44,9 +44,37 @@ var results =	"<div  class=' nav navbar  navbar-inverse navbar-fixed-top ' role=
 
 
 	function createTable(name){
+    var results="";
+
+ if (name=='Introduction'){
+   alert('intro');
+results="</div>"+"<iframe name='votar' style='display:none';></iframe>"+
+   "<div class='container-fluid'>"+
+   "<div class='row'>"+
+   "<div class='col-sm-6'>"+
+   "<h2>"+name+"</h2>"+
+   "</div>"+
+   "</div>"+
+   "<div id='source-html'>"+
+   "<div class='table-scroll'>"+
+   "<table  id='productTable'"+
+   "class='table table-bordered table-condensed table-scroll table-responsive'>"+
+   "<thead class='thead-dark'>"
+   +
+   "<tr><th></th>"+
+   "<th scope='col'>Key Information</th>"+
+   "<th scope='col'>Detail</th>"+
+   "</tr></thead></table>"+
+   "</div></div>"+
+   "</div>"+
+   "<div>"+
+   "<button class='btn  bg-primary' onclick='exportHTML()'>Download</button>"+
+   "</div>";
 
 
-var results=
+ }
+ else{
+results=
 "<iframe name='votar' style='display:none;'></iframe>"+
 "<div class='container-fluid'>"+
 "<div class='row'>"+
@@ -84,11 +112,10 @@ var results=
 			"</div>"+
 			"<div>"+
 			"<button class='btn  bg-primary' onclick='exportHTML()'>Download</button>"+
-				"	</div>"
+				"	</div>"	;
 
-
-			;
-	return results;
+      };
+return results;
 }
 
 
