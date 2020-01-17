@@ -48,12 +48,20 @@ input {
   <body>
     <div id= "Introduction10"></div>
 
-<div id = "SiteAppreciation">
+<div id = "Site_Appreciation">
 </div>
 
-<div id = "EnergyAnalysis"></div>
+<div id = "Energy_Analysis"></div>
 <div id = "Site_and_Turbine_Suitability">
 </div>
+<div id = "Contract_Overview">
+
+
+</div>
+<div id="Programme"></div>
+<div id="Balance_of_Plant_Track_Record"></div>
+<div id="Supply_Turbine_Supply_Agreement"></div>
+
 	<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
 <script type="text/javascript" src="js/firebase.js">
@@ -122,9 +130,9 @@ function colorChange (id) {
                 document.body.removeChild(fileDownload);
              }
 
- function headings(name, id, topic){
+ function headings(name, topic){
 //document.getElementById('productTable').id = name;
-$(id).html(navigationbar()+createTable(topic)+ formInfo());
+$("#"+name).html(navigationbar()+createTable(topic)+ formInfo());
 //document.getElementById('productTable').id = name;
 
 keyRead(name);
@@ -134,12 +142,17 @@ keyRead(name);
 
 $(document).ready(function() {
 fireInit();
-//headings('SiteAppreciation','#SiteAppreciation', 'Site Appreciation');
+headings('Site_Appreciation', 'Site Appreciation');
 //document.getElementById('productTable').id ="Energy";
 
-  //headings('Energy','#EnergyAnalysis', 'Energy Analysis');
+  headings('Energy_Analysis', 'Energy Analysis');
 
-headings('Site_and_Turbine_Suitability','#Site_and_Turbine_Suitability','Site Conditions and Turbine Suitability');
+headings('Site_and_Turbine_Suitability','Site Conditions and Turbine Suitability');
+headings("Contract_Overview", 'Contract Overview');
+headings('Programme',"Programme");
+headings('Balance_of_Plant_Track_Record',"Balance of Plant Track Record");
+headings('Supply_Turbine_Supply_Agreement',"Supply -Turbine Supply Agreement");
+
 					  colorChange("#probabilityscore");
 					  colorChange("#severityscore");
 
@@ -291,60 +304,51 @@ if(valList.length<3){
 
   //alert(valList[1]);
 
-  //alert(valList[1]=="");
-alert(valList[0]);
+  //alert(valList[1]=="")
+if (snapData.heading == '')
+{
+//alert(valList[6]);
 
-	if (valList[1] =="")
-	{
-
-	//alert(valList[6]);
-
-	ret = "<tr>" +
-			"<td>" +
-			"<button type='button' class='btn btn-info btn-lg' data-toggle='modal'  data-target='#myModal'" +
-			"onclick='productDisplay(this);' " +
-			"class='btn btn-default'" +
-			"data-id='" + id + "'>" +
-			"<span class='glyphicon glyphicon-edit' />" +
-			"</button>" +
-			"<td>" + "</td>"  +
-			"<td>" + valList[7] + "</td>"  +
-			"<td>" + valList[0] + "</td>" +
-			"<td>"  + valList[2] + "</td>" +
-			"<td class='"+valList [4]+"'>" + valList[4] + "</td>" +
-			"<td>" + valList[5] + "</td>" +
-			"<td class='"+valList[6]+"'>" + valList[6] + "</td>" +
-			"<td>" + valList[3] + "</td>" +
-			"<td>" + riskScore() + "</td>" +
-			"<td class='"+risk(riskScore())+"'><strong>" + risk(riskScore()) + "</strong></td>" +
-			"<td>" + valList[8] + "</td>" +
-			"</tr>";
+  ret = "<tr>" +
+    "<td>" +
+    "<button type='button' class='btn btn-info btn-lg' data-toggle='modal'  data-target='#myModal'" +
+    "onclick='productDisplay(this);' " +
+    "class='btn btn-default'" +
+    "data-id='" + id + "'>" +
+    "<span class='glyphicon glyphicon-edit' />" +
+    "</button>" +
+    "<td>" + "</td>"  +
+    "<td>" + snapData.subtopic + "</td>"  +
+    "<td>" + snapData.duedelligence + "</td>" +
+    "<td>"  + snapData.observation + "</td>" +
+    "<td class='"+snapData.severityscore+"'>" + snapData.severityscore + "</td>" +
+    "<td>" + snapData.severitydescription + "</td>" +
+    "<td class='"+snapData.probabilityscore+"'>" + snapData.probabilityscore + "</td>" +
+    "<td>" + snapData.probabilitydescription + "</td>" +
+    "<td>" + riskScore() + "</td>" +
+    "<td class='"+risk(riskScore())+"'><strong>" + risk(riskScore()) + "</strong></td>" +
+    "<td>" + snapData.suggestion + "</td>" +
+    "</tr>";
 
 RiskArray[j]=riskScore(),
 j++;
 
-	}
-	else
-	{
+}
+else
+{
+  ret = "<tr>" +
+    "<td>" +
+    "<button type='button' id='edit'" +
+    "onclick='productDisplay(this);' " +
+    "class='btn btn-default'" +
+    "data-id='" + id + "'>" +
+    "<span class='glyphicon glyphicon-edit' />" +
+    "</button>" +
+    "</td>" +
+    "</td><td class='Subtopic'> <strong>" + snapData.heading + "<strong/></td>" +
 
-
-
-
-		ret = "<tr>" +
-			"<td>" +
-			"<button type='button' id='edit'" +
-			"onclick='productDisplay(this);' " +
-			"class='btn btn-default'" +
-			"data-id='" + id + "'>" +
-			"<span class='glyphicon glyphicon-edit' />" +
-			"</button>" +
-			"</td>" +
-			"</td><td class='Subtopic'> <strong>" + valList[1] + "<strong/></td>" +
-
-			"</tr>" ;
-
-
-	}
+    "</tr>" ;
+}
 }
 
 

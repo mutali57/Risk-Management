@@ -453,12 +453,13 @@ function productUpdateInTable(id) {
 	// Change Update Button Text
 //$("#submitContact").text("Add");
 }
+sna
 var j=0;
 // Build a <table> row of Product data
 function productBuildTableRow(id) {
 	var ret ;
 
-	if (valList[1] == '')
+	if (snapData.heading == '')
 	{
 	//alert(valList[6]);
 
@@ -471,16 +472,16 @@ function productBuildTableRow(id) {
 			"<span class='glyphicon glyphicon-edit' />" +
 			"</button>" +
 			"<td>" + "</td>"  +
-			"<td>" + valList[7] + "</td>"  +
-			"<td>" + valList[0] + "</td>" +
-			"<td>"  + valList[2] + "</td>" +
-			"<td class='"+valList [4]+"'>" + valList[4] + "</td>" +
-			"<td>" + valList[5] + "</td>" +
-			"<td class='"+valList[6]+"'>" + valList[6] + "</td>" +
-			"<td>" + valList[3] + "</td>" +
+			"<td>" + snapData.subtopic + "</td>"  +
+			"<td>" + snapData.duedelligence + "</td>" +
+			"<td>"  + snapData.observation + "</td>" +
+			"<td class='"+snapData.severityscore+"'>" + snapData.severityscore + "</td>" +
+			"<td>" + snapData.severitydescription + "</td>" +
+			"<td class='"+snapData.probabilityscore+"'>" + snapData.probabilityscore + "</td>" +
+			"<td>" + snapData.probabilitydescription + "</td>" +
 			"<td>" + riskScore() + "</td>" +
 			"<td class='"+risk(riskScore())+"'><strong>" + risk(riskScore()) + "</strong></td>" +
-			"<td>" + valList[8] + "</td>" +
+			"<td>" + snapData.suggestion + "</td>" +
 			"</tr>";
 
 RiskArray[j]=riskScore(),
@@ -501,7 +502,7 @@ j++;
 			"<span class='glyphicon glyphicon-edit' />" +
 			"</button>" +
 			"</td>" +
-			"</td><td class='Subtopic'> <strong>" + valList[1] + "<strong/></td>" +
+			"</td><td class='Subtopic'> <strong>" + snapData.heading + "<strong/></td>" +
 
 			"</tr>" ;
 
