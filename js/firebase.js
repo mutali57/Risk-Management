@@ -1,5 +1,6 @@
 var valList= [];
 var keyList =[];
+var snapData;
 var RiskArray= [];
 var databaseRes;
 function fireInit () {
@@ -31,12 +32,13 @@ function valRead(name) {
 									   {
 										   var i=0;
 
+snapData =snapshot.val();
 
 
 										   snapshot.forEach(function(data) {
 
 
-																valList[i] = data.val();
+																valList[i] = data.val()
 
 																i++;
 															});
@@ -89,11 +91,10 @@ function keyRead(name) {
 
 										   valRead(name+"/" + data.key);
 
-
 																i++;
 															});
 
-
+document.getElementById('productTable').id =name;
 
 									   }
 
