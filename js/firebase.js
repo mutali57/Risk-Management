@@ -2,7 +2,7 @@ var valList= [];
 var keyList =[];
 var snapData;
 var RiskArray= [];
-var databaseRes;
+//var databaseRes;
 function fireInit () {
 	var  a=  {
 
@@ -16,7 +16,7 @@ function fireInit () {
 	};
 	 firebase.initializeApp(a);
 
-	databaseRes= firebase.database();
+
 
 }
 
@@ -24,7 +24,7 @@ function valRead(name) {
 
 
 
-
+var	databaseRes= firebase.database();
 
     databaseRes.ref().child(name). on('value', function(snapshot) {
 
@@ -75,7 +75,7 @@ function keyRead(name) {
 
 
 	//var database = firebase.database();
-
+var	databaseRes= firebase.database();
 
     databaseRes.ref().child(name). on('value', function(snapshot) {
 
@@ -93,8 +93,13 @@ function keyRead(name) {
 
 																i++;
 															});
-
-document.getElementById('productTable').id =name;
+															try {
+															    document.getElementById('productTable').id =name;
+															    } catch(e) {
+															        console.log(e);
+															        // [Error: Uh oh!]
+															    }
+        ;
 
 									   }
 
@@ -120,6 +125,7 @@ document.getElementById('productTable').id =name;
 
 
 function contactScript() {
+	var	databaseRes= firebase.database();
 
    databaseRes = firebase.database().ref("Energy");
 
@@ -157,6 +163,9 @@ window.location.href = 'index.html';
 			}
 
 function updateTotal (id){
+
+
+	var	databaseRes= firebase.database();
 	if(id=="energyRisk"){
 	var str='';
 	//alert(RiskArray);
@@ -189,6 +198,7 @@ databaseRes = firebase.database().ref('totalRisk/').update({siteApp:str});
 }
 function updateFile(name) {
 	//alert(activeId);
+	var	databaseRes= firebase.database();
 
 	databaseRes = firebase.database().ref(name+"/"+keyList [activeId-1]);
 	$("#newContact").submit(function(a) { $(this), console.log("Submit to Firebase");

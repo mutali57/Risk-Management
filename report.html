@@ -46,7 +46,8 @@ input {
 
 
   <body>
-    <div id= "Introduction10"></div>
+    <div>
+    <div id= "Introduction"></div>
 
 <div id = "Site_Appreciation">
 </div>
@@ -55,12 +56,14 @@ input {
 <div id = "Site_and_Turbine_Suitability">
 </div>
 <div id = "Contract_Overview">
-
-
 </div>
 <div id="Programme"></div>
 <div id="Balance_of_Plant_Track_Record"></div>
+<div id="Original_Equipment_Manufacturer_and_Turbine_Technolog"></div>
 <div id="Supply_Turbine_Supply_Agreement"></div>
+<div id ="Supply_Balance_of_Plant"></div>
+<div id="Supply_Project_Management_Agreement"></div>
+<div id ="Supply_Interface"></div>
 
 	<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
@@ -142,6 +145,7 @@ keyRead(name);
 
 $(document).ready(function() {
 fireInit();
+headings("Introduction",'Introduction');
 headings('Site_Appreciation', 'Site Appreciation');
 //document.getElementById('productTable').id ="Energy";
 
@@ -151,10 +155,17 @@ headings('Site_and_Turbine_Suitability','Site Conditions and Turbine Suitability
 headings("Contract_Overview", 'Contract Overview');
 headings('Programme',"Programme");
 headings('Balance_of_Plant_Track_Record',"Balance of Plant Track Record");
+headings("Original_Equipment_Manufacturer_and_Turbine_Technolog","Original_Equipment_Manufacturer_and_Turbine_Technolog");
 headings('Supply_Turbine_Supply_Agreement',"Supply -Turbine Supply Agreement");
+headings('Supply_Balance_of_Plant',"Supply balance of Plant");
+headings("Supply_Project_Management_Agreement","Supply_Project_Management_Agreement");
+headings("Supply_Interface","Supply Interface");
+
 
 					  colorChange("#probabilityscore");
 					  colorChange("#severityscore");
+
+
 
 
 
@@ -311,12 +322,7 @@ if (snapData.heading == '')
 
   ret = "<tr>" +
     "<td>" +
-    "<button type='button' class='btn btn-info btn-lg' data-toggle='modal'  data-target='#myModal'" +
-    "onclick='productDisplay(this);' " +
-    "class='btn btn-default'" +
-    "data-id='" + id + "'>" +
-    "<span class='glyphicon glyphicon-edit' />" +
-    "</button>" +
+    
     "<td>" + "</td>"  +
     "<td>" + snapData.subtopic + "</td>"  +
     "<td>" + snapData.duedelligence + "</td>" +
