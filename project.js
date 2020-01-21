@@ -43,11 +43,11 @@ var results =	"<div  class=' nav navbar  navbar-inverse navbar-fixed-top ' role=
 
 
 
-	function createTable(name){
+	function createTable(name,page){
     var results="";
 
  if (name=='Introduction'){
-   alert('intro');
+
 results="</div>"+"<iframe name='votar' style='display:none';></iframe>"+
    "<div class='container-fluid'>"+
    "<div class='row'>"+
@@ -75,8 +75,9 @@ results="</div>"+"<iframe name='votar' style='display:none';></iframe>"+
  }
  else{
 results=
+
 "<iframe name='votar' style='display:none;'></iframe>"+
-"<div class='container-fluid'>"+
+"<div class='container-fluid my-3 p-3 bg-white rounded box-shadow'>"+
 "<div class='row'>"+
 "<div class='col-sm-6'>"+
 "<h2>"+name+"</h2>"+
@@ -84,9 +85,18 @@ results=
  "</div>"
 +"<div id='source-html'>"+"<div lass='table-scroll'>"+
 "<table  id='productTable'	class='table table-bordered table-condensed table-scroll table-responsive'>"
+
 		+"<thead class='thead-dark'>"
 			  +"<tr>"
-				+"<th >"
+				+"<th>"+
+
+        "<a role='button' class='btn btn-info btn-lg'  href='"+page+".html'"
+         +
+        "data-id='mybutton'>" +
+        "<span class='glyphicon glyphicon-edit' />" +
+
+
+        "</button></th>"
 				+"<th scope='col'>Reference (and clause)</th>"
 				+"<th scope='col'>Sub topic</th>"
 				+"<th scope='col'>Due diligence focus (hide this column)</th>"

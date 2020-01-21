@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang='en'>
   <head>
 	<meta charset="utf-8">
 	<title>jQuery Add / Remove Table Rows</title>
@@ -14,8 +14,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-<script type="text/javascript" src="project.js"></script>
-	<title>Registration Form</title>
+<script  src="project.js"></script>
+
 <style>
 
 #duedelligence {
@@ -35,8 +35,8 @@ input {
 
 }
 </style>
-	<!-- <script type="text/javascript" src="js/bootstrap.min.js" ></script>-->
-	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<!-- <script  src="js/bootstrap.min.js" ></script>-->
+	<script  src="js/jquery-3.4.1.min.js"></script>
 
 
 	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
@@ -45,144 +45,18 @@ input {
 
 
   <body>
+
 <div>
 </div>
 
-	  <!--<div class="row">
-	  <div class="col-sm-6">
-	  <div class="panel panel-primary">
 
-	  <div class="panel-heading">
-	  <button type="button" id="closebutton"
-	  class="btn btn-primary">
-	  close
-	  </button>
-	  Product Information
-	  </div>
-
-	  <div class="panel-body">
-	  <div class="form-group">
-	  <label for="heading">
-	  Heading
-	  </label>
-	  <input type="text"
-	  class="form-control"
-	  value="Site Data"
-	  id="heading" />
-	  <div class="valid-feedback">Valid.</div>
-	  <div class="invalid-feedback">Please fill out this field.</div>
-	  </div>
-
-	  <div class="form-group">
-	  <label for="subtopic">
-	  Sub Topic
-	  </label>
-	  <input type="text"
-	  class="form-control"
-	  value="Extending Bootstrap with CSS, JavaScript and jQuery"
-	  id="subtopic" />
-	  </div>
-
-	  <div class="form-group">
-	  <label for="duedelligence">
-	  Due Delligence
-	  </label>
-	  <input type="text"
-	  class="form-control"
-	  value="6/11/2015"
-	  id="duedelligence" />
-	  </div>
-	  <div class="form-group">
-	  <label for="url">
-	  Observation
-	  </label>
-	  <input type="option"
-	  class="form-control"
-	  value="www.pluralsight.com"
-	  id="observation" />
-	  </div>
-	  <div class="form-group">
-	  <label for="severityscore">
-	  Serverity of impact score
-	  </label>
-	  <select  id ='severityscore'
-
-	  class="form-control"  >
-	  <option value='Negligible'> NULL</option>
-	  <option   value ='Low'>LOW</option>
-	  <option value='Medium'> MEDIUM</option>
-	  <option  value='High'>HIGH</option>
-	  </select>
-
-	  </div>
-	  <div class="form-group">
-	  <label for="Description">
-	  Severity of impact description
-	  </label>
-	  <input type="text"
-	  class="form-control"
-	  value="6/11/2015"
-	  id="severitydescription" />
-	  </div>
-	  <div class="form-group">
-	  <label for="probabilityscore">
-	  Probability of accurence score
-	  </label>
-	  <select  id ='probabilityscore'
-
-	  class="form-control"  >
-	  <option value='N/A'> NULL</option>
-	  <option value='Negligible'> NULL</option>
-	  <option   value ='Low'>LOW</option>
-	  <option value='Medium'> MEDIUM</option>
-	  <option  value='High'>HIGH</option>
-	  </select>
-
-	  </div>
-	  <div class="form-group">
-	  <label for="Description">
-	  Probability of accurence description
-	  </label>
-	  <input type="text"
-	  class="form-control"
-	  value="6/11/2015"
-	  id="probabilitydescription" />
-	  </div>
-	  <div class="form-group">
-	  <label for="suggestion">
-	  Suggestion
-	  </label>
-	  <input type="text"
-	  class="form-control"
-	  value="6/11/2015"
-	  id="suggestion" />
-	  </div>
-
-	  </div>
-	  <div class="panel-footer">
-	  <div class="row">
-	  <div class="col-xs-12">
-	  <div style="position: absolute; left: -5000px;" aria-hidden="true">
-	  <input type="text" name="b_96d9e6e519173af7bdbdab9d_23138bd741" tabindex="-1" value="">
-	  </div>
-	  <button type="submit" class="btn btn-primary"  name="subscribe" id="submitContact">Submit</button>
-	  </div>
-	  </div>
-
-	  </div>
-	  </div>
-	  </div>
-	  </div>-->
-
-
-	<!--<p>hello</p>-->
 	<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
-<script type="text/javascript" src="js/firebase.js">
+<script  src="js/firebase.js">
 </script>
-	<script type="text/javascript" src="js/risk.js"></script>
+	<script  src="js/risk.js"></script>
 
-<script type="text/javascript">
+<script>
 
 var isUpdated=false;
 
@@ -272,7 +146,7 @@ $(document).ready(function() {
 					  colorChange("#severityscore");
 
 					  fireInit();
-					  keyRead('Site_and_Turbine_Suitability');
+					  keyRead("Site_Appreciation");
 
 					  //updateTotal('energyRisk');
 					 //alert(RiskArray);
@@ -288,7 +162,7 @@ updateTotal("SiteAPP");
 
 											   //keyRead('Energy');
 
-													 updateFile("Site_and_Turbine_Suitability");
+													 updateFile("Site_Appreciation");
 
 													 $("#submitContact").text("Submit");
 												 }
@@ -408,7 +282,6 @@ function productUpdate() {
 	}
 
 	// Clear form fields
-	formClear();
 
 	// Focus to product name field
 	$("#subtopic").focus();
@@ -447,11 +320,9 @@ function productUpdateInTable(id) {
 	// Remove original product
 	$(row).remove();
 
-	// Clear form fields
-	formClear();
 
-	// Change Update Button Text
-//$("#submitContact").text("Add");
+
+
 }
 
 var j=0;
@@ -470,6 +341,7 @@ function productBuildTableRow(id) {
 			"class='btn btn-default'" +
 			"data-id='" + id + "'>" +
 			"<span class='glyphicon glyphicon-edit' />" +
+
 			"</button>" +
 			"<td>" + "</td>"  +
 			"<td>" + snapData.subtopic + "</td>"  +
@@ -514,23 +386,6 @@ j++;
 	return ret;
 }
 
-// Delete product from <table>
-
-
-// Clear form fields+())))))))
-function formClear() {
-    $("#heading").val("");
-	$("#subtopic").val(""),
-		$("#duedelligence").val("");
-	$("#observation").val("");
-	$("#severityscore").val("");
-	$("#severitydescription").val("");
-	$("#probabilityscore").val("");
-	$("#probabilitydescription").val("");
-	$("#suggestion").val("");
-
-
-}
 </script>
   </body>
 </html>
