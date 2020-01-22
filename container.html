@@ -128,10 +128,10 @@ function colorChange (id) {
              }
 
 
-
 $(document).ready(function() {
-  $('div').html(navigationbar()+createTable("Site Appreciation")+ formInfo());
+  $('div').html(navigationbar()+createTable(localStorage.getItem("nameid"))+ formInfo());
 
+  					  fireInit();
 
 
 
@@ -145,8 +145,8 @@ $(document).ready(function() {
 					  colorChange("#probabilityscore");
 					  colorChange("#severityscore");
 
-					  fireInit();
-					  keyRead("Site_Appreciation");
+					  keyRead(localStorage.getItem("nameid"));
+
 
 					  //updateTotal('energyRisk');
 					 //alert(RiskArray);
@@ -157,12 +157,12 @@ $(document).ready(function() {
 												 {
 
 
-updateTotal("SiteAPP");
+//updateTotal("SiteAPP");
 
 
 											   //keyRead('Energy');
 
-													 updateFile("Site_Appreciation");
+													 updateFile(localStorage.getItem("nameid"));
 
 													 $("#submitContact").text("Submit");
 												 }

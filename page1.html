@@ -1,63 +1,18 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-	<meta charset="utf-8">
-	<title>jQuery Add / Remove Table Rows</title>
-	<!--<link href="css/bootstrap.min.css" rel="stylesheet" />-->
-	<link href="css/styles.css" rel="stylesheet"/>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-  <script type="text/javascript" src="project.js"></script>
-	<title>Registration Form</title>
-<style>
-
-#duedelligence {
-  height:100px;
-
-}
-
-.panel {
-margin-left: 50%;
-
-}
-input {
-  min-height:10px!important;
-
-  max-height:99.99%!important;
-  transition: height 0.001s;
-
-}
-</style>
-	<!-- <script type="text/javascript" src="js/bootstrap.min.js" ></script>-->
-	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-
-
-
-
-	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-
+<html>
 <body>
-<div id=nvbarid></div>
-<div id=tableid></div>
+
+<div id="result"></div>
 
 <script>
+// Check browser support
+if (typeof(Storage) !== "undefined") {
+  // Store
+  localStorage.setItem("lastname", "Smith");
 
-$(document).ready(function() {
-$('#nvbarid').html(navigationbar()+createTable()+ formInfo());
-
-});
-
-
-
+} else {
+  document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
 </script>
 
 </body>

@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
 	<meta charset="utf-8">
 	<title>jQuery Add / Remove Table Rows</title>
@@ -194,7 +194,18 @@ headings("Supply_Interface","Supply Interface");
 
             $("table").on("click",function(){
 
+
+
 nameid= $(this).closest('table').attr('id');
+if (typeof(Storage) !== "undefined") {
+  // Store
+  localStorage.setItem("nameid", nameid);
+
+} else {
+  //document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+
+
  var id= nameid.toLowerCase();
 
 var page = replaceAll(id,'_',"");
@@ -203,7 +214,7 @@ var page = replaceAll(id,'_',"");
 
 $('#mybutton').on("click", function(){
 
-createTable(nameid, page);
+createTable(nameid);
 });
 
 

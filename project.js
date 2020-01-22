@@ -43,7 +43,7 @@ var results =	"<div  class=' nav navbar  navbar-inverse navbar-fixed-top ' role=
 
 
 
-	function createTable(name,page){
+	function createTable(name){
     var results="";
 
  if (name=='Introduction'){
@@ -88,20 +88,20 @@ results=
 
 		+"<thead class='thead-dark'>"
 			  +"<tr>"
-				+"<th>"+
+				+"<th class='topicid'>"+
 
-        "<a role='button' class='btn btn-info btn-lg'  href='"+page+".html'"
+        "<a role='button' class='btn btn-info btn-lg'  href='container.html'"
          +
         "data-id='mybutton'>" +
         "<span class='glyphicon glyphicon-edit' />" +
 
 
         "</button></th>"
-				+"<th scope='col'>Reference (and clause)</th>"
-				+"<th scope='col'>Sub topic</th>"
-				+"<th scope='col'>Due diligence focus (hide this column)</th>"
-				+"<th scope='col'>Observations, issues and specific risk description</th>"
-				+"<th scope='col'>"
+				+"<th class='ref' scope='col'>Reference (and clause)</th>"
+				+"<th class='sub' scope='col'>Sub topic</th>"
+				+"<th class ='dil' scope='col'>Due diligence focus (hide this column)</th>"
+				+"<th class ='obs' scope='col'>Observations, issues and specific risk description</th>"
+				+"<th class='severityscr' scope='col'>"
 				  +"<div>Severity of impact</div>"
 				  +"<div>score</div></th>"
 				+"<th scope='col'>"
