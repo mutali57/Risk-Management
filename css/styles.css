@@ -183,3 +183,11 @@ tfoot th:first-child {
 .ref  {
   background-color: Red:
 }
+
+body {
+   background-image: url("http://localhost:3000/wind-turbine-3299275.jpg");
+   height: 10%;
+
+   /* Center and scale the image nicely */
+
+}

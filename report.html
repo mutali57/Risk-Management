@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,10 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-<script type="text/javascript" src="project.js"></script>
+
 	<title>Registration Form</title>
 <style>
 
@@ -37,11 +33,6 @@ input {
 }
 </style>
 	<!-- <script type="text/javascript" src="js/bootstrap.min.js" ></script>-->
-	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-
-
-	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
 
 
@@ -78,8 +69,20 @@ input {
 <div class="Supply_Project_Management_Agreement"></div>
 <div class ="Supply_Interface"></div>
 
-	<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+  <script  src="js/jquery-3.4.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+  <script src="js/auth.js">
+
+  </script>
+<script type="text/javascript" src="project.js"></script>
 <script type="text/javascript" src="js/firebase.js">
 </script>
 	<script type="text/javascript" src="js/risk.js"></script>
@@ -170,7 +173,9 @@ keyRead(name);
  }
 
 $(document).ready(function() {
-fireInit();
+
+
+
 headings("Introduction",'Introduction');
 headings('Site_Appreciation', 'Site Appreciation');
 //document.getElementById('productTable').id ="Energy";
@@ -294,7 +299,7 @@ function productUpdate() {
 	}
 
 	// Clear form fields
-	formClear();
+
 
 	// Focus to product name field
 	$("#subtopic").focus();

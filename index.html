@@ -36,14 +36,15 @@
 
       <main role="main" class="inner cover ">
 
-        <form class="form-signin">
-          <div class="text-center mb-4">
+          <div class="text-center mb-4 form-signin">
             <h1 class="cover-heading">Cover your page.</h1>
             <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
 
               </div>
 
-          <div class="form-label-group">
+          <div id="login_div" class="form-label-group">
+
+            <div class="form-label-group">
             <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
             <label for="inputEmail">Email address</label>
           </div>
@@ -51,7 +52,7 @@
           <div class="form-label-group">
             <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
             <label for="inputPassword">Password</label>
-          </div>
+</div>
 
           <div class="checkbox mb-3">
             <label>
@@ -60,7 +61,14 @@
           </div>
           <button class="btn btn-lg btn-primary btn-block" onclick= "login();">Sign in</button>
           <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
-        </form>
+</div>
+          <div id="user_div" class="loggedin-div">
+            <h3>Welcome User</h3>
+            <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+            <button class ="btn btn-lg btn-primary btn-block" onclick="logout()">Logout</button>
+          </div>
+
+
       </main>
 
       <footer class="mastfoot mt-auto">
@@ -76,74 +84,65 @@
     <!-- Placed at the end of the document so the pages load faster -->
       <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 
-      <script>
+      <script src='js/auth.js'>
         // Initialize Firebase
-        var  a=  {
 
-      		apiKey: "AIzaSyB5F9qY38724px4bwXULcrCwj8fCq_D58Y",
-      		authDomain: "projectrisk-1a0a1.firebaseapp.com",
-      		databaseURL: "https://projectrisk-1a0a1.firebaseio.com",
-      		projectId: "projectrisk-1a0a1",
-      		storageBucket: "projectrisk-1a0a1.appspot.com",
-      		messagingSenderId: "659506389580",
-      		appId: "1:659506389580:web:029194abbba2619576cae9"
-      	};
-      	 firebase.initializeApp(a);
-      </script>
-      <script >
-
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          // User is signed in.
-
-          //document.getElementById("inputEmail").style.display = "block";
-        //  document.getElementById("login_div").style.display = "none";
-
-          var user = firebase.auth().currentUser;
-
-          if(user != null){
-
-            var email_id = user.email;
-            //document.getElementById("nputPassword").innerHTML = "Welcome User : " + email_id;
-
-          }
-
-        } else {
-          // No user is signed in.
-
-        //  document.getElementById("user_div").style.display = "none";
-        //  document.getElementById("login_div").style.display = "block";
-
-        }
-      });
-
-      function login(){
-
-        var userEmail = document.getElementById("inputEmail").value;
-        var userPass = document.getElementById("inputPassword").value;
-
-        firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
-          // Handle Errors here.
-          var errorCode = error.code;
-          var errorMessage = error.message;
-
-          window.alert("Error : " + errorMessage);
-
-          // ...
-        });
-
-      }
-
-      function logout(){
-        firebase.auth().signOut();
-      }
 
       </script>
+    <script>
+    firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+
+      document.getElementById("user_div").style.display = "block";
+      document.getElementById("login_div").style.display = "none";
+
+
+      var user = firebase.auth().currentUser;
+
+      if(user != null){
+
+          window.location.href="dash2.html"
+
+        var email_id = user.email;document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
+      }
+
+    } else {
+      // No user is signed in.
+    //window.location.href="index.html"
+    document.getElementById("user_div").style.display = "none";
+    document.getElementById("login_div").style.display = "block";
+
+    }
+
+    });
+
+    function login(){
+
+    var userEmail = document.getElementById("inputEmail").value;
+    var userPass = document.getElementById("inputPassword").value;
+
+    firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+
+      window.alert("Error : " + errorMessage);
+
+      // ...
+    });
+
+    }
+
+    function logout(){
+    firebase.auth().signOut();
+    }
+    </script>
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="js/vendor/popper.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-slim.min.js"><\/script>')</script>
+    <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>
 </html>

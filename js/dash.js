@@ -96,6 +96,7 @@ alert (valList[0]);
 
  //alert(valList.length);
  //topic(a [3],4,valList [1]);
+topic(a[1],2,snapData.Site_Appreciation);
  topic(a [2],3, valList [0]);
  topic(a[3],4, valList[1]);
 
@@ -105,30 +106,11 @@ alert (valList[0]);
 
 
 }
-var data = {
-  labels: a,
-  series: [high,low,medium,critical
-
-  ]
-};
-
-var options = {
-  high: 10,
-  low: -10,
-  axisX: {
-    labelInterpolationFnc: function(value, index) {
-      return index % 2 === 0 ? value : null;
-    }
-  }
-};
-
-new Chartist.Bar('.ct-chart', data, options);
-
 
 
 $(document).ready(function (){
 
-fireInit();
+//fireInit();
 //readData();
 valRead('totalRisk');
 //valRead('totalRisk');
