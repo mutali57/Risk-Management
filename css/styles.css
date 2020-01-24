@@ -168,7 +168,7 @@ tfoot th:first-child {
 
 .container-fluid
 {
-  margin-top:100px;
+  margin-top:1px;
 
 }
 #myInput{
@@ -184,9 +184,8 @@ tfoot th:first-child {
   background-color: Red:
 }
 
-body {
-   background-image: url("http://localhost:3000/wind-turbine-3299275.jpg");
-   height: 10%;
+main  {
+
 
    /* Center and scale the image nicely */
 

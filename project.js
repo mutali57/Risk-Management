@@ -76,7 +76,7 @@ results="</div>"+"<iframe name='votar' style='display:none';></iframe>"+
    "<div class='table-scroll'>"+
    "<table  id='productTable'"+
    "class='table table-bordered table-condensed table-scroll table-responsive'>"+
-   "<thead class='thead-dark'>"
+   "<thead >"
    +
    "<tr><th></th>"+
    "<th scope='col'>Key Information</th>"+
@@ -84,9 +84,7 @@ results="</div>"+"<iframe name='votar' style='display:none';></iframe>"+
    "</tr></thead></table>"+
    "</div></div>"+
    "</div>"+
-   "<div>"+
-   "<button class='btn  bg-primary' onclick='exportHTML()'>Download</button>"+
-   "</div>";
+   "<div>";
 
 
  }
@@ -103,7 +101,7 @@ results=
 +"<div id='source-html'>"+"<div lass='table-scroll'>"+
 "<table  id='productTable'	class='table table-bordered table-condensed table-scroll table-responsive'>"
 
-		+"<thead class='thead-dark'>"
+		+"<thead >"
 			  +"<tr>"
 				+"<th class='topicid'>"+
 
@@ -136,12 +134,7 @@ results=
 		  +"</table>"
 			+"</div>"+
 			"</div>"+
-			"</div>"+
-			"<div>"+
-			"<button class='btn  bg-primary' onclick='exportHTML()'>Download</button>"+
-				"	</div>"	;
-
-      };
+			"</div>";  };
 return results;
 }
 
