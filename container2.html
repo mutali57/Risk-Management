@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+	<title>jQuery Add / Remove Table Rows</title>
+	<!--<link href="css/bootstrap.min.css" rel="stylesheet" />-->
+	<link href="css/styles.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+	<title>Registration Form</title>
+<style>
+
+#duedelligence {
+  height:100px;
+
+}
+
+.panel {
+margin-left: 50%;
+
+}
+input {
+  min-height:10px!important;
+
+  max-height:99.99%!important;
+  transition: height 0.001s;
+
+}
+</style>
+  </head>
+
+
+  <body>
+<form  target="votar"   class="sucess-none was-validated  " id="newContact" >
+
+<div>
+</div>
+</form>
+</div>
+<button   aria-hidden="true"
+type="submit" class="btn btn-primary"  name="subscribe" id="submitContact">Submit</button>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+  <script  src="js/jquery-3.4.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+  <script src="js/auth.js">
+
+  </script>
+<script type="text/javascript" src="project.js"></script>
+<script type="text/javascript" src="js/firebase.js">
+</script>
+	<script type="text/javascript" src="js/risk.js"></script>
+<script>
+
+var isUpdated=false;
+
+
+/*function resizable (el, factor) {
+  var int = Number(factor) || 7.7;
+  function resize() {el.style.height = ((el.value.length+1) * int) + 'px'}
+  var e = 'keyup,keypress,focus,blur,change'.split(',');
+  for (var i in e) el.addEventListener(e[i],resize,false);
+  resize();
+}*/
+
+
+//resizable(document.getElementById('duedelligence'),3);
+
+
+function do_resize(textbox) {
+
+ var maxrows=5;
+  var txt=textbox.value;
+  var cols=textbox.cols;
+
+ var arraytxt=txt.split('\n');
+  var rows=arraytxt.length;
+
+ for (i=0;i<arraytxt.length;i++)
+  rows+=parseInt(arraytxt[i].length/cols);
+
+ if (rows>maxrows) textbox.rows=maxrows;
+  else textbox.rows=rows;
+ }
+
+
+function colorChange (id) {
+	$(id).change(function () {
+					 if ($(this).val() == "Low")
+					 {
+						 $(id).css("background-color", "yellow");
+					 }
+					 else if ($(this).val() == "Medium")
+					 {
+						 $(id).css("background-color", '#ffa500');
+
+					 }
+					 else if ($(this).val() == "High")
+					 {
+						 $(id).css("background-color", "Red");
+					 }
+					 else if ($(this).val() == "Negligible")
+					 {
+						 $(id).css("background-color", "green");
+					 }
+				 });}
+         function exportHTML(){
+                var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' "+
+                     "xmlns:w='urn:schemas-microsoft-com:office:word' "+
+                     "xmlns='http://www.w3.org/TR/REC-html40'>"+
+                     "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
+                var footer = "</body></html>";
+                var sourceHTML = header+document.getElementById("source-html").innerHTML+footer;
+
+                var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+                var fileDownload = document.createElement("a");
+                document.body.appendChild(fileDownload);
+                fileDownload.href = source;
+                fileDownload.download = 'document.doc';
+                fileDownload.click();
+                document.body.removeChild(fileDownload);
+             }
+
+
+$(document).ready(function() {
+  $('div').html(navigationbar()+createTable(localStorage.getItem("nameid"))+ formInfo());
+
+
+
+
+					  $("#myInput").on("keyup", function() {
+										   var value = $(this).val().toLowerCase();
+										   $("#mytbody tr").filter(function() {
+																	   $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+																   });
+									   });
+
+					  colorChange("#probabilityscore");
+					  colorChange("#severityscore");
+
+					  keyRead(localStorage.getItem("nameid"));
+
+
+					  //updateTotal('energyRisk');
+					 //alert(RiskArray);
+
+					  $("#submitContact").on("click", function () {
+												 alert($("#submitContact").text());
+												 if ($("#submitContact").text() == "Update")
+												 {
+
+
+updateTotal("totalRisk/"+localStorage.getItem("nameid"));
+
+
+											   //keyRead('Energy');
+
+													 updateFile(localStorage.getItem("nameid"));
+
+													 $("#submitContact").text("Submit");
+												 }
+												 else
+												 {
+													 contactScript();
+
+													 $("#submitContact").text("Submit");
+												 }
+											 });
+
+
+
+					  // alert($('#submitContact').text());
+
+
+					  // $(".panel-primary").hide();
+					  //if ($(".panel-primary").hide ()){
+					  //  $("#submitContact").text("Update");};
+					 /* $('#closebutton').click(function () {
+												  $('.panel-primary').hide();
+												  $('#submitContact').text("Update");
+												  $('#addbutton').show();
+
+											  });*/
+
+					  $('#download').on('click',function () {
+					  alert('hello');
+  var filename  = 'ThisIsYourPDFFilename.pdf';
+
+		html2canvas($('.container') ,{
+  onrendered: function(canvas) {
+
+
+			var pdf = new jsPDF('table', 'pt', 'a4');
+
+			pdf.addImage(canvas.toDataURL('css/png'), 'PNG', 0, 0, 500, 500);
+			pdf.save('hello.pdf');
+		}});
+			});
+
+
+
+
+
+
+
+
+				  });
+
+
+
+
+
+
+</script>
+<script>
+// Current product being edited
+var editRow = null;
+var nextId = 1;
+// ID of Product currently editing
+var activeId = 0;
+
+function productDisplay(ctl) {
+
+console.log( 'pressed');
+//openForm();
+
+	//alert(row);
+
+
+	$('#submitContact').text('Update');
+
+	editRow = $(ctl).parents("tr");
+
+	var cols = editRow.children("td");
+	activeId = $($(cols[0]).children("button")[0]).data("id");
+	//alert(activeId-1);
+
+	$("#heading").val($(cols[1]).text());
+	$("#subtopic").val($(cols[2]).text());
+	$("#duedelligence").val($(cols[3]).text());
+	$("#observation").val($(cols[4]).text());
+	$("#severityscore").val($(cols[5]).text());
+	$("#severitydescription").val($(cols[6]).text());
+	$("#probabilityscore").val($(cols[7]).text());
+	$("#probabilitydescription").val($(cols[8]).text());
+	$("#suggestion").val($(cols[11]).text());
+
+
+
+	// Change Update Button Text
+
+}
+
+function productUpdate() {
+
+//alert ($("#submitContact").text());
+	if ($("#submitContact").text() == 'Update')
+	{
+
+        productUpdateInTable(activeId);
+
+	}
+	else
+
+	{
+
+
+		productAddToTable();
+
+
+
+
+
+
+	}
+
+	// Clear form fields
+
+	// Focus to product name field
+	$("#subtopic").focus();
+
+}
+
+// Add product to <table>
+function productAddToTable() {
+	;
+
+
+
+	// First check if a <tbody> tag exists, add one if not
+	if ($("#productTable tbody").length == 0)
+	{
+
+        $("#productTable").append("<tbody id='mytbody'></tbody>");
+	}
+
+
+	// Append product to table
+
+	$("#productTable tbody").append(productBuildTableRow(nextId));
+	nextId += 1;
+}
+
+// Update product in <table>
+function productUpdateInTable(id) {
+
+	var row = $("#productTable button[data-id='" + id + "']")
+		.parents("tr")[0];
+
+	// Add changed product to table
+	$(row).after(productBuildTableRow(id));
+
+	// Remove original product
+	$(row).remove();
+
+
+
+
+}
+
+var j=0;
+// Build a <table> row of Product data
+function productBuildTableRow(id) {
+	var ret ;
+
+	if (snapData.heading == '')
+	{
+	//alert(valList[6]);
+
+		ret = "<tr>" +
+			"<td>" +
+			"<button type='button' class='btn btn-info btn-lg' data-toggle='modal'  data-target='#myModal'" +
+			"onclick='productDisplay(this);' " +
+			"class='btn btn-default'" +
+			"data-id='" + id + "'>" +
+			"<span class='glyphicon glyphicon-edit' />" +
+
+			"</button>" +
+			"<td>" + "</td>"  +
+			"<td>" + snapData.subtopic + "</td>"  +
+			"<td>" + snapData.duedelligence + "</td>" +
+			"<td>"  + snapData.observation + "</td>" +
+			"<td class='"+snapData.severityscore+"'>" + snapData.severityscore + "</td>" +
+			"<td>" + snapData.severitydescription + "</td>" +
+			"<td class='"+snapData.probabilityscore+"'>" + snapData.probabilityscore + "</td>" +
+			"<td>" + snapData.probabilitydescription + "</td>" +
+			"<td>" + riskScore() + "</td>" +
+			"<td class='"+risk(riskScore())+"'><strong>" + risk(riskScore()) + "</strong></td>" +
+			"<td>" + snapData.suggestion + "</td>" +
+			"</tr>";
+
+RiskArray[j]=riskScore(),
+j++;
+
+	}
+	else
+	{
+
+
+
+		ret = "<tr>" +
+			"<td>" +
+			"<button type='button' id='edit'" +
+			"onclick='productDisplay(this);' " +
+			"class='btn btn-default'" +
+			"data-id='" + id + "'>" +
+			"<span class='glyphicon glyphicon-edit' />" +
+			"</button>" +
+			"</td>" +
+			"</td><td class='Subtopic'> <strong>" + snapData.heading + "<strong/></td>" +
+
+			"</tr>" ;
+
+
+	}
+
+
+
+	return ret;
+}
+
+</script>
+  </body>
+</html>

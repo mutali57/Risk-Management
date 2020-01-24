@@ -137,7 +137,7 @@ input {
           </div>
         </nav>
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+        <main role="main" id="source-html" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 
     <div class="Introduction"></div>
 
@@ -258,7 +258,7 @@ function colorChange (id) {
    var page = replaceAll(id,'_',"");
 
 //document.getElementById('productTable').id = name;
-$("."+name).html(createTable(topic,page)+ formInfo());
+$("."+name).html(createTable(topic,page));
 //document.getElementById('productTable').id = name;
 
 keyRead(name);
