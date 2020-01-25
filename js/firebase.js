@@ -151,7 +151,7 @@ function updateTotal (id){
 
 
 	var	databaseRes= firebase.database();
-	if(id=="energyRisk"){
+	
 	var str='';
 	//alert(RiskArray);
 	for ( x in RiskArray){
@@ -159,10 +159,10 @@ function updateTotal (id){
 		str+=','+RiskArray [x];
 	}
 
-databaseRes = firebase.database().ref('totalRisk/').update ({energyRisk:str});
+databaseRes = firebase.database().ref('totalRisk/').update ({id:str});
 
-}
 
+/*
 
 if(id=="siteApp"){
 
@@ -175,7 +175,7 @@ if(id=="siteApp"){
 		str+=','+RiskArray [x];
 
 		}
-databaseRes = firebase.database().ref('totalRisk/').update({siteApp:str});
+databaseRes = firebase.database().ref('totalRisk/').update({siteApp:str});*/
 
 }
 
