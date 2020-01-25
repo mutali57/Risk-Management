@@ -2,17 +2,17 @@
 <html lang="en">
   <head>
 	<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta name="description" content="">
-  <meta name="author" content="">
-	<title>jQuery Add / Remove Table Rows</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<meta name="description" content="">
+	<meta name="author" content="">
+	
 	<!--<link href="css/bootstrap.min.css" rel="stylesheet" />-->
 	<link href="css/styles.css" rel="stylesheet"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/dashboard.css"
+	<link href="css/dashboard.css" rel="stylesheet">
     <!-- Custom styles for this template -->
 
 
@@ -22,7 +22,7 @@
 	<title>Registration Form</title>
 <style>
 td {
-  font-size: 1.5srem;
+  font-size: 1.5rem;
 
 }
 #duedelligence {
@@ -42,7 +42,7 @@ input {
 
 }
 </style>
-	<!-- <script type="text/javascript" src="js/bootstrap.min.js" ></script>-->
+	<!-- <script  src="js/bootstrap.min.js" ></script>-->
   </head>
 
 
@@ -59,6 +59,7 @@ input {
         </li>
       </ul>
     </nav>
+	
     <div class="container-fluid">
       <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
@@ -136,52 +137,53 @@ input {
             </ul>
           </div>
         </nav>
+	  </div>
+	</div>
+        <main  id="source-html" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 
-        <main role="main" id="source-html" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+		  <div class="Introduction"></div>
 
-    <div class="Introduction"></div>
+		  <div class= "Site_Appreciation">
+		  </div>
 
-<div class= "Site_Appreciation">
-</div>
-
-<div class= "Energy_Analysis"></div>
-<div class= "Site_and_Turbine_Suitability">
-</div>
-<div class = "Contract_Overview">
-</div>
-<div class="Programme"></div>
-<div class="Balance_of_Plant_Track_Record"></div>
-<div class="Original_Equipment_Manufacturer_and_Turbine_Technolog"></div>
-<div class="Supply_Turbine_Supply_Agreement"></div>
-<div class ="Supply_Balance_of_Plant"></div>
-<div class="Supply_Project_Management_Agreement"></div>
-<div class ="Supply_Interface"></div>
-<div>
-<button class='btn  bg-primary' onclick='exportHTML()'>Download</button>
-  </div>
-<main>
-<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-  <script  src="js/jquery-3.4.1.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-  <script>
-    feather.replace()
-  </script>
-
-  <script src="js/auth.js">
-
-  </script>
-<script type="text/javascript" src="project.js"></script>
-<script type="text/javascript" src="js/firebase.js">
+		  <div class= "Energy_Analysis"></div>
+		  <div class= "Site_and_Turbine_Suitability">
+		  </div>
+		  <div class = "Contract_Overview">
+		  </div>
+		  <div class="Programme"></div>
+		  <div class="Balance_of_Plant_Track_Record"></div>
+		  <div class="Original_Equipment_Manufacturer_and_Turbine_Technolog"></div>
+		  <div class="Supply_Turbine_Supply_Agreement"></div>
+		  <div class ="Supply_Balance_of_Plant"></div>
+		  <div class="Supply_Project_Management_Agreement"></div>
+		  <div class ="Supply_Interface"></div>
+		  <div>
+			<button class='btn  bg-primary' onclick='exportHTML()'>Download</button>
+		  </div>
+		</main>
+		<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+		<script  src="js/jquery-3.4.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+<script>
+feather.replace();
 </script>
-	<script type="text/javascript" src="js/risk.js"></script>
 
-<script type="text/javascript">
+<script src="js/auth.js">
+
+</script>
+		<script  src="project.js"></script>
+<script  src="js/firebase.js">
+</script>
+		<script  src="js/risk.js"></script>
+
+<script >
 
 var isUpdated=false;
 
@@ -190,19 +192,19 @@ var isUpdated=false;
 function do_resize(textbox) {
 
 
- var maxrows=5;
-  var txt=textbox.value;
-  var cols=textbox.cols;
+	var maxrows=5;
+	var txt=textbox.value;
+	var cols=textbox.cols;
 
- var arraytxt=txt.split('\n');
-  var rows=arraytxt.length;
+	var arraytxt=txt.split('\n');
+	var rows=arraytxt.length;
 
- for (i=0;i<arraytxt.length;i++)
-  rows+=parseInt(arraytxt[i].length/cols);
+	for (i = 0;i < arraytxt.length;i++)
+		rows += parseInt(arraytxt[i].length / cols);
 
- if (rows>maxrows) textbox.rows=maxrows;
-  else textbox.rows=rows;
- }
+	if (rows > maxrows) textbox.rows = maxrows;
+	else textbox.rows = rows;
+}
 
 
 function colorChange (id) {
@@ -226,102 +228,105 @@ function colorChange (id) {
 						 $(id).css("background-color", "green");
 					 }
 				 });}
-         function exportHTML(){
-                var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' "+
-                     "xmlns:w='urn:schemas-microsoft-com:office:word' "+
-                     "xmlns='http://www.w3.org/TR/REC-html40'>"+
-                     "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
-                var footer = "</body></html>";
-                var sourceHTML = header+document.getElementById("source-html").innerHTML+footer;
+function exportHTML() {
+	var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' " +
+		"xmlns:w='urn:schemas-microsoft-com:office:word' " +
+		"xmlns='http://www.w3.org/TR/REC-html40'>" +
+		"<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
+	var footer = "</body></html>";
+	var sourceHTML = header + document.getElementById("source-html").innerHTML + footer;
 
-                var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
-                var fileDownload = document.createElement("a");
-                document.body.appendChild(fileDownload);
-                fileDownload.href = source;
-                fileDownload.download = 'document.doc';
-                fileDownload.click();
-                document.body.removeChild(fileDownload);
-             }
-
-
+	var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+	var fileDownload = document.createElement("a");
+	document.body.appendChild(fileDownload);
+	fileDownload.href = source;
+	fileDownload.download = 'document.doc';
+	fileDownload.click();
+	document.body.removeChild(fileDownload);
+}
 
 
-             function replaceAll(str, find, replace) {
-                 return str.replace(new RegExp(find, 'g'), replace);
-             }
 
 
- function headings(name, topic){
+function replaceAll(str, find, replace) {
+	return str.replace(new RegExp(find, 'g'), replace);
+}
+
+
+function headings(name, topic) {
 
     var id=name.toLowerCase();
 
-   var page = replaceAll(id,'_',"");
+	var page = replaceAll(id, '_', "");
 
 //document.getElementById('productTable').id = name;
-$("."+name).html(createTable(topic,page));
+	$("." + name).html(createTable(topic, page));
 //document.getElementById('productTable').id = name;
 
-keyRead(name);
+	keyRead(name);
 
 
- }
+}
 
 $(document).ready(function() {
 
 
 
-headings("Introduction",'Introduction');
-headings('Site_Appreciation', 'Site Appreciation');
+					  headings("Introduction", 'Introduction');
+					  headings('Site_Appreciation', 'Site Appreciation');
 //document.getElementById('productTable').id ="Energy";
 
-  headings('Energy_Analysis', 'Energy Analysis');
+					  headings('Energy_Analysis', 'Energy Analysis');
 
-headings('Site_and_Turbine_Suitability','Site Conditions and Turbine Suitability');
-headings("Contract_Overview", 'Contract Overview');
-headings('Programme',"Programme");
-headings('Balance_of_Plant_Track_Record',"Balance of Plant Track Record");
-headings("Original_Equipment_Manufacturer_and_Turbine_Technolog","Original_Equipment_Manufacturer_and_Turbine_Technolog");
-headings('Supply_Turbine_Supply_Agreement',"Supply -Turbine Supply Agreement");
-headings('Supply_Balance_of_Plant',"Supply balance of Plant");
-headings("Supply_Project_Management_Agreement","Supply_Project_Management_Agreement");
-headings("Supply_Interface","Supply Interface");
+					  headings('Site_and_Turbine_Suitability', 'Site Conditions and Turbine Suitability');
+					  headings("Contract_Overview", 'Contract Overview');
+					  headings('Programme', "Programme");
+					  headings('Balance_of_Plant_Track_Record', "Balance of Plant Track Record");
+					  headings("Original_Equipment_Manufacturer_and_Turbine_Technolog", "Original_Equipment_Manufacturer_and_Turbine_Technolog");
+					  headings('Supply_Turbine_Supply_Agreement', "Supply -Turbine Supply Agreement");
+					  headings('Supply_Balance_of_Plant', "Supply balance of Plant");
+					  headings("Supply_Project_Management_Agreement", "Supply_Project_Management_Agreement");
+					  headings("Supply_Interface", "Supply Interface");
 
 
 					  colorChange("#probabilityscore");
 					  colorChange("#severityscore");
-      var      nameid ="";
+					  var      nameid ="";
 
-            $("table").on("click",function(){
-
-
-
-nameid= $(this).closest('table').attr('id');
-if (typeof(Storage) !== "undefined") {
-  // Store
-  localStorage.setItem("nameid", nameid);
-
-} else {
-  //document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
-}
-
-
- var id= nameid.toLowerCase();
-
-var page = replaceAll(id,'_',"");
+					  $("table").on("click", function() {
 
 
 
-$('#mybutton').on("click", function(){
+										nameid = $(this).closest('table').attr('id');
+										if (typeof(Storage) !== "undefined")
+										{
+											// Store
+											localStorage.setItem("nameid", nameid);
 
-createTable(nameid);
-});
+										}
+										else
+										{
+											//document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+										}
 
 
-  });
+										var id= nameid.toLowerCase();
+
+										var page = replaceAll(id, '_', "");
 
 
 
-});
+										$('#mybutton').on("click", function() {
+
+															  createTable(nameid);
+														  });
+
+
+									});
+
+
+
+				  });
 
 
 
@@ -339,7 +344,7 @@ var activeId = 0;
 
 function productDisplay(ctl) {
 
-console.log( 'pressed');
+	console.log('pressed');
 //openForm();
 
 	//alert(row);
@@ -441,67 +446,70 @@ var j=0;
 // Build a <table> row of Product data
 function productBuildTableRow(id) {
 	var ret ;
-if(valList.length<3){
+	if (valList.length < 3)
+	{
 
-  ret = "<tr>" +
-    "<td>" +
-  "<button type='button' class='btn btn-info btn-lg' data-toggle='modal'  data-target='#myModal'" +
-  "onclick='productDisplay(this);' " +
-  "class='btn btn-default'" +
-  "data-id='" + id + "'>" +
-  "<span class='glyphicon glyphicon-edit' />" +
-  "</button>" +
-  "<td>" + valList[0] + "</td>"  +
-  "<td>" + valList[1] + "</td>" +
-
-
-  "</tr>";
+		ret = "<tr>" +
+			"<td>" +
+			"<button type='button' class='btn btn-info btn-lg' data-toggle='modal'  data-target='#myModal'" +
+			"onclick='productDisplay(this);' " +
+			"class='btn btn-default'" +
+			"data-id='" + id + "'>" +
+			"<span class='glyphicon glyphicon-edit' />" +
+			"</button>" +
+			"<td>" + valList[0] + "</td>"  +
+			"<td>" + valList[1] + "</td>" +
 
 
-}else{
+			"</tr>";
 
-  //alert(valList[1]);
 
-  //alert(valList[1]=="")
-if (snapData.heading == '')
-{
+	}
+	else
+	{
+
+		//alert(valList[1]);
+
+		//alert(valList[1]=="")
+		if (snapData.heading == '')
+		{
 //alert(valList[6]);
 
-  ret = "<tr>" +
-    "<td>" +
-    "<td>" + "</td>"  +
-    "<td>" + snapData.subtopic + "</td>"  +
-    "<td>" + snapData.duedelligence + "</td>" +
-    "<td>"  + snapData.observation + "</td>" +
-    "<td class='"+snapData.severityscore+"'>" + snapData.severityscore + "</td>" +
-    "<td>" + snapData.severitydescription + "</td>" +
-    "<td class='"+snapData.probabilityscore+"'>" + snapData.probabilityscore + "</td>" +
-    "<td>" + snapData.probabilitydescription + "</td>" +
-    "<td>" + riskScore() + "</td>" +
-    "<td class='"+risk(riskScore())+"'><strong>" + risk(riskScore()) + "</strong></td>" +
-    "<td>" + snapData.suggestion + "</td>" +
-    "</tr>";
+			ret = "<tr>" +
+				"<td>" +
+				"<td>" + "</td>"  +
+				"<td>" + snapData.subtopic + "</td>"  +
+				"<td>" + snapData.duedelligence + "</td>" +
+				"<td>"  + snapData.observation + "</td>" +
+				"<td class='" + snapData.severityscore + "'>" + snapData.severityscore + "</td>" +
+				"<td>" + snapData.severitydescription + "</td>" +
+				"<td class='" + snapData.probabilityscore + "'>" + snapData.probabilityscore + "</td>" +
+				"<td>" + snapData.probabilitydescription + "</td>" +
+				"<td>" + riskScore() + "</td>" +
+				"<td class='" + risk(riskScore()) + "'><strong>" + risk(riskScore()) + "</strong></td>" +
+				"<td>" + snapData.suggestion + "</td>" +
+				"</tr>";
 
-RiskArray[j]=riskScore(),
-j++;
+			RiskArray[j] = riskScore(),
+				j++;
 
-}
-else
-{
-  ret = "<tr>" +
-    "<td>" +
-    "<button type='button' id='edit'" +
-    "onclick='productDisplay(this);' " +
-    "class='btn btn-default'" +
-    "data-id='" + id + "'>" +
-    "<span class='glyphicon glyphicon-edit' />" +
-    "</button>" +
-    "</td>" +
-    "</td><td class='Subtopic'> <strong>" + snapData.heading + "<strong/></td>" +
+		}
+		else
+		{
+			ret = "<tr>" +
+				"<td>" +
+				"<button type='button' id='edit'" +
+				"onclick='productDisplay(this);' " +
+				"class='btn btn-default'" +
+				"data-id='" + id + "'>" +
+				"<span class='glyphicon glyphicon-edit' />" +
+				"</button>" +
+				"</td>" +
+				"</td><td class='Subtopic'> <strong>" + snapData.heading + "<strong/></td>" +
 
-    "</tr>" ;
-}
-}
+				"</tr>" ;
+		}
+	}
 
 
 	return ret;
@@ -512,13 +520,5 @@ else
 
 
 </script>
-  </body>
-</html>
-
-
-</div>
-
-
-
-</body>
+	 </body>
 </html>

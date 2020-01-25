@@ -29,16 +29,16 @@ body {
 
 
 
-background-image: url('http://localhost:3000/cover.svg');
+background-image: url('http://localhost:8099/cover.svg');
 
 
 
     height: 100%;
 
     /* Center and scale the image nicely */
-    background-position: center;
+    background-position:center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
 }
 
 body {

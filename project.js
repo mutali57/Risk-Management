@@ -175,7 +175,7 @@ var results=	"<form  target='votar'   class='sucess-none was-validated  ' id='ne
 						+"<textarea id='duedelligence' class='form-control' onkeyup='new do_resize(this);' cols='20' rows='1' name='description_name'></textarea>"
 					  +"</div>"
 					  +"<div class='form-group'>"
-						+"<label for='url'>"+
+						+"<label for='Observation'>"+
 						  "Observation"+
 					"</label>"
             +"<textarea id='observation' class='form-control' "
@@ -195,7 +195,7 @@ var results=	"<form  target='votar'   class='sucess-none was-validated  ' id='ne
 
 					  +"</div>"
 					  +"<div class='form-group'>"
-						+"<label for='Description'>"
+						+"<label for='severitydescription'>"
 						  +"Severity of impact description"
 					+"</label>"
             +"<textarea id='severitydescription' class='form-control' onkeyup='new do_resize(this);' cols='20' rows='1' name='description_name'></textarea>"
@@ -214,7 +214,7 @@ var results=	"<form  target='votar'   class='sucess-none was-validated  ' id='ne
 
 					  +"</div>"
 					  +"<div class='form-group'>"
-						+"<label for='Description'>"+
+						+"<label for='probabilitydescription'>"+
 						  "Probability of accurence description	</label>"
             +"<textarea id='probabilitydescription' class='form-control' onkeyup='new do_resize(this);' cols='20' rows='1' name='description_name'></textarea>"
 

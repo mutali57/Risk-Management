@@ -31,9 +31,9 @@ var a= [ "Introduction","Site Appreciation","Energy Yield Assessment",
  var editRow=null;
 
  var my=[];
- var my= energyRisk.split (',');
+ my= energyRisk.split (',');
 
- for (x in my){
+ for (var x in my){
 
   if (risk(my [x])=="H"){
 	  high++;
@@ -114,7 +114,7 @@ $(document).ready(function (){
 //readData();
 valRead('totalRisk');
 //valRead('totalRisk');
-;
+
 
 
 
