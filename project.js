@@ -79,7 +79,7 @@ results="</div>"+"<iframe name='votar' style='display:none';></iframe>"+
    "<thead >"
    +
    "<tr><th></th>"+
-   "<th scope='col'>Key Information</th>"+
+   "<th class='col-md-2' scope='col'>Key Information</th>"+
    "<th scope='col'>Detail</th>"+
    "</tr></thead></table>"+
    "</div></div>"+
@@ -92,49 +92,45 @@ results="</div>"+"<iframe name='votar' style='display:none';></iframe>"+
 results=
 
 "<iframe name='votar' style='display:none;'></iframe>"+
-"<div class='container-fluid my-3 p-3 bg-white rounded box-shadow'>"+
-"<div class='row'>"+
-"<div class='col-sm-6'>"+
-"<h2>"+name+"</h2>"+
-"</div>"+
- "</div>"
-+"<div id='source-html'>"+"<div lass='table-scroll'>"+
-"<table  id='productTable'	class='table table-bordered table-condensed table-scroll table-responsive'>"
+"<br>"+
+"<br>"+
+"<div id='source-html'>"+"<div class='table mybody table-responsive-sm table-responsive-md table-responsive-xs'>"+
 
-		+"<thead >"
+"<table  id='productTable'	class='table table-bordered table-condensed table-scroll w-auto '>"
+
+		+"<thead>"
+
+    +"<tr><th colspan='12'><h1>"+name+"</h1></th></tr>"
 			  +"<tr>"
 				+"<th class='topicid'>"+
 
         "<a role='button' class='btn btn-info btn-lg'  href='container.html'"
          +
         "data-id='mybutton'>" +
-        "<span class='glyphicon glyphicon-edit' />" +
-
+        "<span class='glyphicon glyphicon-edit'/>" +
 
         "</button></th>"
-				+"<th class='ref' scope='col'>Reference (and clause)</th>"
-				+"<th class='sub' scope='col'>Sub topic</th>"
-				+"<th class ='dil' scope='col'>Due diligence focus (hide this column)</th>"
-				+"<th class ='obs' scope='col'>Observations, issues and specific risk description</th>"
-				+"<th class='severityscr' scope='col'>"
-				  +"<div>Severity of impact</div>"
-				  +"<div>score</div></th>"
-				+"<th scope='col'>"
-				  +"<div>Severity</div><div>of</div><div>impact</div>"
-				  +"<div>description</div></th>"
-				+"<th scope='col'><div>Probability of occurrence</div>"
-				  +"<div>score</div></th>"
-				+"<th scope='col'><div>Probability of occurrence</div>"+
-				  "<div>description</div></th>"
-				+"<th scope='col'>Risk score</th>"
-				+"<th scope='col'>Risk</th>"
-				+"<th scope='col'>Suggestion </th>"
+				+"<th class='th-sm' scope='col'>Reference (and clause)</th>"
+				+"<th class='th-sm' scope='col'>Sub topic</th>"
+				+"<th class ='th-lg' scope='col'>Due diligence focus (hide this column)</th>"
+				+"<th class ='th-sm' scope='col'>Observations, issues and specific risk description</th>"
+				+"<th class='th-lg' scope='col'>"
+				  +"Severity of impact"
+				  +"score</th>"
+				+"<th class='th-lg'scope='col'>"
+				  +"Severity of impact"
+				  +"description</th>"
+				+"<th class='th-sm'scope='col'>Probability of occurrence"
+				  +"score</th>"
+				+"<th  class='th-sm' scope='col'>Probability<br>of<br>occurrence<br>"+
+				  "description</th>"
+				+"<th class='th-sm' scope='col'>Risk score</th>"
+				+"<th  class='th-sm' scope='col'>Risk</th>"
+				+"<th class='th-lg' scope='col'>Suggestion </th>"
 			  +"</tr>"
 			+"</thead>"
 		  +"</table>"
-			+"</div>"+
-			"</div>"+
-			"</div>";  };
+			+"</div>";  };
 return results;
 }
 

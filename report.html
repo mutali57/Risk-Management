@@ -6,12 +6,12 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<meta name="description" content="">
 	<meta name="author" content="">
-	
+
 	<!--<link href="css/bootstrap.min.css" rel="stylesheet" />-->
 	<link href="css/styles.css" rel="stylesheet"/>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=poppins" rel="stylesheet">
+
 	<link href="css/dashboard.css" rel="stylesheet">
     <!-- Custom styles for this template -->
 
@@ -21,45 +21,122 @@
 
 	<title>Registration Form</title>
 <style>
+/*
 td {
   font-size: 1.5rem;
 
+}
+th {
+
+font-size: 15px;
 }
 #duedelligence {
   height:100px;
 
 }
 
+
 .panel {
 margin-left: 50%;
 
 }
 input {
+
   min-height:10px!important;
 
   max-height:99.99%!important;
   transition: height 0.001s;
 
+}*/
+/*@media (min-width: 480px) {
+  th {
+  background-color: Red;
+    font-size: 11px;
+text-align: center;
+
+  }
+  td {
+    font-size: 10px;
+
+  }
+
 }
+*/
+@media (min-width: 1200px) {
+
+  td {
+
+    font-size: 1.5rem;
+
+  }
+  th {
+
+
+  font-size: 15px;
+  }
+  #duedelligence {
+    height:100px;
+
+  }
+
+
+  .panel {
+  margin-left: 50%;
+
+  }
+  input {
+
+    min-height:10px!important;
+
+    max-height:99.99%!important;
+    transition: height 0.001s;
+
+  }
+
+
+
+
+
+
+}
+
+
+
+
 </style>
 	<!-- <script  src="js/bootstrap.min.js" ></script>-->
   </head>
 
 
   <body>
-	<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
-      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-      <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-		  <button class ="btn btn-primary" onclick="logout();">
+  <!--  <div class ="container">
+    <div class ="row">
+      <div class="col-md-12">
+        <div class="col-md-6">
 
-			Signout
-		  </button>
+              <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+            </div>
+</div>
+  <nav class="navbar navbar-default sticky-top bg-dark flex-md-nowrap p-0">
+<div class="col-md-3">
+  <a class="navbar-brand" href="#">Company name</a>
+</div>
+<div class="col-md-6">
+
+      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    </div>
+      <ul class="navbar-nav">
+        <li class="nav-item text-nowrap">
+      <button class ="btn btn-primary" onclick="logout();">
+
+      Signout
+      </button>
         </li>
       </ul>
     </nav>
-	
+  </div>
+  </div>
+
     <div class="container-fluid">
       <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
@@ -136,32 +213,158 @@ input {
               </li>
             </ul>
           </div>
-        </nav>
-	  </div>
-	</div>
-        <main  id="source-html" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+        </nav>-->
 
-		  <div class="Introduction"></div>
+       <nav class=" navbar navbar-default navbar-fixed-top ">
+    <div class="container-fluid">
+    <div class ="row">  <!-- Brand and toggle get grouped for better mobile display -->
 
-		  <div class= "Site_Appreciation">
-		  </div>
+      <div class="navbar-header">
 
-		  <div class= "Energy_Analysis"></div>
-		  <div class= "Site_and_Turbine_Suitability">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+
+        <a class="navbar-brand" href="#">company name</a>
+      </div>
+
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="dash2.html">Home <span class="sr-only">(current)</span></a></li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Risk Assessment <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+
+<li><a href="#IntroductionID">Introduction</a></li>
+<li><a href="#SiteConditionsID">Site Appreciation</a></li>
+<li><a href="#EnergyID">Energy Yield Assessment</a></li>
+<li><a href="#ContractOverviewID">Contract Overview</a></li>
+<li><a href="#ProgrammeID">Programme</a></li>
+<li><a href="#OEMID">OEM and Turbine Technology</a></li>
+<li><a href="#BoPID">Balance of Plant Track Record</a></li>
+<li><a href="#supplyTurbineID">Supply - Turbine Supply Agreement</a></li>
+<li><a href="#SupplyBoPID">Supply - Balance of Plant</a></li>
+<li><a href="#SupplyProjectID">Supply - Project Management Agreementt</a></li>
+<li><a href="#SupplyInterfaceID">Supply - Interface</a></li>
+            </ul>
+          </li>
+        </ul>
+
+  <div class="navbar-nav">">
+          <input class="form-control" id="myInput" type="text" placeholder="Search Table">
+  </div>
+  <div class="nav navbar-nav navbar-right">
+  <button type="submit" class="btn btn-default">Submit</button>
+</div>
+
+
+    </div>
+
+
+
+
+            </div>
+
+    </div><!--
+      <div class ="row"></div> /.container-fluid -->
+
+  </nav>
+
+
+
+
+<div id="source-html" class="container-field">
+
+<div row='row'>
+
+
+
+
+
+
+
+
+
+
+<div class= 'col-md-12 col-sm-12' >
+<div id="IntroductionID" class="rowclass Introduction "></div>
+
+
+  <div id="SiteConditionsID" >
+    <div class= "rowclass Site_Appreciation"></div>
+  </div>
+
+  <div id="EnergyID" >
+  <div  class= "rowclass Energy_Analysis"></div>
+  </div>
+
+  <div id="SiteConditionsTurbineID" >
+  <div class= "rowclass Site_and_Turbine_Suitability"></div>
+  </div>
+
+
+  <div id="ContractOverviewID" >
+  <div class = " rowclass Contract_Overview"></div>
+  </div>
+
+  <div id="ProgrammeID" >
+  <div class= "rowclass Programme"></div>
+  </div>
+
+  <div id="OEMID" >
+  <div class= "rowclass Original_Equipment_Manufacturer_and_Turbine_Technolog"></div>
+  </div>
+
+  <div id="BoPID" >
+  <div class= "rowclass Balance_of_Plant_Track_Record"></div>
+  </div>
+
+  <div id="SupplyTurbineID" >
+  <div class= "rowclass Supply_Turbine_Supply_Agreement"></div>
+  </div>
+
+
+  <div id="SupplyBoPID" >
+  <div class= "rowclass Supply_Balance_of_Plant"></div>
+  </div>
+
+
+  <div id="SupplyProjectID" >
+  <div class= "rowclass Supply_Project_Management_Agreement"></div>
+  </div>
+
+
+
+  <div id="SupplyInterfaceID" >
+  <div class= "rowclass Supply_Interface"></div>
+  </div>
+
+
+
+
+</div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
 		  </div>
-		  <div class = "Contract_Overview">
-		  </div>
-		  <div class="Programme"></div>
-		  <div class="Balance_of_Plant_Track_Record"></div>
-		  <div class="Original_Equipment_Manufacturer_and_Turbine_Technolog"></div>
-		  <div class="Supply_Turbine_Supply_Agreement"></div>
-		  <div class ="Supply_Balance_of_Plant"></div>
-		  <div class="Supply_Project_Management_Agreement"></div>
-		  <div class ="Supply_Interface"></div>
-		  <div>
-			<button class='btn  bg-primary' onclick='exportHTML()'>Download</button>
-		  </div>
-		</main>
+<button class='btn  bg-primary' onclick='exportHTML()'>Download</button>
+		</div>
+
 		<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-auth.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
@@ -169,7 +372,7 @@ input {
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 		<script  src="js/jquery-3.4.1.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
 		<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
 <script>
 feather.replace();
@@ -270,7 +473,12 @@ function headings(name, topic) {
 
 $(document).ready(function() {
 
-
+  $("#myInput").on("keyup", function() {
+             var value = $(this).val().toLowerCase();
+             $("#mytbody tr").filter(function() {
+                           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                         });
+           });
 
 					  headings("Introduction", 'Introduction');
 					  headings('Site_Appreciation', 'Site Appreciation');
@@ -282,10 +490,10 @@ $(document).ready(function() {
 					  headings("Contract_Overview", 'Contract Overview');
 					  headings('Programme', "Programme");
 					  headings('Balance_of_Plant_Track_Record', "Balance of Plant Track Record");
-					  headings("Original_Equipment_Manufacturer_and_Turbine_Technolog", "Original_Equipment_Manufacturer_and_Turbine_Technolog");
+					  headings("Original_Equipment_Manufacturer_and_Turbine_Technolog", "Original Equipment Manufacturer and Turbine Technolog");
 					  headings('Supply_Turbine_Supply_Agreement', "Supply -Turbine Supply Agreement");
 					  headings('Supply_Balance_of_Plant', "Supply balance of Plant");
-					  headings("Supply_Project_Management_Agreement", "Supply_Project_Management_Agreement");
+					  headings("Supply_Project_Management_Agreement", "Supply Project Management Agreement");
 					  headings("Supply_Interface", "Supply Interface");
 
 
@@ -477,18 +685,18 @@ function productBuildTableRow(id) {
 
 			ret = "<tr>" +
 				"<td>" +
-				"<td>" + "</td>"  +
-				"<td>" + snapData.subtopic + "</td>"  +
-				"<td>" + snapData.duedelligence + "</td>" +
-				"<td>"  + snapData.observation + "</td>" +
-				"<td class='" + snapData.severityscore + "'>" + snapData.severityscore + "</td>" +
-				"<td>" + snapData.severitydescription + "</td>" +
-				"<td class='" + snapData.probabilityscore + "'>" + snapData.probabilityscore + "</td>" +
-				"<td>" + snapData.probabilitydescription + "</td>" +
-				"<td>" + riskScore() + "</td>" +
-				"<td class='" + risk(riskScore()) + "'><strong>" + risk(riskScore()) + "</strong></td>" +
-				"<td>" + snapData.suggestion + "</td>" +
-				"</tr>";
+				"<td>" + "</td>"   +
+  			"<td>" + snapData.subtopic + "</td>"  +
+  			"<td>" + snapData.duedelligence + "</td>" +
+  			"<td>"  + snapData.observation + "</td>" +
+  			"<td class='"+snapData.severityscore+"'>" + snapData.severityscore + "</td>" +
+  			"<td>" + snapData.severitydescription + "</td>" +
+  			"<td class='"+snapData.probabilityscore+"'>" + snapData.probabilityscore + "</td>" +
+  			"<td><p>" + snapData.probabilitydescription + "</p></td>" +
+  			"<td>" + riskScore() + "</td>" +
+  			"<td class='"+risk(riskScore())+"'><strong>" + risk(riskScore()) + "</strong></td>" +
+  			"<td>" + snapData.suggestion + "</td>" +
+  			"</tr>";
 
 			RiskArray[j] = riskScore(),
 				j++;
