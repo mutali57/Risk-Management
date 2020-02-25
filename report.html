@@ -9,10 +9,10 @@
 
 	<!--<link href="css/bootstrap.min.css" rel="stylesheet" />-->
 	<link href="css/styles.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link href="https://fonts.googleapis.com/css?family=poppins" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
 
-	<link href="css/dashboard.css" rel="stylesheet">
+<link href="css/dashboard.css" rel="stylesheet">
     <!-- Custom styles for this template -->
 
 
@@ -62,7 +62,7 @@ text-align: center;
 
 }
 */
-@media (min-width: 1200px) {
+/*@media (min-width: 1200px) {
 
   td {
 
@@ -99,7 +99,7 @@ text-align: center;
 
 
 }
-
+*/
 
 
 
@@ -215,67 +215,58 @@ text-align: center;
           </div>
         </nav>-->
 
-       <nav class=" navbar navbar-default navbar-fixed-top ">
-    <div class="container-fluid">
-    <div class ="row">  <!-- Brand and toggle get grouped for better mobile display -->
 
-      <div class="navbar-header">
+        <nav class="navbar  navbar-dark navbar-expand-lg sticky-top bg-dark  ">
+  <a class="navbar-brand" href="#">Company name</a>
 
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <li class="nav-item">
+          <a class="nav-link" href="dash2.html">Home</a>
+        </li>
+        <a class="nav-link" href="#">Report<span class="sr-only">(current)</span></a>
+      </li>
 
-        <a class="navbar-brand" href="#">company name</a>
-      </div>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Assessment
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item"  href="#IntroductionID">Introduction</a>
+          <a class="dropdown-item" href="#SiteConditionsID">Site Appreciation</a>
+          <a class="dropdown-item" href="#EnergyID">Energy Yield Assessment</a>
+          <a class="dropdown-item" href="#ContractOverviewID">Contract Overview</a>
+          <a class="dropdown-item" href="#ProgrammeID">Programme</a>
+          <a class="dropdown-item" href="#OEMID">OEM and Turbine Technology</a>
+          <a class="dropdown-item" href="#BoPID">Balance of Plant Track Record</a>
+          <a class="dropdown-item" href="#SupplyTurbineID">Supply - Turbine Supply Agreement</a>
+          <a class="dropdown-item" href="#SupplyProjectID">Supply - Project Management Agreement</a>
+          <a class="dropdown-item" href="#SupplyInterfaceID">Supply - Interface</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+<input class="form-control form-control-dark w-50" id="myInput" type="text" placeholder="Search" aria-label="Search">
+<li class="nav-item text-nowrap">
+<button class ="btn btn-primary" onclick="logout();">
 
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="dash2.html">Home <span class="sr-only">(current)</span></a></li>
-
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Risk Assessment <span class="caret"></span></a>
-      <ul class="dropdown-menu">
-
-<li><a href="#IntroductionID">Introduction</a></li>
-<li><a href="#SiteConditionsID">Site Appreciation</a></li>
-<li><a href="#EnergyID">Energy Yield Assessment</a></li>
-<li><a href="#ContractOverviewID">Contract Overview</a></li>
-<li><a href="#ProgrammeID">Programme</a></li>
-<li><a href="#OEMID">OEM and Turbine Technology</a></li>
-<li><a href="#BoPID">Balance of Plant Track Record</a></li>
-<li><a href="#supplyTurbineID">Supply - Turbine Supply Agreement</a></li>
-<li><a href="#SupplyBoPID">Supply - Balance of Plant</a></li>
-<li><a href="#SupplyProjectID">Supply - Project Management Agreementt</a></li>
-<li><a href="#SupplyInterfaceID">Supply - Interface</a></li>
-            </ul>
-          </li>
-        </ul>
-
-  <div class="navbar-nav">">
-          <input class="form-control" id="myInput" type="text" placeholder="Search Table">
+Signout
+</button>
+</li>
   </div>
-  <div class="nav navbar-nav navbar-right">
-  <button type="submit" class="btn btn-default">Submit</button>
-</div>
 
 
-    </div>
+</nav>
 
-
-
-
-            </div>
-
-    </div><!--
-      <div class ="row"></div> /.container-fluid -->
-
-  </nav>
 
 
 
@@ -294,6 +285,8 @@ text-align: center;
 
 
 <div class= 'col-md-12 col-sm-12' >
+
+
 <div id="IntroductionID" class="rowclass Introduction "></div>
 
 
@@ -343,7 +336,9 @@ text-align: center;
 
 
   <div id="SupplyInterfaceID" >
+
   <div class= "rowclass Supply_Interface"></div>
+
   </div>
 
 
@@ -370,16 +365,27 @@ text-align: center;
 		<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-		<script  src="js/jquery-3.4.1.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
-		<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script>
 feather.replace();
 </script>
 
 <script src="js/auth.js">
 
+
+</script>
+
+<script>
+
+function logout(){
+  alert("HELLO")
+firebase.auth().signOut();
+window.location.href="index.html"
+
+
+}
 </script>
 		<script  src="project.js"></script>
 <script  src="js/firebase.js">
@@ -663,7 +669,7 @@ function productBuildTableRow(id) {
 			"onclick='productDisplay(this);' " +
 			"class='btn btn-default'" +
 			"data-id='" + id + "'>" +
-			"<span class='glyphicon glyphicon-edit' />" +
+			"<i class='fas fa-edit'></i>" +
 			"</button>" +
 			"<td>" + valList[0] + "</td>"  +
 			"<td>" + valList[1] + "</td>" +
@@ -710,7 +716,8 @@ function productBuildTableRow(id) {
 				"onclick='productDisplay(this);' " +
 				"class='btn btn-default'" +
 				"data-id='" + id + "'>" +
-				"<span class='glyphicon glyphicon-edit' />" +
+				 "<i class='fas fa-edit'></i>" +
+ +
 				"</button>" +
 				"</td>" +
 				"</td><td class='Subtopic'> <strong>" + snapData.heading + "<strong/></td>" +

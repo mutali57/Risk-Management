@@ -5,9 +5,8 @@
 	<title>jQuery Add / Remove Table Rows</title>
 	<!--<link href="css/bootstrap.min.css" rel="stylesheet" />-->
 	<link href="css/styles.css" rel="stylesheet"/>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
@@ -34,6 +33,45 @@ input {
   transition: height 0.001s;
 
 }
+@media (min-width: 1200px) {
+
+  td {
+
+    font-size: 1.5rem;
+
+  }
+  th {
+
+
+  font-size: 15px;
+  }
+  #duedelligence {
+    height:100px;
+
+  }
+
+
+  .panel {
+  margin-left: 50%;
+
+  }
+  input {
+
+    min-height:10px!important;
+
+    max-height:99.99%!important;
+    transition: height 0.001s;
+
+  }
+
+
+
+
+
+
+}
+
+
 </style>
   </head>
 
@@ -47,10 +85,9 @@ input {
 <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-  <script  src="js/jquery-3.4.1.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
   <script src="js/auth.js">
 
@@ -159,12 +196,12 @@ $(document).ready(function() {
 												 {
 
 
-updateTotal("totalRisk/"+localStorage.getItem("nameid"));
+updateTotal("My_data/totalRisk/"+localStorage.getItem("nameid"));
 
 
 											   //keyRead('Energy');
 
-													 updateFile(localStorage.getItem("nameid"));
+													 updateFile("My_data/"+localStorage.getItem("nameid"));
 
 													 $("#submitContact").text("Submit");
 												 }
@@ -342,8 +379,7 @@ function productBuildTableRow(id) {
 			"onclick='productDisplay(this);' " +
 			"class='btn btn-default'" +
 			"data-id='" + id + "'>" +
-			"<span class='glyphicon glyphicon-edit' />" +
-
+			"<span class='fas fa-edit'></span>" +
 			"</button>" +
 			"<td>" + "</td>"  +
 			"<td>" + snapData.subtopic + "</td>"  +

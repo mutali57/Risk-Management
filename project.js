@@ -65,31 +65,28 @@ var results="<nav class='navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-
 
  if (name=='Introduction'){
 
-results="</div>"+"<iframe name='votar' style='display:none';></iframe>"+
-   "<div class='container-fluid'>"+
-   "<div class='row'>"+
-   "<div class='col-sm-6'>"+
-   "<h2>"+name+"</h2>"+
-   "</div>"+
-   "</div>"+
+results="<iframe name='votar' style='display:none';></iframe>"+
+"<br>"+
+"<br>"+
    "<div id='source-html'>"+
-   "<div class='table-scroll'>"+
+
    "<table  id='productTable'"+
-   "class='table table-bordered table-condensed table-scroll table-responsive'>"+
+   "class='table table-bordered table-condensed table-scroll w-auto'>"+
    "<thead >"
-   +
+   +"<tr><th colspan='3'><h1>"+name+"</h1></th></tr>"
+ +
    "<tr><th></th>"+
-   "<th class='col-md-2' scope='col'>Key Information</th>"+
+   "<th width='25%' scope='col'>Key Information</th>"+
    "<th scope='col'>Detail</th>"+
-   "</tr></thead></table>"+
-   "</div></div>"+
-   "</div>"+
+   "</tr></thead> </table>"+
+
    "<div>";
 
 
  }
  else{
 results=
+
 
 "<iframe name='votar' style='display:none;'></iframe>"+
 "<br>"+
@@ -107,7 +104,7 @@ results=
         "<a role='button' class='btn btn-info btn-lg'  href='container.html'"
          +
         "data-id='mybutton'>" +
-        "<span class='glyphicon glyphicon-edit'/>" +
+        "<i class='fas fa-edit'></i>" +
 
         "</button></th>"
 				+"<th class='th-sm' scope='col'>Reference (and clause)</th>"

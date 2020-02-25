@@ -62,7 +62,8 @@ function keyRead(name) {
 	//var database = firebase.database();
 var	databaseRes= firebase.database();
 
-    databaseRes.ref().child(name). on('value', function(snapshot) {
+    databaseRes.ref().child("My_data/"+name). on('value', function(snapshot) {
+
 
 									   if (snapshot.exists())
 									   {
@@ -74,7 +75,7 @@ var	databaseRes= firebase.database();
 
 											keyList [i]=data.key;
 
-										   valRead(name+"/" + data.key);
+										   valRead("My_data/"+name+"/" + data.key);
 
 																i++;
 															});
@@ -232,4 +233,3 @@ alert('hey');
 
 									});});
 									}
-

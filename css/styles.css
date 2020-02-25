@@ -183,6 +183,7 @@ h1{ text-align: center;
     color:Black;}
 
 #myInput{
+  width: 300%;
 
 
 }
@@ -192,4 +193,9 @@ h1{ text-align: center;
 
 .ref  {
   background-color: Red:
+}
+
+.lgt {
+
+margin-left:-10px;
 }
