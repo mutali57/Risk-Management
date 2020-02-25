@@ -91,7 +91,7 @@ results=
 "<iframe name='votar' style='display:none;'></iframe>"+
 "<br>"+
 "<br>"+
-"<div id='source-html'>"+"<div class='table mybody table-responsive-sm table-responsive-md table-responsive-xs'>"+
+"<div id='source-html'>"+"<div class='table mybody table-responsive-sm table-responsive-md table-responsive-xs table-responsive-xl''>"+
 
 "<table  id='productTable'	class='table table-bordered table-condensed table-scroll w-auto '>"
 

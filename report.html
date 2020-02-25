@@ -101,7 +101,28 @@ text-align: center;
 }
 */
 
+@media (min-width: 576px) {
+body{
 
+  zoom: 50%;
+}
+
+
+
+ }
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+
+
+
+ }
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {  }
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {  }
 
 </style>
 	<!-- <script  src="js/bootstrap.min.js" ></script>-->
@@ -244,7 +265,7 @@ text-align: center;
           <a class="dropdown-item" href="#ProgrammeID">Programme</a>
           <a class="dropdown-item" href="#OEMID">OEM and Turbine Technology</a>
           <a class="dropdown-item" href="#BoPID">Balance of Plant Track Record</a>
-          <a class="dropdown-item" href="#SupplyTurbineID">Supply - Turbine Supply Agreement</a>
+          <a class="dropdown-item" href="SupplyTurbineID">Supply - Turbine Supply Agreement</a>
           <a class="dropdown-item" href="#SupplyProjectID">Supply - Project Management Agreement</a>
           <a class="dropdown-item" href="#SupplyInterfaceID">Supply - Interface</a>
           <div class="dropdown-divider"></div>
@@ -284,7 +305,7 @@ Signout
 
 
 
-<div class= 'col-md-12 col-sm-12' >
+<div class= 'col-md-12 col-sm-12 col-xm-12' >
 
 
 <div id="IntroductionID" class="rowclass Introduction "></div>
@@ -716,8 +737,7 @@ function productBuildTableRow(id) {
 				"onclick='productDisplay(this);' " +
 				"class='btn btn-default'" +
 				"data-id='" + id + "'>" +
-				 "<i class='fas fa-edit'></i>" +
- +
+				"<span class='glyphicon glyphicon-edit' />" +
 				"</button>" +
 				"</td>" +
 				"</td><td class='Subtopic'> <strong>" + snapData.heading + "<strong/></td>" +
