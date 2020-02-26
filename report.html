@@ -102,10 +102,6 @@ text-align: center;
 */
 
 @media (min-width: 576px) {
-body{
-
-  zoom: 50%;
-}
 
 
 
@@ -238,7 +234,8 @@ body{
 
 
         <nav class="navbar  navbar-dark navbar-expand-lg sticky-top bg-dark  ">
-  <a class="navbar-brand" href="#">Company name</a>
+
+  <span id = 'user' class="navbar-brand fas fa-user">user</span>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -277,13 +274,25 @@ body{
       </li>
     </ul>
 <input class="form-control form-control-dark w-50" id="myInput" type="text" placeholder="Search" aria-label="Search">
-<li class="nav-item text-nowrap">
-<button class ="btn btn-primary" onclick="logout();">
 
-Signout
+<li  id ="logout"   style='display:none;'class="nav-item text-nowrap">
+
+<button   class ="btn btn-primary" onclick="logout();">
+<span class="fas fa-sign-out-alt">Logout</span>
 </button>
+
+
 </li>
-  </div>
+<li id ="login" style="display:none;" class="nav-item text-nowrap">
+
+<button   class ="btn btn-primary" onclick="login();">
+<span class="fas fa-sign-out-alt">Login</span>
+</button>
+
+
+</li>
+
+</div>
 
 
 </nav>
@@ -292,7 +301,7 @@ Signout
 
 
 
-<div id="source-html" class="container-field">
+<div  class="container-fluid">
 
 <div row='row'>
 
@@ -305,7 +314,7 @@ Signout
 
 
 
-<div class= 'col-md-12 col-sm-12 col-xm-12' >
+<div id="source-html" class= 'col-md-12 col-sm-12 col-xm-12' >
 
 
 <div id="IntroductionID" class="rowclass Introduction "></div>
@@ -333,7 +342,7 @@ Signout
   </div>
 
   <div id="OEMID" >
-  <div class= "rowclass Original_Equipment_Manufacturer_and_Turbine_Technolog"></div>
+  <div class= "rowclass Original_Equipment_Manufacturer_and_Turbine_Technology"></div>
   </div>
 
   <div id="BoPID" >
@@ -389,9 +398,6 @@ Signout
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script>
-feather.replace();
-</script>
 
 <script src="js/auth.js">
 
@@ -498,6 +504,10 @@ function headings(name, topic) {
 
 }
 
+
+
+
+
 $(document).ready(function() {
 
   $("#myInput").on("keyup", function() {
@@ -507,7 +517,7 @@ $(document).ready(function() {
                          });
            });
 
-					  headings("Introduction", 'Introduction');
+					 headings("Introduction", 'Introduction');
 					  headings('Site_Appreciation', 'Site Appreciation');
 //document.getElementById('productTable').id ="Energy";
 
@@ -517,16 +527,16 @@ $(document).ready(function() {
 					  headings("Contract_Overview", 'Contract Overview');
 					  headings('Programme', "Programme");
 					  headings('Balance_of_Plant_Track_Record', "Balance of Plant Track Record");
-					  headings("Original_Equipment_Manufacturer_and_Turbine_Technolog", "Original Equipment Manufacturer and Turbine Technolog");
+					  headings("Original_Equipment_Manufacturer_and_Turbine_Technology", "Original Equipment Manufacturer and Turbine Technology");
 					  headings('Supply_Turbine_Supply_Agreement', "Supply -Turbine Supply Agreement");
 					  headings('Supply_Balance_of_Plant', "Supply balance of Plant");
 					  headings("Supply_Project_Management_Agreement", "Supply Project Management Agreement");
 					  headings("Supply_Interface", "Supply Interface");
-
+headings("Supply_Interface", "Supply Interface");
 
 					  colorChange("#probabilityscore");
 					  colorChange("#severityscore");
-					  var      nameid ="";
+					  var nameid ="";
 
 					  $("table").on("click", function() {
 
@@ -569,6 +579,48 @@ $(document).ready(function() {
 
 
 </script>
+
+<script>
+firebase.auth().onAuthStateChanged(function(user) {
+if (user) {
+  // User is signed in.
+
+
+document.getElementById("logout").style.display = "block";
+
+
+  var user = firebase.auth().currentUser;
+
+  if(user != null){
+
+document.getElementById("user").innerHTML = "   "+user.email;
+document.getElementById("logout").style.display = "none";
+      //window.location.href="dash2.html"
+
+
+  }
+
+} else {
+  // No user is signed in.
+//window.location.href="index.html"
+
+
+    window.location.href="index.html"
+}
+
+});
+
+function login(){
+
+window.location.href="index.html"
+
+}
+
+
+</script>
+
+
+
 
 <script>
 // Current product being edited

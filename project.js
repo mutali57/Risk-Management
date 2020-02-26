@@ -7,7 +7,7 @@ function navigationbar(){
 
 
 
-var results="<nav class='navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0'>"
+var results="<nav class='navbar navbar-expand navbar-dark sticky-top bg-dark flex-md-nowrap p-0'>"
   +"<a class='navbar-brand col-sm-3 col-md-2 mr-0' href='#'>Company name</a>"+
   "<input class='form-control form-control-dark w-100' type='text' placeholder='Search' aria-label='Search'>"
   +"<ul class='navbar-nav px-3'>"+
@@ -112,16 +112,16 @@ results=
 				+"<th class ='th-lg' scope='col'>Due diligence focus (hide this column)</th>"
 				+"<th class ='th-sm' scope='col'>Observations, issues and specific risk description</th>"
 				+"<th class='th-lg' scope='col'>"
-				  +"Severity of impact"
-				  +"score</th>"
+				  +"Severity<br>of<br>impact"
+				  +"<br>score</th>"
 				+"<th class='th-lg'scope='col'>"
-				  +"Severity of impact"
-				  +"description</th>"
-				+"<th class='th-sm'scope='col'>Probability of occurrence"
+				  +"Severity<br>of<br>impact"
+				  +"<br>description</th>"
+				+"<th class='th-sm'scope='col'>Probability<br>of<br>occurrence<br>"
 				  +"score</th>"
 				+"<th  class='th-sm' scope='col'>Probability<br>of<br>occurrence<br>"+
 				  "description</th>"
-				+"<th class='th-sm' scope='col'>Risk score</th>"
+				+"<th class='th-sm' scope='col'>Risk<br>score</th>"
 				+"<th  class='th-sm' scope='col'>Risk</th>"
 				+"<th class='th-lg' scope='col'>Suggestion </th>"
 			  +"</tr>"
@@ -135,39 +135,41 @@ return results;
 function formInfo(){
 
 var results=	"<form  target='votar'   class='sucess-none was-validated  ' id='newContact' >"
-	  +"<div class='modal fade modalPanel' id='myModal' role='dialog'>"
-			+"<div class='modal-body'>"
+	  +"<div class='modal fade modalPanel' id='myModal'  tabindex='-1'  aria-labelledby='exampleModalLabel' aria-hidden='true'>"
+
+    	+"<div class='modal-body'>"
 			  +"<div class='row'>"
 				+"<div class='col-sm-6'>"
-				  +"<div class='panel panel-primary'>"
+				  +"<div class='card bg'>"
 
-					+"<div class='panel-heading  modal-header'>"
-					  +"<button type='button' id='closebutton' data-dismiss='modal'	class='btn btn-primary '>"
-					+"	close  </button>"
-					  +"Product Information"
+					+"<div class='card-header card-title  modal-header'>"+
+"<h5 class='modal-title' id='exampleModalLabel'>Project Risk</h5>"
+					  +"<button type='button' id='closebutton' data-dismiss='modal'	class='close' aria-label='Close'>"
+					+"<span aria-hidden='true'>&times;</span> </button>"
+
 					+"</div>"
 
-					+"<div class='panel-body'>"
-					  +"<div class='form-group'>"
+					+"<div class='card-body'>"
+					  +"<div class='form-row '>"
 						+"<label for='heading'>"
 						 +"Heading"+
 					"</label>"
 						+"<input type='text'class='form-control'	  value='Site Data'id='heading' />"
 					  +"</div>"
 
-					  +"<div class='form-group'>"
+					  +"<div class='form-row'>"
 						+"<label for='subtopic'>"+
 						  "Sub Topic"+
 						"</label>"
 						+"<input type='text' class='form-control'  value='Extending Bootstrap with CSS, JavaScript and jQuery' id='subtopic' />"
 					  +"</div>"
-					  +"<div class='form-group'>"
+					  +"<div class='form-row'>"
 						+"<label for='duedelligence'>"+
 						  "Due Delligence"
 				  	+"</label>"
 						+"<textarea id='duedelligence' class='form-control' onkeyup='new do_resize(this);' cols='20' rows='1' name='description_name'></textarea>"
 					  +"</div>"
-					  +"<div class='form-group'>"
+					  +"<div class='form-row'>"
 						+"<label for='Observation'>"+
 						  "Observation"+
 					"</label>"
@@ -175,7 +177,7 @@ var results=	"<form  target='votar'   class='sucess-none was-validated  ' id='ne
 						+"onkeyup='new do_resize(this);' cols='20' rows='1' name='description_name'>"
 						+"</textarea>"
 					  +"</div>"
-					  +"<div class='form-group'>"
+					  +"<div class='form-row'>"
 						+"<label for='severityscore'>"+
 						  "Serverity of impact score </label>"
 						+"<select  id ='severityscore' class='form-control'  >"
@@ -187,7 +189,7 @@ var results=	"<form  target='votar'   class='sucess-none was-validated  ' id='ne
 					"</select>"
 
 					  +"</div>"
-					  +"<div class='form-group'>"
+					  +"<div class='form-row'>"
 						+"<label for='severitydescription'>"
 						  +"Severity of impact description"
 					+"</label>"
@@ -195,7 +197,7 @@ var results=	"<form  target='votar'   class='sucess-none was-validated  ' id='ne
 
 
 					  +"</div>"
-					  +"<div class='form-group'>"
+					  +"<div class='form-row'>"
 						+"<label for='probabilityscore'> Probability of accurence score</label>"
 						+"<select  id ='probabilityscore' class='form-control'  >"
               +"<option value='Null'> NULL</option>"
@@ -206,13 +208,13 @@ var results=	"<form  target='votar'   class='sucess-none was-validated  ' id='ne
 						+"</select>"
 
 					  +"</div>"
-					  +"<div class='form-group'>"
+					  +"<div class='form-row'>"
 						+"<label for='probabilitydescription'>"+
 						  "Probability of accurence description	</label>"
             +"<textarea id='probabilitydescription' class='form-control' onkeyup='new do_resize(this);' cols='20' rows='1' name='description_name'></textarea>"
 
 						+"</div>"
-					  +"<div class='form-group'>"
+					  +"<div class='form-row'>"
 						+"<label for='suggestion'>"+
 						  "Suggestion	</label>"
 						+"<input type='text'class='form-control'  value='6/11/2015'		  id='suggestion' />"
@@ -230,8 +232,9 @@ var results=	"<form  target='votar'   class='sucess-none was-validated  ' id='ne
 						  +"<button   aria-hidden='true'type='submit' class='btn btn-primary'  name='subscribe' id='submitContact'>Submit</button>"
 						+"</div>"
 
-					  +"</div>"
 
+
++"</div>"
 					+"</div>"
 				  +"</div>"
 				+"</div>"
