@@ -188,6 +188,7 @@ return results;
 function formInfo(){
 
 var results=	"<form  target='votar'   class='sucess-none was-validated  ' id='newContact' >"
+
 	  +"<div class='modal' id='myModal'>"
 
   +  "<div class='modal-dialog' role='document'>"+

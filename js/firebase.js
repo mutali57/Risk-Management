@@ -2,6 +2,7 @@ var valList= [];
 var keyList =[];
 var snapData;
 var RiskArray= [];
+var updated =false;
 
 
 
@@ -139,7 +140,7 @@ var nhead=$('#heading').val(),
 
 
 return databaseRes.push(dataModel).then(function() {
-alert(' Add successful');
+
 
 window.location.href = 'index.html';
 
@@ -170,7 +171,7 @@ if(id=="siteApp"){
 
 	var str='';
 	//alert(RiskArray);
-	alert(RiskArray);
+
 	for ( x in RiskArray){
 
 		str+=','+RiskArray [x];
@@ -183,6 +184,7 @@ databaseRes = firebase.database().ref('totalRisk/').update({siteApp:str});
 
 }
 function updateFile(name) {
+
 	//alert(activeId);
 	var	databaseRes= firebase.database();
 
@@ -202,8 +204,7 @@ function updateFile(name) {
 
 		};
 	}else {
-
-
+updated =true;
 								var nhead=$('#heading').val(),
 									b=$("#subtopic").val(),
 									c =$("#duedelligence").val(),
@@ -228,7 +229,9 @@ function updateFile(name) {
 								return databaseRes.update(dataModel). then(function() {
 
 
-									window.location.reload();
+$("#myModal").modal("hide");
+
+
 
 									});});
 									}
