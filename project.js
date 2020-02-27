@@ -2,22 +2,75 @@
 
 function navigationbar(){
 
+var results =  "<nav class='navbar  navbar-dark navbar-expand-lg sticky-top bg-dark  '>"
+
+  +"<span id = 'user' class='navbar-brand fas fa-user'>user</span>"
+
+  +"<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>"
+  +"<span class='navbar-toggler-icon'></span>"
+  +"</button>"
+
+  +"<div class='collapse navbar-collapse' id='navbarSupportedContent'>"
+  +"<ul class='navbar-nav mr-auto'>"
+  +"<li class='nav-item active'>"
+  +"<li class='nav-item'>"
+    +"<a class='nav-link' href='dash2.html'>Home</a>"
+  +"</li>"
+  +"<a class='nav-link' href='#'>Report<span class='sr-only'>(current)</span></a>"
+  +"</li>"
+
+  +"<li class='nav-item dropdown'>"
+  +"<a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>"
+   +"Assessment"
+  +"</a>"
+  +"<div class='dropdown-menu' aria-labelledby='navbarDropdown'>"
+    +"<a class='dropdown-item'  href='#IntroductionID'>Introduction</a>"
+    +"<a class='dropdown-item' href='#SiteConditionsID'>Site Appreciation</a>"
+    +"<a class='dropdown-item' href='#EnergyID'>Energy Yield Assessment</a>"
+    +"<a class='dropdown-item' href='#ContractOverviewID'>Contract Overview</a>"
+    +"<a class='dropdown-item' href='#ProgrammeID'>Programme</a>"
+    +"<a class='dropdown-item' href='#OEMID'>OEM and Turbine Technology+</a>"
+    +"<a class='dropdown-item' href='#BoPID'>Balance of Plant Track Record</a>"
+    +"<a class='dropdown-item' href='#SupplyTurbineID'>Supply - Turbine Supply Agreement</a>"
+    +"<a class='dropdown-item' href='#SupplyProjectID'>Supply - Project Management Agreement</a>"
+    +"<a class='dropdown-item' href='#SupplyInterfaceID'>Supply - Interface</a>"
+    +"<div class='dropdown-divider'></div>"
+    +"<a class='dropdown-item' href='#'>Something else here</a>"
+  +"</div>"
+  +"</li>"
+  +"<li class='nav-item'>"
+  +"<a class='nav-link disabled' href='#'>Disabled</a>"
+  +"</li>"
+  +"</ul>"
+  +"<input class='form-control form-control-dark w-50' id='myInput' type='text' placeholder='Search' aria-label='Search'>"
+
+  +"<li  id ='logout'   style='display:none;'class='nav-item text-nowrap'>"
+
+  +"<button   class ='btn btn-primary' onclick='logout();'>"
+  +"<span class='fas fa-sign-out-alt'>Logout</span>"
+  +"</button>"
+
+
+  +"</li>"
+  +"<li id ='login' style='display:none;' class='nav-item text-nowrap'>"
+
+  +"<button   class ='btn btn-primary' onclick='login();'>"
+  +"<span class='fas fa-sign-out-alt'>Login</span>"
+  +"</button>"
+
+
+  +"</li>"
+
+  +"</div>"
+
+
+  +"</nav>";
 
 
 
 
 
-var results="<nav class='navbar navbar-expand navbar-dark sticky-top bg-dark flex-md-nowrap p-0'>"
-  +"<a class='navbar-brand col-sm-3 col-md-2 mr-0' href='#'>Company name</a>"+
-  "<input class='form-control form-control-dark w-100' type='text' placeholder='Search' aria-label='Search'>"
-  +"<ul class='navbar-nav px-3'>"+
-  "<li class='nav-item text-nowrap'>"
-  +"<button class ='btn btn-primary' onclick='logout();'>"+
-  "Signout"+
-    " </button>"
-  +  "</li>"+
-  "</ul>"+
-"</nav>";
+
 
 /*var results =	"<div  class=' nav navbar  navbar-inverse navbar-fixed-top ' role='navigation'>"
       +"<div class='container nav-wrapper'>"
@@ -48,7 +101,7 @@ var results="<nav class='navbar navbar-expand navbar-dark sticky-top bg-dark fle
       +"</div>"
 	+"</div>"
 	;*/
-	;
+
 	return results;
 }
 
@@ -135,21 +188,23 @@ return results;
 function formInfo(){
 
 var results=	"<form  target='votar'   class='sucess-none was-validated  ' id='newContact' >"
-	  +"<div class='modal fade modalPanel' id='myModal'  tabindex='-1'  aria-labelledby='exampleModalLabel' aria-hidden='true'>"
+	  +"<div class='modal' id='myModal'>"
+
+  +  "<div class='modal-dialog' role='document'>"+
+    "<div class='modal-content'>"
+
+    +"<div class='modal-header'>"+
+  "<h5 class='modal-title' id='exampleModalLabel'>Project Risk</h5>"
+      +"<button type='button' id='closebutton' data-dismiss='modal' aria-label='Close'>"
+    +"<span aria-hidden='true'>&times;</span> </button>"
+
+    +"</div>"
+
 
     	+"<div class='modal-body'>"
 			  +"<div class='row'>"
-				+"<div class='col-sm-6'>"
-				  +"<div class='card bg'>"
+				+"<div class='col-sm-12 col-md-12 col-lg-12'>"
 
-					+"<div class='card-header card-title  modal-header'>"+
-"<h5 class='modal-title' id='exampleModalLabel'>Project Risk</h5>"
-					  +"<button type='button' id='closebutton' data-dismiss='modal'	class='close' aria-label='Close'>"
-					+"<span aria-hidden='true'>&times;</span> </button>"
-
-					+"</div>"
-
-					+"<div class='card-body'>"
 					  +"<div class='form-row '>"
 						+"<label for='heading'>"
 						 +"Heading"+
@@ -219,10 +274,10 @@ var results=	"<form  target='votar'   class='sucess-none was-validated  ' id='ne
 						  "Suggestion	</label>"
 						+"<input type='text'class='form-control'  value='6/11/2015'		  id='suggestion' />"
 					  +"</div>"
-
-					+"</div>"
-
-					+"<div class='panel-footer modal-footer'>"
++"</div>"
++"</div>"
++"</div>"
+					+"<div class='modal-footer'>"
 					  +"<div class='row'>"
 						+"<div class='col-xs-12'>"
 						  +"<div style='position: absolute; left: -5000px;' aria-hidden='true'>"
@@ -234,6 +289,7 @@ var results=	"<form  target='votar'   class='sucess-none was-validated  ' id='ne
 
 
 
++"</div>"
 +"</div>"
 					+"</div>"
 				  +"</div>"

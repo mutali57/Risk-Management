@@ -187,12 +187,6 @@ h1{ text-align: center;
 margin-top: 0px;zs
 
 }
-.modal-dialog {
-    position: center;
-    width: 100%;
-    margin: .5rem;
-    pointer-events: none;
-}
 
 
 
@@ -208,6 +202,8 @@ margin-top: 0px;zs
 
 margin-left:-10px;
 }
-textarea {
-  margin: 10px;
+
+.form-row{
+
+  
 }

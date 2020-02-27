@@ -92,6 +92,57 @@ input {
   <script src="js/auth.js">
 
   </script>
+</script>
+<script>
+firebase.auth().onAuthStateChanged(function(user) {
+if (user) {
+  // User is signed in.
+
+
+document.getElementById("logout").style.display = "block";
+
+
+  var user = firebase.auth().currentUser;
+
+
+  if(user != null){
+
+document.getElementById("user").innerHTML = "   "+user.email;
+document.getElementById("logout").style.display = "none";
+      //window.location.href="dash2.html"
+
+
+  }
+
+} else {
+  // No user is signed in.
+//window.location.href="index.html"
+
+
+    window.location.href="index.html"
+}
+
+});
+
+function login(){
+
+window.location.href="index.html"
+
+}
+
+
+</script>
+
+<script>
+
+function logout(){
+  alert("HELLO")
+firebase.auth().signOut();
+window.location.href="index.html"
+
+
+}
+</script>
 <script type="text/javascript" src="project.js"></script>
 <script type="text/javascript" src="js/firebase.js">
 </script>
@@ -166,10 +217,23 @@ function colorChange (id) {
                 fileDownload.click();
                 document.body.removeChild(fileDownload);
              }
+             function replaceAll(str, find, replace) {
+             	return str.replace(new RegExp(find, 'g'), replace);
+             }
+
+
 
 
 $(document).ready(function() {
-  $('div').html(navigationbar()+createTable(localStorage.getItem("nameid"))+ formInfo());
+
+
+
+
+
+  var id=localStorage.getItem("nameid");
+
+  var page = replaceAll(id, '_', " ");
+  $('div').html(navigationbar()+createTable(page)+ formInfo());
 
 
 

@@ -189,13 +189,12 @@ function updateFile(name) {
 	databaseRes = firebase.database().ref(name+"/"+keyList [activeId-1]);
 	$("#newContact").submit(function(a) { $(this), console.log("Submit to Firebase");
 	var	dataModel;
-alert(name);
 
 
 	if (name=='Introduction'){
 		var detail=$('#detail').val();
 
-alert('hey');
+
 		dataModel={
 
 	    details : detail
@@ -227,7 +226,7 @@ alert('hey');
 									suggestion: k};
 }
 								return databaseRes.update(dataModel). then(function() {
-									alert('Update success');
+
 
 									window.location.reload();
 

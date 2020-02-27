@@ -110,10 +110,8 @@ topic(a[1],2,snapData.Site_Appreciation);
 
 $(document).ready(function (){
 
-//fireInit();
-//readData();
-valRead('totalRisk');
-//valRead('totalRisk');
+valRead('My_data/totalRisk');
+
 
 
 
