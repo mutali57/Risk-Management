@@ -149,7 +149,6 @@ window.location.href="index.html"
 	<script type="text/javascript" src="js/risk.js"></script>
 <script>
 
-var isUpdated=false;
 
 
 /*function resizable (el, factor) {
@@ -253,30 +252,27 @@ $(document).ready(function() {
 
 					  //updateTotal('energyRisk');
 					 //alert(RiskArray);
+           $("#submitContact").on("click", function () {
 
-					  $("#submitContact").on("click", function () {
-
-												 if ($("#submitContact").text() == "Update")
-												 {
-
-
-updateTotal("My_data/totalRisk/"+localStorage.getItem("nameid"));
+                        if ($("#submitContact").text() == "Update")
+                        {
 
 
-											   //keyRead('Energy');
-
-													 updateFile("My_data/"+localStorage.getItem("nameid"));
-	 $("#submitContact").text("Submit");
-												 }
-												 else
-												 {
-													 contactScript();
+        updateTotal(localStorage.getItem("nameid"));
 
 
-												 }
+                    // updateFile("My_data/"+localStorage.getItem("nameid"));
 
+                          $("#submitContact").text("Submit");
+                        }
+                        else
+                        {
+                          contactScript();
 
-											 });
+                          $("#submitContact").text("Submit");
+                        }
+                      });
+
 
 
 
@@ -331,7 +327,7 @@ var nextId = 1;
 var activeId = 0;
 
 function productDisplay(ctl) {
-alert("productDisplay");
+
 console.log( 'pressed');
 //openForm();
 
@@ -358,7 +354,6 @@ console.log( 'pressed');
 
 
 
-
 	// Change Update Button Text
 
 }
@@ -366,9 +361,8 @@ console.log( 'pressed');
 function productUpdate() {
 
 //alert ($("#submitContact").text());
-	if (updated)
+	if ($("#submitContact").text() == 'Update')
 	{
-
 
         productUpdateInTable(activeId);
 
@@ -376,10 +370,11 @@ function productUpdate() {
 	else
 
 	{
-//alert("PRODUCT");
+
 
 		productAddToTable();
 
+refresh(localStorage.getItem("nameid"));
 
 
 
@@ -410,7 +405,7 @@ function productAddToTable() {
 
 	// Append product to table
 
-	$("#productTable tbody").append(productBuildTableRow(nextId,false));
+	$("#productTable tbody").append(productBuildTableRow(nextId));
 	nextId += 1;
 }
 
@@ -421,7 +416,7 @@ function productUpdateInTable(id) {
 		.parents("tr")[0];
 
 	// Add changed product to table
-	$(row).after(productBuildTableRow(id, true));
+	$(row).after(productBuildTableRow(id));
 
 	// Remove original product
 	$(row).remove();
@@ -433,66 +428,9 @@ function productUpdateInTable(id) {
 
 var j=0;
 // Build a <table> row of Product data
-function productBuildTableRow(id, myupdate) {
+function productBuildTableRow(id) {
+
 	var ret ;
-
-
-  if(myupdate){
-
-    if ($("#heading").val() == '')
-  	{
-  	//alert(valList[6]);
-
-  		ret = "<tr>" +
-  			"<td>" +
-  			"<button type='button' class='edit_butn btn btn-info btn-lg' data-toggle='modal'  data-target='#myModal'" +
-  			"onclick='productDisplay(this);' " +
-  			"class='btn btn-default'" +
-  			"data-id='" + id + "'>" +
-  			"<span class='fas fa-edit'></span>" +
-  			"</button>" +
-  			"<td>" + "</td>"  +
-  			"<td>" + $("#subtopic").val() + "</td>"  +
-  			"<td>" + $("#duedelligence").val() + "</td>" +
-  			"<td>"  +  $("#observation").val() + "</td>" +
-  			"<td class='"+$("#severityscore").val()+"'>" + $("#severityscore").val() + "</td>" +
-  			"<td>" + $("#severitydescription").val() + "</td>" +
-  			"<td class='"+$("#probabilityscore").val()+"'>" + $("#probabilityscore").val() + "</td>" +
-  			"<td>" + $("#probabilitydescription").val()+ "</td>" +
-  			"<td>" + riskScore() + "</td>" +
-  			"<td class='"+risk(riskScore())+"'><strong>" + risk(riskScore()) + "</strong></td>" +
-  			"<td>" +  $("#suggestion").val() + "</td>" +
-  			"</tr>";
-
-  RiskArray[j]=riskScore(),
-  j++;
-
-  	}
-  	else
-  	{
-
-
-
-  		ret = "<tr>" +
-  			"<td>" +
-  			"<button type='button' id='edit'" +
-  			"onclick='productDisplay(this);' " +
-  			"class='btn btn-default'" +
-  			"data-id='" + id + "'>" +
-  			"<span class='glyphicon glyphicon-edit' />" +
-  			"</button>" +
-  			"</td>" +
-  			"</td><td class='Subtopic'> <strong>" + snapData.heading + "<strong/></td>" +
-
-  			"</tr>" ;
-
-
-  	}
-
-updated=false;
-  } else{
-
-
 
 	if (snapData.heading == '')
 	{
@@ -500,16 +438,17 @@ updated=false;
 
 		ret = "<tr>" +
 			"<td>" +
-			"<button type='button' class='edit_butn btn btn-info btn-lg' data-toggle='modal'  data-target='#myModal'" +
+			"<button type='button' class='btn btn-info btn-lg' data-toggle='modal'  data-target='#myModal'" +
 			"onclick='productDisplay(this);' " +
 			"class='btn btn-default'" +
 			"data-id='" + id + "'>" +
-			"<span class='fas fa-edit'></span>" +
+		"<i class='fas fa-edit'></i> " +
+
 			"</button>" +
 			"<td>" + "</td>"  +
 			"<td>" + snapData.subtopic + "</td>"  +
 			"<td>" + snapData.duedelligence + "</td>" +
-			"<td>"  + snapData.observation + "</td>" +
+			"<td class ='obs'>"  + snapData.observation + "</td>" +
 			"<td class='"+snapData.severityscore+"'>" + snapData.severityscore + "</td>" +
 			"<td>" + snapData.severitydescription + "</td>" +
 			"<td class='"+snapData.probabilityscore+"'>" + snapData.probabilityscore + "</td>" +
@@ -521,6 +460,7 @@ updated=false;
 
 RiskArray[j]=riskScore(),
 j++;
+
 
 	}
 	else
@@ -534,7 +474,6 @@ j++;
 			"onclick='productDisplay(this);' " +
 			"class='btn btn-default'" +
 			"data-id='" + id + "'>" +
-			"<span class='glyphicon glyphicon-edit' />" +
 			"</button>" +
 			"</td>" +
 			"</td><td class='Subtopic'> <strong>" + snapData.heading + "<strong/></td>" +
@@ -543,11 +482,13 @@ j++;
 
 
 	}
-}
+
 
 
 	return ret;
 }
+
+
 
 </script>
   </body>

@@ -247,7 +247,7 @@ text-align: center;
         <li class="nav-item">
           <a class="nav-link" href="dash2.html">Home</a>
         </li>
-        <a class="nav-link" href="#">Report<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="report.html">Report<span class="sr-only">(current)</span></a>
       </li>
 
       <li class="nav-item dropdown">
@@ -256,15 +256,18 @@ text-align: center;
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item"  href="#IntroductionID">Introduction</a>
-          <a class="dropdown-item" href="#SiteConditionsID">Site Appreciation</a>
-          <a class="dropdown-item" href="#EnergyID">Energy Yield Assessment</a>
-          <a class="dropdown-item" href="#ContractOverviewID">Contract Overview</a>
+          <a class="dropdown-item" href="#Site_AppreciationID">Site Appreciation</a>
+          <a class="dropdown-item" href="#Energy_Analysis">Energy Yield Assessment</a>
+          <a class="dropdown-item" href="#Site_and_Turbine_SuitabilityID">Site_and_Turbine_Suitability</a>
+          <a class="dropdown-item" href="#Contract_OverviewID">Contract Overview</a>
           <a class="dropdown-item" href="#ProgrammeID">Programme</a>
-          <a class="dropdown-item" href="#OEMID">OEM and Turbine Technology</a>
-          <a class="dropdown-item" href="#BoPID">Balance of Plant Track Record</a>
-          <a class="dropdown-item" href="#SupplyTurbineID">Supply - Turbine Supply Agreement</a>
-          <a class="dropdown-item" href="#SupplyProjectID">Supply - Project Management Agreement</a>
-          <a class="dropdown-item" href="#SupplyInterfaceID">Supply - Interface</a>
+          <a class="dropdown-item" href="#Original_Equipment_Manufacturer_and_Turbine_TechnologyID">OEM and Turbine Technology</a>
+          <a class="dropdown-item" href="#Balance_of_Plant_Track_RecordID">Balance of Plant Track Record</a>
+          <a class="dropdown-item" href="#Supply_Balance_of_PlantID">Supply_Balance_of_Plant</a>
+
+          <a class="dropdown-item" href="#Supply_Turbine_Supply_AgreementID">Supply - Turbine Supply Agreement</a>
+          <a class="dropdown-item" href="#Supply_Project_Management_AgreementID">Supply - Project Management Agreement</a>
+          <a class="dropdown-item" href="#Supply_InterfaceID">Supply - Interface</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
@@ -320,20 +323,20 @@ text-align: center;
 <div id="IntroductionID" class="rowclass Introduction "></div>
 
 
-  <div id="SiteConditionsID" >
+  <div id="Site_AppreciationID" >
     <div class= "rowclass Site_Appreciation"></div>
   </div>
 
-  <div id="EnergyID" >
+  <div id="Energy_Analysis" >
   <div  class= "rowclass Energy_Analysis"></div>
   </div>
 
-  <div id="SiteConditionsTurbineID" >
+  <div id="Site_and_Turbine_SuitabilityID" >
   <div class= "rowclass Site_and_Turbine_Suitability"></div>
   </div>
 
 
-  <div id="ContractOverviewID" >
+  <div id="Contract_OverviewID" >
   <div class = " rowclass Contract_Overview"></div>
   </div>
 
@@ -341,27 +344,27 @@ text-align: center;
   <div class= "rowclass Programme"></div>
   </div>
 
-  <div id="OEMID" >
+  <div id="Original_Equipment_Manufacturer_and_Turbine_TechnologyID" >
   <div class= "rowclass Original_Equipment_Manufacturer_and_Turbine_Technology"></div>
   </div>
 
-  <div id="BoPID" >
+  <div id="Balance_of_Plant_Track_RecordID" >
   <div class= "rowclass Balance_of_Plant_Track_Record"></div>
   </div>
 
-  <div id="SupplyTurbineID" >
+  <div id="Supply_Turbine_Supply_AgreementID" >
   <div class= "rowclass Supply_Turbine_Supply_Agreement"></div>
   </div>
 
 
-  <div id="SupplyBoPID" >
+  <div id="Supply_Balance_of_PlantID" >
   <div class= "rowclass Supply_Balance_of_Plant"></div>
   </div>
 
-  <div id="SupplyProjectID" >
+  <div id="Supply_Project_Management_AgreementID" >
   <div class= "rowclass Supply_Project_Management_Agreement"></div>
   </div>
-  <div id="SupplyInterfaceID" >
+  <div id="Supply_InterfaceID" >
 
   <div class= "rowclass Supply_Interface"></div>
 
@@ -517,12 +520,9 @@ $(document).ready(function() {
                          });
            });
 
-					 headings("Introduction", 'Introduction');
+					  headings("Introduction", 'Introduction');
 					  headings('Site_Appreciation', 'Site Appreciation');
-//document.getElementById('productTable').id ="Energy";
-
 					  headings('Energy_Analysis', 'Energy Analysis');
-
 					  headings('Site_and_Turbine_Suitability', 'Site Conditions and Turbine Suitability');
 					  headings("Contract_Overview", 'Contract Overview');
 					  headings('Programme', "Programme");
@@ -585,7 +585,7 @@ if (user) {
   // User is signed in.
 
 
-document.getElementById("logout").style.display = "block";
+//document.getElementById("logout").style.display = "block";
 
 
   var user = firebase.auth().currentUser;
@@ -593,7 +593,7 @@ document.getElementById("logout").style.display = "block";
   if(user != null){
 
 document.getElementById("user").innerHTML = "   "+user.email;
-document.getElementById("logout").style.display = "none";
+document.getElementById("logout").style.display = "block";
       //window.location.href="dash2.html"
 
 

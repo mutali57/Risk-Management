@@ -2,8 +2,7 @@ var valList= [];
 var keyList =[];
 var snapData;
 var RiskArray= [];
-var updated =false;
-
+var string=[];
 
 
 function valRead(name) {
@@ -141,70 +140,107 @@ var nhead=$('#heading').val(),
 
 return databaseRes.push(dataModel).then(function() {
 
-
-window.location.href = 'index.html';
+window.location.href = 'container.html';
 
 });});
 
 
 			}
 
+      function refresh(id ){
+
+      var updates = {};
+      var dataModel;
+
+      var	databaseRes;
+
+
+      	var str='';
+      	//alert(RiskArray);
+
+      	for ( x in RiskArray){
+
+      		str+=','+RiskArray [x];
+
+
+
+      	}
+
+
+
+      var data=    {
+          total:str
+
+            };
+
+
+
+
+      								var nhead=$('#heading').val(),
+      									b=$("#subtopic").val(),
+      									c =$("#duedelligence").val(),
+      									d=$("#observation").val(),
+      									e=$("#severityscore").val(),
+      									f=$("#severitydescription").val(),
+      									g=$("#probabilityscore").val(),
+      									h=$("#probabilitydescription").val(),
+      									k=$("#suggestion").val();
+      						dataModel= {
+
+      									heading:nhead,
+      									subtopic: b,
+      									duedelligence: c,
+      									observation: d,
+      									severityscore: e,
+      									severitydescription: f,
+      									probabilityscore: g,
+      									probabilitydescription: h,
+      									suggestion: k};
+
+      updates["totalRisk/"+id] = data;
+
+
+      //databaseRes = firebase.database().ref('totalRisk/').update ({energyRisk:str});
+
+
+
+
+       return databaseRes = firebase.database().ref("My_data/").update(updates);
+
+
+
+
+      }
+
 function updateTotal (id){
 
+var updates = {};
+var dataModel;
 
-	var	databaseRes= firebase.database();
-	if(id=="energyRisk"){
+var	databaseRes;
+
+
 	var str='';
 	//alert(RiskArray);
+
 	for ( x in RiskArray){
 
 		str+=','+RiskArray [x];
+
+
+
 	}
 
-databaseRes = firebase.database().ref('totalRisk/').update ({energyRisk:str});
-
-}
 
 
-if(id=="siteApp"){
+var data=    {
+    total:str
+
+      };
 
 
-	var str='';
-	//alert(RiskArray);
-
-	for ( x in RiskArray){
-
-		str+=','+RiskArray [x];
-
-		}
-databaseRes = firebase.database().ref('totalRisk/').update({siteApp:str});
-
-}
 
 
-}
-function updateFile(name) {
-
-	//alert(activeId);
-	var	databaseRes= firebase.database();
-
-	databaseRes = firebase.database().ref(name+"/"+keyList [activeId-1]);
-	$("#newContact").submit(function(a) { $(this), console.log("Submit to Firebase");
-	var	dataModel;
-
-
-	if (name=='Introduction'){
-		var detail=$('#detail').val();
-
-
-		dataModel={
-
-	    details : detail
-
-
-		};
-	}else {
-updated =true;
 								var nhead=$('#heading').val(),
 									b=$("#subtopic").val(),
 									c =$("#duedelligence").val(),
@@ -225,13 +261,79 @@ updated =true;
 									probabilityscore: g,
 									probabilitydescription: h,
 									suggestion: k};
+
+updates["totalRisk/"+id] = data;
+updates[id+"/"+ keyList [activeId-1]]= dataModel;
+
+//databaseRes = firebase.database().ref('totalRisk/').update ({energyRisk:str});
+
+
+
+
+ return databaseRes = firebase.database().ref("My_data/").update(updates).then(function() {
+
+
+
+window.location.href="container.html";
+
+  });
+
+
+
+
+
 }
+
+
+function updateFile(name) {
+var	dataModel;
+	//alert(activeId);
+	var	databaseRes= firebase.database();
+
+	databaseRes = firebase.database().ref(name+"/"+keyList [activeId-1]);
+	$("#newContact").submit(function(a) { $(this), console.log("Submit to Firebase");
+
+
+
+	if (name=='Introduction'){
+		var detail=$('#detail').val();
+
+
+		dataModel={
+
+	    details : detail
+
+
+		};
+	}else {
+
+								var nhead=$('#heading').val(),
+									b=$("#subtopic").val(),
+									c =$("#duedelligence").val(),
+									d=$("#observation").val(),
+									e=$("#severityscore").val(),
+									f=$("#severitydescription").val(),
+									g=$("#probabilityscore").val(),
+									h=$("#probabilitydescription").val(),
+									k=$("#suggestion").val();
+						dataModel= {
+
+									heading:nhead,
+									subtopic: b,
+									duedelligence: c,
+									observation: d,
+									severityscore: e,
+									severitydescription: f,
+									probabilityscore: g,
+									probabilitydescription: h,
+									suggestion: k};
+                }
+
 								return databaseRes.update(dataModel). then(function() {
 
 
-$("#myModal").modal("hide");
-
-
+                  window.location.href = 'container.html';
+//updateFile("My_data/"+localStorage.getItem("nameid"));
 
 									});});
 									}

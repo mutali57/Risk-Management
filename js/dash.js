@@ -3,6 +3,21 @@ var high=0;
 var medium=0;
 var low=0;
 var critical=0;
+var i=0;
+var  negligible=0;
+
+var arrLow=[];
+var arrHigh=[];
+var arrMedium=[];
+var arrCritical=[];
+var arrNegligible=[];
+var heads=[];
+
+
+
+
+
+
 var a= [ "Introduction","Site Appreciation","Energy Yield Assessment",
 	"Site Conditions and Turbine Suitability",
 	"Contract Overview",
@@ -25,9 +40,14 @@ var a= [ "Introduction","Site Appreciation","Energy Yield Assessment",
 	"Operational Performance",
 	"Financial Model"];
 
-	function topic(name,id,totalRisk){
+	function topic(){
+for (x in keyList){
+heads[x]=	replaceAll(keyList[x],"_"," ");
+}
+
+
 		//alert(totalRisk);
-		 var energyRisk=totalRisk;
+		 var energyRisk=valList[0];
  var editRow=null;
 
  var my=[];
@@ -37,6 +57,7 @@ var a= [ "Introduction","Site Appreciation","Energy Yield Assessment",
 
   if (risk(my [x])=="H"){
 	  high++;
+
   }
  if (risk(my [x])=="C"){
 	  critical++;
@@ -48,75 +69,83 @@ var a= [ "Introduction","Site Appreciation","Energy Yield Assessment",
   if (risk(my [x])=="M"){
 	  medium++;
   }
+	if (risk(my [x])=="N"){
+	  negligible++;
+  }
  }
+  arrLow[i]=low;
+ arrHigh[i]=high;
+arrMedium[i]=medium;
+arrCritical[i]=critical;
+ arrNegligible[i]=negligible;
+var total=low+high+critical+medium;
+
+
 
 		var ref="";
 	var textStr="";
-  var num=id+1;
+
 	  ref ="<tr>"+
-	  "<td>"+num+
-	  ".<div><button type='button' class='btn btn-info btn-lg'" +
-			"onclick='asserts(this);' " +
-			"class='btn btn-default'" +
-			"data-id='" + num + "'>" +
-			"<span class='glyphicon glyphicon-edit' />" +
-			"</button></td>" +
+	  "<td>"+heads[i]
+	  +"<br><a type='button' class='btn btn-info btn-lg'" +
+			"href='report.html#"+keyList[i]+ "ID'>" +
+			"<i class='fas fa-edit'></i>" +
+			"<a></td>" +
 
-	  "<td>"+name+"</td>"+
+	  "<td>"+"</td>"+
 	  "<td></td>"+
-	  "<td></td>"+
-	  "<td></td>"+
+	  "<td>"+total+"</td>"+
+	  "<td>"+negligible+"</td>"+
 	  "<td>"+low+"</td>"+
-	  "<td>"+medium+"</td>"+
-	  "<td>"+high+"</td>"+
-	  "<td>"+critical+"</td></tr>";
-	  textStr=  $('tbody').append(ref);
+	  "<td>"+medium+"</td>"
+		+"<td>"+high+"</td>"+
+	  "<td>"+critical+"</td>";
 
 
+		i++;
+
+return ref;
 	}
 
 
 
-function asserts (ctl){
-	editRow = $(ctl).parents("tr");
+ 	 function asserts (ctl){
+ 	 	editRow = $(ctl).parents("tr");
 
-	var cols = editRow.children("td");
-	alert($($(cols[0]).children('button')[0]).data ('id'));
-	var activeId = $($(cols[0]).children("button")[0]).data("id");
-	alert(activeId);
-
-
-		//window.location.href = 'energy.html';
+ 	 	var cols = editRow.children("td");
+ 	 	alert($($(cols[0]).children('button')[0]).data ('id'));
+ 	 	var activeId = $($(cols[0]).children("button")[0]).data("id");
+ 	 	//alert(activeId);
 
 
-}
+ 	 		//window.location.href = 'energy.html';
 
-function riskCounter (){
-alert (valList[0]);
 
- //alert(valList.length);
- //topic(a [3],4,valList [1]);
-topic(a[1],2,snapData.Site_Appreciation);
- topic(a [2],3, valList [0]);
- topic(a[3],4, valList[1]);
+ 	 }
+	 function replaceAll(str, find, replace) {
+	 	return str.replace(new RegExp(find, 'g'), replace);
+	 }
 
 
 
 
+ 	 function riskCounter (){
+
+
+$("tbody").append(topic);
 
 
 }
 
 
-$(document).ready(function (){
 
-valRead('My_data/totalRisk');
+ 	 $(document).ready(function (){
 
-
-
-
+keyRead("My_data/totalRisk/");
+ 	 
 
 
 
-	 //
-});
+
+ 	 	 //
+ 	 });
