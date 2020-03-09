@@ -304,20 +304,10 @@ text-align: center;
 
 
 
-<div  class="container-fluid">
+<div  id="source-html"  class="container-fluid">
 
 <div row='row'>
-
-
-
-
-
-
-
-
-
-
-<div id="source-html" class= 'col-md-12 col-sm-12 col-xm-12' >
+<div  class= 'col-md-12 col-sm-12 col-xm-12' >
 
 
 <div id="IntroductionID" class="rowclass Introduction "></div>
@@ -344,13 +334,15 @@ text-align: center;
   <div class= "rowclass Programme"></div>
   </div>
 
-  <div id="Original_Equipment_Manufacturer_and_Turbine_TechnologyID" >
-  <div class= "rowclass Original_Equipment_Manufacturer_and_Turbine_Technology"></div>
+    <div id="Balance_of_Plant_Track_RecordID" >
+    <div class= "rowclass Balance_of_Plant_Track_Record"></div>
+    </div>
+
+  <div id="Original_Equipment_Manufacturer_and_Turbine_TechnologyID">
+  <div class="rowclass Original_Equipment_Manufacturer_and_Turbine_Technology"></div>
   </div>
 
-  <div id="Balance_of_Plant_Track_RecordID" >
-  <div class= "rowclass Balance_of_Plant_Track_Record"></div>
-  </div>
+
 
   <div id="Supply_Turbine_Supply_AgreementID" >
   <div class= "rowclass Supply_Turbine_Supply_Agreement"></div>
@@ -369,29 +361,12 @@ text-align: center;
   <div class= "rowclass Supply_Interface"></div>
 
   </div>
-
-
-
-
-
-
-
-
 </div>
     </div>
   </div>
 
-
-
-
-
-
-
-
-
-		  </div>
 <button class='btn  bg-primary' onclick='exportHTML()'>Download</button>
-		</div>
+
 
 		<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-auth.js"></script>
@@ -410,7 +385,7 @@ text-align: center;
 <script>
 
 function logout(){
-  alert("HELLO")
+
 firebase.auth().signOut();
 window.location.href="index.html"
 
@@ -479,7 +454,7 @@ function exportHTML() {
 	var fileDownload = document.createElement("a");
 	document.body.appendChild(fileDownload);
 	fileDownload.href = source;
-	fileDownload.download = 'document.doc';
+	fileDownload.download = 'report.doc';
 	fileDownload.click();
 	document.body.removeChild(fileDownload);
 }

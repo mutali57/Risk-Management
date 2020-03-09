@@ -4,7 +4,7 @@ var medium=0;
 var low=0;
 var critical=0;
 var i=0;
-var  negligible=0;
+var negligible=0;
 
 var arrLow=[];
 var arrHigh=[];
@@ -43,42 +43,51 @@ var a= [ "Introduction","Site Appreciation","Energy Yield Assessment",
 	function topic(){
 for (x in keyList){
 heads[x]=	replaceAll(keyList[x],"_"," ");
-}
+};
 
 
 		//alert(totalRisk);
-		 var energyRisk=valList[0];
- var editRow=null;
+		 var energyRisk=snapData.total;
 
- var my=[];
+
+ //var my=[1,2,9,9,9,0,0]
  my= energyRisk.split (',');
+ for (var x=1;x<my.length;x++){
+//alert(my[x]);
+ if(isNaN(my[x])){
 
- for (var x in my){
 
+ }else{
   if (risk(my [x])=="H"){
+
 	  high++;
 
   }
- if (risk(my [x])=="C"){
+ else if (risk(my [x])=="C"){
 	  critical++;
   }
-  if (risk(my [x])=="L"){
+  else if (risk(my [x])=="L"){
 
 	  low++;
+
   }
-  if (risk(my [x])=="M"){
+else if (risk(my [x])=="M"){
 	  medium++;
   }
-	if (risk(my [x])=="N"){
-	  negligible++;
+else if(risk(my[x])=="N"){
+negligible++;
   }
- }
+
+}}
+
+ //alert(keyList[i]+" :"+"low:"+low+" high: "+ "medium :"+medium+ "crtical :"+critical);
   arrLow[i]=low;
  arrHigh[i]=high;
 arrMedium[i]=medium;
 arrCritical[i]=critical;
  arrNegligible[i]=negligible;
-var total=low+high+critical+medium;
+var total=low+high+critical+medium+negligible;
+
 
 
 
@@ -103,6 +112,12 @@ var total=low+high+critical+medium;
 
 
 		i++;
+		low=0;
+		medium=0;
+		medium=0;
+		high=0;
+		critical=0;
+		negligible=0;
 
 return ref;
 	}
@@ -135,6 +150,8 @@ return ref;
 $("tbody").append(topic);
 
 
+
+
 }
 
 
@@ -142,8 +159,57 @@ $("tbody").append(topic);
  	 $(document).ready(function (){
 
 keyRead("My_data/totalRisk/");
- 	 
 
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+	type: 'bar',
+
+	data: {
+		labels:heads,
+		datasets: [
+{
+label: 'Low',
+data: arrLow,
+backgroundColor: 'Green' // green
+
+},
+{
+label: 'Medium',
+data: arrMedium,
+backgroundColor: 'Yellow' // yellow
+},
+{
+label: 'High',
+data:arrHigh,
+backgroundColor: 'Red' // red
+},{
+label: 'Critical',
+data:arrCritical,
+backgroundColor: 'Black' // red
+}
+]
+
+
+	},
+	options: {
+		animation: {
+				duration: 0 // general animation time
+		},
+		hover: {
+				animationDuration: 0 // duration of animations when hovering an item
+		},
+		responsiveAnimationDuration: 0 ,// animation duration after a resize
+
+		scales: {
+
+			xAxes: [{ stacked: true }],
+			yAxes: [{ stacked: true }]
+		},
+		legend: {
+			//display: true,
+		}
+	}
+});
 
 
 

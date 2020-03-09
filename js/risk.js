@@ -2,8 +2,17 @@
 function risk(score) {
 
 	var  result ="";
-	var str= ["N","L","L","M","M","O","H","O","O","C"];
+
+	var str= ["N","L","L","M","M","0","H","0","0","C"];
     ;
+
+if(isNaN(score)){
+result=0/0;
+
+
+}else {
+
+
 
 	if (str[score] == "H")
 	{
@@ -26,11 +35,13 @@ function risk(score) {
 
 	}
 
-	else
+	else if (str[score]="N")
 	{
-		result = "N";
+		result="N"
+
 
 	}
+}
 
 	return result;
 }
@@ -63,7 +74,7 @@ function riskScore(){
 
 	}
 	else {
-		serverityRisk=null;
+		serverityRisk=0/0;
 	}
 
 	var ProbRisk;
@@ -92,7 +103,7 @@ function riskScore(){
 
 	}
 	else {
-		ProbRisk=null;
+		ProbRisk=0/0;
 	}
 
 	 return ProbRisk * serverityRisk;
