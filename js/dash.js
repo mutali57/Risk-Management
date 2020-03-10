@@ -157,59 +157,60 @@ $("tbody").append(topic);
 
 
  	 $(document).ready(function (){
+		 var ctx = document.getElementById("myChart");
+		 var myChart = new Chart(ctx, {
+		 	type: 'bar',
+
+		 	data: {
+		 		labels:heads,
+		 		datasets: [
+		 {
+		 label: 'Low',
+		 data: arrLow,
+		 backgroundColor: 'Green' // green
+
+		 },
+		 {
+		 label: 'Medium',
+		 data: arrMedium,
+		 backgroundColor: 'Yellow' // yellow
+		 },
+		 {
+		 label: 'High',
+		 data:arrHigh,
+		 backgroundColor: 'Red' // red
+		 },{
+		 label: 'Critical',
+		 data:arrCritical,
+		 backgroundColor: 'Black' // red
+		 }
+		 ]
+
+
+		 	},
+		 	options: {
+		 		animation: {
+		 				duration: 0 // general animation time
+		 		},
+		 		hover: {
+		 				animationDuration: 0 // duration of animations when hovering an item
+		 		},
+		 		responsiveAnimationDuration: 0 ,// animation duration after a resize
+
+		 		scales: {
+
+		 			xAxes: [{ stacked: true }],
+		 			yAxes: [{ stacked: true }]
+		 		},
+		 		legend: {
+		 			//display: true,
+		 		}
+		 	}
+		 });
 
 keyRead("My_data/totalRisk/");
 
-var ctx = document.getElementById("myChart");
-var myChart = new Chart(ctx, {
-	type: 'bar',
 
-	data: {
-		labels:heads,
-		datasets: [
-{
-label: 'Low',
-data: arrLow,
-backgroundColor: 'Green' // green
-
-},
-{
-label: 'Medium',
-data: arrMedium,
-backgroundColor: 'Yellow' // yellow
-},
-{
-label: 'High',
-data:arrHigh,
-backgroundColor: 'Red' // red
-},{
-label: 'Critical',
-data:arrCritical,
-backgroundColor: 'Black' // red
-}
-]
-
-
-	},
-	options: {
-		animation: {
-				duration: 0 // general animation time
-		},
-		hover: {
-				animationDuration: 0 // duration of animations when hovering an item
-		},
-		responsiveAnimationDuration: 0 ,// animation duration after a resize
-
-		scales: {
-
-			xAxes: [{ stacked: true }],
-			yAxes: [{ stacked: true }]
-		},
-		legend: {
-			//display: true,
-		}
-	}
-});
 
 
 
