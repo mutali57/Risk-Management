@@ -45,9 +45,9 @@ for (x in keyList){
 heads[x]=	replaceAll(keyList[x],"_"," ");
 };
 
-alert(snapData.total.length);
+
 		//alert(totalRisk);
-		 var energyRisk=snapData.total;
+		 var energyRisk=valList;
 
 
  //var my=[1,2,9,9,9,0,0]
@@ -79,7 +79,7 @@ negligible++;
   }
 
 }}
-
+//hell
  //alert(keyList[i]+" :"+"low:"+low+" high: "+ "medium :"+medium+ "crtical :"+critical);
   arrLow[i]=low;
  arrHigh[i]=high;
@@ -128,7 +128,7 @@ return ref;
  	 	editRow = $(ctl).parents("tr");
 
  	 	var cols = editRow.children("td");
- 	 	alert($($(cols[0]).children('button')[0]).data ('id'));
+ 	 //	alert($($(cols[0]).children('button')[0]).data ('id'));
  	 	var activeId = $($(cols[0]).children("button")[0]).data("id");
  	 	//alert(activeId);
 
