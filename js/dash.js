@@ -47,7 +47,7 @@ heads[x]=	replaceAll(keyList[x],"_"," ");
 
 
 		//alert(totalRisk);
-		 var energyRisk=valList;
+		 var energyRisk=snapData.total;
 //alert
 ///var mys=[1,2,9,9,9,0,0]
  my= energyRisk.split (',');
