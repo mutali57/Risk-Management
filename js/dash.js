@@ -48,9 +48,8 @@ heads[x]=	replaceAll(keyList[x],"_"," ");
 
 		//alert(totalRisk);
 		 var energyRisk=valList;
-
-
- //var my=[1,2,9,9,9,0,0]
+//alert
+///var mys=[1,2,9,9,9,0,0]
  my= energyRisk.split (',');
  for (var x=1;x<my.length;x++){
 //alert(my[x]);
