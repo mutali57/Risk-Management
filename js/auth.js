@@ -11,9 +11,9 @@ var  a=  {
  firebase.initializeApp(a);
 
 
-if('serviceWorker'in navigator){
+/*if('serviceWorker'in navigator){
   window.addEventListener("load", function(){
-    navigator.serviceWorker.register("service_worker.js"). then(
+    navigator.serviceWorker.register(""). then(
       function(){
         console.log("Service worker");
 
@@ -23,4 +23,4 @@ if('serviceWorker'in navigator){
     });
 
   });
-}
+}*/

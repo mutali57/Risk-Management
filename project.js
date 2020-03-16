@@ -16,7 +16,7 @@ var results =  "<nav class='navbar  navbar-dark navbar-expand-lg sticky-top bg-d
   +"<li class='nav-item'>"
     +"<a class='nav-link' href='dash2.html'>Home</a>"
   +"</li>"
-  +"<a class='nav-link' href='#'>Report<span class='sr-only'>(current)</span></a>"
+  +"<a class='nav-link' href='report.html'>Report<span class='sr-only'>(current)</span></a>"
   +"</li>"
 
   +"<li class='nav-item dropdown'>"
@@ -24,18 +24,19 @@ var results =  "<nav class='navbar  navbar-dark navbar-expand-lg sticky-top bg-d
    +"Assessment"
   +"</a>"
   +"<div class='dropdown-menu' aria-labelledby='navbarDropdown'>"
-    +"<a class='dropdown-item'  href='#IntroductionID'>Introduction</a>"
-    +"<a class='dropdown-item' href='#SiteConditionsID'>Site Appreciation</a>"
-    +"<a class='dropdown-item' href='#EnergyID'>Energy Yield Assessment</a>"
-    +"<a class='dropdown-item' href='#ContractOverviewID'>Contract Overview</a>"
-    +"<a class='dropdown-item' href='#ProgrammeID'>Programme</a>"
-    +"<a class='dropdown-item' href='#OEMID'>OEM and Turbine Technology+</a>"
-    +"<a class='dropdown-item' href='#BoPID'>Balance of Plant Track Record</a>"
-    +"<a class='dropdown-item' href='#SupplyTurbineID'>Supply - Turbine Supply Agreement</a>"
-    +"<a class='dropdown-item' href='#SupplyProjectID'>Supply - Project Management Agreement</a>"
-    +"<a class='dropdown-item' href='#SupplyInterfaceID'>Supply - Interface</a>"
-    +"<div class='dropdown-divider'></div>"
-    +"<a class='dropdown-item' href='#'>Something else here</a>"
+  +"<a class='dropdown-item'  href='report.html#IntroductionID'>Introduction</a>"
+  +"<a class='dropdown-item' href='report.html#Site_AppreciationID'>Site Appreciation</a>"
+  +"<a class='dropdown-item' href='report.html#Energy_Analysis'>Energy Yield Assessment</a>"
+  +"<a class='dropdown-item' href='report.html#Site_and_Turbine_SuitabilityID'>Site_and_Turbine_Suitability</a>"
+  +"<a class='dropdown-item' href='report.html#Contract_OverviewID'>Contract Overview</a>"
+  +"<a class='dropdown-item' href='report.html#ProgrammeID'>Programme</a>"
+  +"<a class='dropdown-item' href='report.html#Original_Equipment_Manufacturer_and_Turbine_TechnologyID'>OEM and Turbine Technology</a>"
+  +"<a class='dropdown-item' href='report.html#Balance_of_Plant_Track_RecordID'>Balance of Plant Track Record</a>"
+  +"<a class='dropdown-item' href='report.html#Supply_Balance_of_PlantID'>Supply_Balance_of_Plant</a>"
+
+  +"<a class='dropdown-item' href='report.html#Supply_Turbine_Supply_AgreementID'>Supply - Turbine Supply Agreement</a>"
+  +"<a class='dropdown-item' href='report.html#Supply_Project_Management_AgreementID'>Supply - Project Management Agreement</a>"
+  +"<a class='dropdown-item' href='report.html#Supply_InterfaceID'>Supply - Interface</a>"
   +"</div>"
   +"</li>"
   +"<li class='nav-item'>"
@@ -128,7 +129,15 @@ results="<iframe name='votar' style='display:none';></iframe>"+
    "<thead >"
    +"<tr><th colspan='3'><h1>"+name+"</h1></th></tr>"
  +
-   "<tr><th></th>"+
+   "<tr>"+
+"<th class='topicid'>"+
+
+   "<a role='button' class='btn btn-info btn-lg'  href='container.html'"
+    +
+   "data-id='mybutton'>" +
+   "<i class='fas fa-edit'></i>" +
+
+   "</a></th>"+
    "<th width='25%' scope='col'>Key Information</th>"+
    "<th scope='col'>Detail</th>"+
    "</tr></thead> </table>"+
@@ -159,7 +168,7 @@ results=
         "data-id='mybutton'>" +
         "<i class='fas fa-edit'></i>" +
 
-        "</button></th>"
+        "</a></th>"
 				+"<th class='th-sm' scope='col'>Reference (and clause)</th>"
 				+"<th class='th-sm' scope='col'>Sub topic</th>"
 				+"<th class ='th-lg' scope='col'>Due diligence focus (hide this column)</th>"
@@ -186,8 +195,78 @@ return results;
 
 
 function formInfo(){
+var results;
 
-var results=	"<form  target='votar'   class='sucess-none was-validated  ' id='newContact' >"
+if(localStorage.getItem("nameid")=="Introduction"){
+
+
+
+results="<form  target='votar'   class='sucess-none was-validated  ' id='newContact' >"
+
+  	  +"<div class='modal' id='myModal'>"
+
+    +  "<div class='modal-dialog' role='document'>"+
+      "<div class='modal-content'>"
+
+      +"<div class='modal-header'>"+
+    "<h5 class='modal-title' id='exampleModalLabel'>Project Risk</h5>"
+        +"<button type='button' id='closebutton' data-dismiss='modal' aria-label='Close'>"
+      +"<span aria-hidden='true'>&times;</span> </button>"
+
+      +"</div>"
+
+
+      	+"<div class='modal-body'>"
+  			  +"<div class='row'>"
+  				+"<div class='col-sm-12 col-md-12 col-lg-12'>"
+
+  					  +"<div class='form-row '>"
+  						+"<label for='keyinfo'>"
+  						 +"Key Information"+
+  					"</label>"
+  						+"<input type='text'class='form-control'	  value='Site Data'id='keyinfo' />"
+  					  +"</div>"
+
+  					  +"<div class='form-row'>"
+  						+"<label for='detail'>"+
+  						  "Details"+
+  					"</label>"
+              +"<textarea id='detail' class='form-control' "
+  						+"onkeyup='new do_resize(this);' cols='20' rows='1' name='description_name'>"
+  						+"</textarea>"
+  					  +"</div>"
+
+  +"</div>"
+  +"</div>"
+  +"</div>"
+  					+"<div class='modal-footer'>"
+  					  +"<div class='row'>"
+  						+"<div class='col-xs-12'>"
+  						  +"<div style='position: absolute; left: -5000px;' aria-hidden='true'>"
+  							+"<input type='text' name='b_96d9e6e519173af7bdbdab9d_23138bd741' tabindex='-1' value=''>"
+
+  						  +"</div>"
+  						  +"<button   aria-hidden='true'type='submit' class='btn btn-primary'  name='subscribe' id='submitContact'>Submit</button>"
+  						+"</div>"
+
+
+
+  +"</div>"
+  +"</div>"
+  					+"</div>"
+  				  +"</div>"
+  				+"</div>"
+  			  +"</div>"
+  			+"</div>"+
+  "</form>";
+
+}
+
+else  {
+
+
+
+results=	"<form  target='votar'   class='sucess-none was-validated  ' id='newContact' >"
 
 	  +"<div class='modal' id='myModal'>"
 
@@ -298,4 +377,5 @@ var results=	"<form  target='votar'   class='sucess-none was-validated  ' id='ne
 			  +"</div>"
 			+"</div>"+
 "</form>";
+}
 	return  results;}

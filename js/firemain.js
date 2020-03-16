@@ -26,10 +26,11 @@ var	databaseRes= firebase.database();
 
 										   snapshot.forEach(function(data) {
 
-                                                      //alert(data.val ());
+                                if(data.val()!="Introduction"){          //alert(data.val ());
 																valList[i] = data.val ();
 
-																i++;
+
+																i++;}
 
 
 															});
@@ -80,11 +81,14 @@ function keyRead(topic) {
 
 											keyList [i]=data.key;
 											//alert(keyList);
+
+                      if(data.key!='Introduction'){
 										   valRead(topic+"/"+data.key);
 
 
 
 													i++;
+                        }
 															});
 
 

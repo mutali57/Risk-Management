@@ -114,7 +114,6 @@ function contactScript() {
 	var	databaseRes= firebase.database();
 
    databaseRes = firebase.database().ref("Energy");
-
 $("#newContact").submit(function(a) { $(this), console.log("Submit to Firebase");
 var nhead=$('#heading').val(),
 									b=$("#subtopic").val(),
@@ -157,6 +156,7 @@ window.location.href = 'container.html';
 
       	var str='';
       	//alert(RiskArray);
+
 
       	for ( x in RiskArray){
 
@@ -219,6 +219,32 @@ var dataModel;
 
 var	databaseRes;
 
+if(id=="Introduction"){
+
+
+
+  var detail=$('#detail').val();
+
+var key=$('#keyinfo').val();
+  dataModel={
+
+    details : detail,
+  keyInfo: key
+  }
+  updates[id+"/"+ keyList [activeId-1]]= dataModel;
+
+
+
+}else {
+
+
+
+
+
+var dataModel;
+
+var	databaseRes;
+
 
 	var str='';
 	//alert(RiskArray);
@@ -230,7 +256,6 @@ var	databaseRes;
 
 
 	}
-
 
 
 var data=    {
@@ -264,8 +289,7 @@ var data=    {
 
 updates["totalRisk/"+id] = data;
 updates[id+"/"+ keyList [activeId-1]]= dataModel;
-
-//databaseRes = firebase.database().ref('totalRisk/').update ({energyRisk:str});
+}//databaseRes = firebase.database().ref('totalRisk/').update ({energyRisk:str});
 
 
 

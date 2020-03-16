@@ -83,15 +83,13 @@ input {
 <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-  <script src="js/auth.js">
-
-  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/auth.js">
+</script>
 </script>
 <script>
 firebase.auth().onAuthStateChanged(function(user) {
@@ -352,7 +350,12 @@ console.log( 'pressed');
 	$("#probabilitydescription").val($(cols[8]).text());
 	$("#suggestion").val($(cols[11]).text());
 
+if(localStorage.getItem("nameid")=="Introduction"){
 
+  $("#keyinfo").val($(cols[1]).text());
+  $("#details").val($(cols[2]).text());
+
+}
 
 	// Change Update Button Text
 
@@ -430,6 +433,26 @@ var j=0;
 // Build a <table> row of Product data
 function productBuildTableRow(id) {
 
+if(localStorage.getItem("nameid")=="Introduction"){
+
+  ret = "<tr>" +
+    "<td>" +
+"<button type='button' class='btn btn-info btn-lg' data-toggle='modal'  data-target='#myModal'" +
+"onclick='productDisplay(this);' " +
+"class='btn btn-default'" +
+"data-id='" + id + "'>" +
+"<i class='fas fa-edit'></i>" +
+"</button>" +
+"<td>" + snapData.keyInfo + "</td>"  +
+"<td>" + snapData.details+ "</td>" +
+
+
+"</tr>";
+
+
+}
+  else{
+
 	var ret ;
 
 	if (snapData.heading == '')
@@ -484,7 +507,7 @@ j++;
 	}
 
 
-
+}
 	return ret;
 }
 

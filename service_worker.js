@@ -1,10 +1,9 @@
 //service worker supported
 //call installl addEventListener
-
 const cacheName = "m"
 //const cacheAssets =['dash.html',"js/auth.js","js/dash.js"]
 
-self.addEventListener('install', function(e){
+/*self.addEventListener('install', function(e){
 
   console.log ("Sevice worker:Installed");
 
@@ -15,7 +14,7 @@ self.addEventListener('install', function(e){
 
     });
   }) );*/
-})
+/*})
  // call activate event
  self.addEventListener('activate', function(e){
 
@@ -50,4 +49,4 @@ self.addEventListener('fetch', e => {
       })
       .catch(err => caches.match(e.request).then(res => res))
   );
-});
+});*/
