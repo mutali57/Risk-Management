@@ -268,6 +268,18 @@ text-align: center;
           <a class="dropdown-item" href="#Supply_Turbine_Supply_AgreementID">Supply - Turbine Supply Agreement</a>
           <a class="dropdown-item" href="#Supply_Project_Management_AgreementID">Supply - Project Management Agreement</a>
           <a class="dropdown-item" href="#Supply_InterfaceID">Supply - Interface</a>
+          <a class="dropdown-item" href="#Supply_Service_AgreementID">Supply - Service Agreement</a>
+         <a class="dropdown-item" href="#Asset_ManagementID">Asset Management</a>
+         <a class="dropdown-item" href="#Grid_Connection_AgreementID">Grid Connection Agreement</a>
+         <a class="dropdown-item" href="#Power_Purchase_AgreementID">Power Purchase Agreement</a>
+         <a class="dropdown-item" href="#Electrical_DesignID">Electrical Design</a>
+         <a class="dropdown-item" href="#Geotechnical_InvestigationID">Geotechnical Investigation</a>
+         <a class="dropdown-item" href="#Civil_DesignID">Civil Design</a>
+         <a class="dropdown-item" href="#EnvironmentalID">Environmental</a>
+         <a class="dropdown-item" href="#PermittingID">Permitting</a>
+         <a class="dropdown-item" href="#Operational_PerformanceID">Operational Performance</a>
+         <a class="dropdown-item" href="#Financial_ModelID">Financial Model</a>
+         
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
@@ -361,6 +373,64 @@ text-align: center;
   <div class= "rowclass Supply_Interface"></div>
 
   </div>
+</div>
+<div id="Supply_Service_AgreementID" >
+
+  <div class= "rowclass Supply_Service_Agreement"></div>
+
+  </div>
+<div id="Asset_ManagementID" >
+
+  <div class= "rowclass Asset_Management"></div>
+
+  </div>
+
+ <div id="Grid_Connection_AgreementID" >
+
+  <div class= "rowclass Grid_Connection_Agreement"></div>
+
+  </div>
+  <div id="Power_Purchase_AgreementID" >
+
+  <div class= "rowclass Power_Purchase_AgreementID"></div>
+
+  </div>
+  <div id="Electrical_DesignID" >
+
+  <div class= "rowclass Electrical_Design"></div>
+
+  </div>
+  <div id="Geotechnical_InvestigationID" >
+
+  <div class= "rowclass Geotechnical_Investigation"></div>
+
+  </div>
+  <div id="Civil_DesignID" >
+
+    <div class= "rowclass Civil_Design"></div>
+  
+    </div>
+    <div id="EnvironmentalID" >
+
+      <div class= "rowclass Environmental"></div>
+          
+      </div>
+      <div id="PermittingID" >
+
+        <div class= "rowclass Permitting"></div>
+      
+        </div>
+
+        <div id="Operational_PerformanceID" >
+
+          <div class= "rowclass Operational_Performance"></div>
+        
+          </div>
+          <div id="Financial_ModelID" >
+
+            <div class= "rowclass Financial_Model"></div>
+          
+            </div>
 </div>
     </div>
   </div>
@@ -504,7 +574,18 @@ $(document).ready(function() {
 					  headings('Supply_Balance_of_Plant', "Supply balance of Plant");
 					  headings("Supply_Project_Management_Agreement", "Supply Project Management Agreement");
 					  headings("Supply_Interface", "Supply Interface");
-
+            headings("Supply_Service_Agreement", "Supply Service Agreement");
+            headings("Asset_Management", "Asset Management");
+            headings("Grid_Connection_Agreement", "Grid Connection Agreement");
+            headings("Power_Purchase_Agreement", "Power Purchase Agreement");
+            headings("Electrical_Design", "Electrical Design");
+            headings("Geotechnical_Investigation", "Geotechnical Investigation");
+            headings("Civil_Design", "Civil Design");
+            headings("Environmental", "Environmental");
+            headings("Permitting", "Permitting");
+            headings("Operational_Performance", "Operational Performance");
+            headings("Financial_Model", " Financial Model");
+            
 					  colorChange("#probabilityscore");
 					  colorChange("#severityscore");
 					  var nameid ="";
