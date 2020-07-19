@@ -12,6 +12,9 @@ var arrMedium=[];
 var arrCritical=[];
 var arrNegligible=[];
 var heads=[];
+var h=[];
+var j=0;
+
 
 
 
@@ -51,6 +54,7 @@ heads[x]=	replaceAll(keyList[x],"_"," ");
 //alert
 ///var mys=[1,2,9,9,9,0,0]
  my= energyRisk.split (',');
+
  for (var x=1;x<my.length;x++){
 //alert(my[x]);
  if(isNaN(my[x])){
@@ -80,12 +84,18 @@ negligible++;
 }}
 //hell
  //alert(keyList[i]+" :"+"low:"+low+" high: "+ "medium :"+medium+ "crtical :"+critical);
-  arrLow[i]=low;
- arrHigh[i]=high;
-arrMedium[i]=medium;
-arrCritical[i]=critical;
- arrNegligible[i]=negligible;
-var total=low+high+critical+medium+negligible;
+ var total=low+high+critical+medium+negligible;
+
+  if (total!=0){
+
+h[j]=heads[i];
+
+
+arrLow[j]=low;
+arrHigh[j]=high;
+arrMedium[j]=medium;
+arrCritical[j]=critical;
+arrNegligible[j]=negligible;
 
 
 
@@ -109,6 +119,8 @@ var total=low+high+critical+medium+negligible;
 		+"<td>"+high+"</td>"+
 	  "<td>"+critical+"</td>";
 
+j++;
+};
 
 		i++;
 		low=0;
@@ -150,20 +162,16 @@ $("tbody").append(topic);
 
 
 
-
 }
+function mygraph(){
 
 
-
- 	 $(document).ready(function (){
-
-		 setTimeout(function() {
 var ctx = document.getElementById("myChart");
   		 var myChart = new Chart(ctx, {
   		 	type: 'bar',
 
   		 	data: {
-  		 		labels:heads,
+  		 		labels:h,
   		 		datasets: [
   		 {
   		 label: 'Low',
@@ -204,16 +212,18 @@ var ctx = document.getElementById("myChart");
   		 			yAxes: [{ stacked: true }]
   		 		},
   		 		legend: {
-  		 			//display: true,
+  		 			display: true,
   		 		}
   		 	}
   		 });
 
-		 },3000);
-		 keyRead("My_data/totalRisk/");
+
+	 };
+window.onload = function(){ setTimeout( function(){	mygraph();}, 3000); };
+ 	 $(document).ready(function (){
 
 
-
+keyRead("My_data/totalRisk/");
 
 
 
