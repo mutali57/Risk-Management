@@ -91,11 +91,11 @@ negligible++;
 h[j]=heads[i];
 
 
-arrLow[j]=low;
-arrHigh[j]=high;
-arrMedium[j]=medium;
-arrCritical[j]=critical;
-arrNegligible[j]=negligible;
+arrLow[j]=((low)/total)*100;
+arrHigh[j]=(high/total)*100;
+arrMedium[j]=((medium)/total)*100;
+arrCritical[j]=(critical/total)*100;
+arrNegligible[j]=(negligible/total)*100;
 
 
 
@@ -173,16 +173,20 @@ var ctx = document.getElementById("myChart");
   		 	data: {
   		 		labels:h,
   		 		datasets: [
-  		 {
+						{
+		   		 label: 'Negligible',
+		   		 data: arrNegligible,
+		   		 backgroundColor: 'Green' // yellow
+				 },{
   		 label: 'Low',
   		 data: arrLow,
-  		 backgroundColor: 'Green' // green
+  		 backgroundColor: 'Yellow' // green
 
   		 },
   		 {
   		 label: 'Medium',
   		 data: arrMedium,
-  		 backgroundColor: 'Yellow' // yellow
+  		 backgroundColor: 'Orange' // yellow
   		 },
   		 {
   		 label: 'High',
@@ -213,6 +217,7 @@ var ctx = document.getElementById("myChart");
   		 		},
   		 		legend: {
   		 			display: true,
+
   		 		}
   		 	}
   		 });
